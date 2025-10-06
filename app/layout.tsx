@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     description: siteMetadata.description,
     images: [
       {
-        url: "/braydon_coyer_portfolio_og.jpg", // Your default OG image
+        url: "/dip3sh_og.png", // Your default OG image
         width: 1200,
         height: 630,
         alt: siteMetadata.title,
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteMetadata.title,
     description: siteMetadata.description,
-    images: ["/braydon_coyer_portfolio_og.jpg"],
+    images: ["/dip3sh_og.png"],
   },
 };
 
@@ -39,7 +39,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`bg-bg-primary ${GeistMono.variable} ${GeistSans.variable}`}
+      className={`bg-bg-primary ${GeistMono.variable} ${GeistSans.variable} antialiased`}
     >
       <body className="flex min-h-screen flex-col font-sans md:max-w-7xl lg:mx-auto lg:flex-row">
         <main
