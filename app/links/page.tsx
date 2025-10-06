@@ -4,14 +4,8 @@ import { GridWrapper } from "@/app/components/GridWrapper";
 import { ProfilePicture } from "@/app/components/ProfilePicture";
 import { Button } from "@/app/components/Button";
 import { siteMetadata } from "@/app/data/siteMetadata";
-import { fetchAndSortBlogPosts } from "@/app/lib/utils";
-import { FeaturedBlogCard } from "@/app/components/FeaturedBlogCard";
-import clsx from "clsx";
 
 export default async function LinksPage() {
-  const allPublishedBlogPosts = await fetchAndSortBlogPosts();
-  const featuredArticles = allPublishedBlogPosts.slice(0, 4);
-
   return (
     <div className="relative">
       <title>Links | Braydon Coyer</title>
@@ -25,8 +19,8 @@ export default async function LinksPage() {
         <GridWrapper>
           <div className="mx-auto max-w-xl text-center md:mt-8">
             <p className="leading-8 text-text-secondary">
-              I&apos;m a front-end developer, team lead, blogger and
-              international public speaker.
+              I&apos;m a front-end developer, team lead, and international
+              public speaker.
             </p>
           </div>
         </GridWrapper>
@@ -170,38 +164,6 @@ export default async function LinksPage() {
             </a>
           </div>
         </GridWrapper>
-
-        <GridWrapper>
-          <div className="text-center text-sm font-medium text-indigo-600">
-            <span>Blog</span>
-          </div>
-        </GridWrapper>
-
-        <div className="z-10">
-          <GridWrapper>
-            <ul className="z-50 grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
-              {featuredArticles.length > 0 ? (
-                <>
-                  {featuredArticles.slice(0, 4).map((post, index) => (
-                    <FeaturedBlogCard
-                      key={post.slug}
-                      slug={post.slug}
-                      imageName={post.imageName}
-                      title={post.title}
-                      summary={post.summary}
-                      className={clsx(
-                        // Hide the fourth article on mobile and desktop
-                        index === 3 && "hidden md:block lg:hidden",
-                      )}
-                    />
-                  ))}
-                </>
-              ) : (
-                <p>Nothing to see here yet...</p>
-              )}
-            </ul>
-          </GridWrapper>
-        </div>
 
         <NewsletterSignUp />
       </div>

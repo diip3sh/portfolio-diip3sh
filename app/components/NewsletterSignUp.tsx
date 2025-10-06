@@ -20,7 +20,7 @@ interface FormState {
 
 export function NewsletterSignUp({
   title = "Subscribe to my newsletter",
-  description = "A periodic update about my life, recent blog posts, how-tos, and discoveries.",
+  description = "A periodic update about my life, recent projects, how-tos, and discoveries.",
   buttonText = "Subscribe",
 }: NewsletterSignUpProps) {
   const [formState, setFormState] = useState<FormState>({

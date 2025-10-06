@@ -20,7 +20,6 @@ const footerSections: FooterSection[] = [
       { href: "/", label: "Home" },
       { href: "/about", label: "About" },
       { href: "/projects", label: "Projects" },
-      { href: "/blog", label: "Blog" },
     ],
   },
   {
@@ -74,8 +73,8 @@ export function Footer(): JSX.Element {
                     />
                   </Link>
                   <p className="w-60 leading-5 text-gray-500">
-                    I&apos;m Braydon - a senior front-end developer, blogger and
-                    public speaker. Thanks for checking out my site!
+                    I&apos;m Braydon - a senior front-end developer and public
+                    speaker. Thanks for checking out my site!
                   </p>
                 </div>
                 <p className="mt-6 text-gray-500">

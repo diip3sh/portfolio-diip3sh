@@ -230,7 +230,7 @@ export default function AboutPage() {
                 </p>
                 <p className="mb-6 text-base leading-8 text-text-secondary">
                   When I&apos;m not working, you&apos;ll find me on creative
-                  coding side projects, writing for my blog, failing
+                  coding side projects, writing about my projects, failing
                   spectacularly at games with friends, or—best of all—hanging
                   out with my family, usually with coffee nearby and dad jokes
                   at the ready.

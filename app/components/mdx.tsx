@@ -410,7 +410,7 @@ function FullWidthCallout({ children, type }) {
       <span className="absolute -top-1/2 left-1/2 -z-10 -translate-x-1/2 opacity-50">
         <BgGradient />
       </span>
-      <div className="blog-container drama-shadow mx-auto rounded-md bg-bg-primary p-6">
+      <div className="content-container drama-shadow mx-auto rounded-md bg-bg-primary p-6">
         {badge && (
           <span
             className={`mb-3.5 inline-flex items-center rounded-full ${badge.bg} px-4 py-1 text-xs font-medium uppercase ${badge.text} ring-1 ring-inset ${badge.ring}`}

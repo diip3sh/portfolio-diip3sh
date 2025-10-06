@@ -14,7 +14,7 @@ body.modal-open {
     1fr;
 }
 
-.blog-container {
+.content-container {
   width: min(65ch, 100%);
 }
 

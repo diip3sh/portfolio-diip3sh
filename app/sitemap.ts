@@ -1,16 +1,7 @@
 import type { MetadataRoute } from "next";
-import { fetchAndSortBlogPosts } from "@/app/lib/utils";
 import { siteMetadata } from "@/app/data/siteMetadata";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const posts = fetchAndSortBlogPosts();
-  const blogUrls = posts.map((post) => ({
-    url: `${siteMetadata.siteUrl}/blog/${post.slug}`,
-    lastModified: new Date(post.publishedAt),
-    changeFrequency: "weekly" as const,
-    priority: 0.8,
-  }));
-
   return [
     {
       url: `${siteMetadata.siteUrl}`,
@@ -25,11 +16,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.7,
     },
     {
-      url: `${siteMetadata.siteUrl}/blog`,
+      url: `${siteMetadata.siteUrl}/projects`,
       lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.5,
+      changeFrequency: "monthly",
+      priority: 0.6,
     },
-    ...blogUrls,
+    {
+      url: `${siteMetadata.siteUrl}/speaking`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
+      url: `${siteMetadata.siteUrl}/toolbox`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
   ];
 }

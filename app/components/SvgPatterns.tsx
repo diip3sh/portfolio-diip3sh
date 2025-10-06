@@ -352,7 +352,7 @@ export function MySitePattern() {
   );
 }
 
-export function BlogPattern(): React.ReactNode {
+export function ContentPattern(): React.ReactNode {
   return (
     <svg
       className="pointer-events-none absolute inset-x-0 left-1/2 top-10 z-0 w-full -translate-x-1/2 transform"

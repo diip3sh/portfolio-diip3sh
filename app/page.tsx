@@ -1,11 +1,9 @@
 import { BgGradient } from "./components/BgGradient";
 import { NewsletterSignUp } from "./components/NewsletterSignUp";
 import { ChangelogBento } from "./components/ChangelogBento";
-import { fetchAndSortBlogPosts } from "./lib/utils";
 import { SpeakingBento } from "./components/SpeakingBento";
 import { CommunityWallBento } from "./components/CommunityWallBento";
 import { CalendarBento } from "./components/CalendarBento";
-import { FeaturedBlogCard } from "./components/FeaturedBlogCard";
 import { ToolboxBento } from "./components/ToolboxBento";
 import { ConnectionsBento } from "./components/ConnectionsBento";
 import { AnimatedProfilePicture } from "./components/AnimatedProfilePicture";
@@ -14,12 +12,8 @@ import { PhotoGallery } from "./components/PhotoGallery";
 import { AboutMeBento } from "./components/AboutMeBento";
 import { AnimatedMobilePhotos } from "./components/AnimatedMobilePhotos";
 import { GridWrapper } from "./components/GridWrapper";
-import clsx from "clsx";
 
 export default async function Home() {
-  const allPublishedBlogPosts = await fetchAndSortBlogPosts();
-  const featuredArticles = allPublishedBlogPosts.slice(0, 4);
-
   const PROFILE_DELAY = 0;
   const HEADING_DELAY = PROFILE_DELAY + 0.2;
   const PARAGRAPH_DELAY = HEADING_DELAY + 0.1;
@@ -102,52 +96,6 @@ export default async function Home() {
               </div>
             </div>
           </GridWrapper>
-        </section>
-
-        {/* Blog Section */}
-        <section className="relative space-y-10 md:space-y-16">
-          {/* <BlogPattern /> */}
-          <div className="relative space-y-4 text-balance">
-            <span className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2">
-              <BgGradient />
-            </span>
-            <GridWrapper>
-              <div className="text-center text-sm font-medium text-indigo-600">
-                <span>Blog</span>
-              </div>
-            </GridWrapper>
-            <GridWrapper>
-              <h2 className="mx-auto max-w-lg text-center text-3xl font-medium leading-10 tracking-tighter text-text-primary md:text-4xl">
-                I like sharing my experiments && knowledge with others
-              </h2>
-            </GridWrapper>
-          </div>
-
-          <div className="z-10">
-            <GridWrapper>
-              <ul className="z-50 grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
-                {featuredArticles.length > 0 ? (
-                  <>
-                    {featuredArticles.slice(0, 4).map((post, index) => (
-                      <FeaturedBlogCard
-                        key={post.slug}
-                        slug={post.slug}
-                        imageName={post.imageName}
-                        title={post.title}
-                        summary={post.summary}
-                        className={clsx(
-                          // Hide the fourth article on mobile and desktop
-                          index === 3 && "hidden md:block lg:hidden",
-                        )}
-                      />
-                    ))}
-                  </>
-                ) : (
-                  <p>Nothing to see here yet...</p>
-                )}
-              </ul>
-            </GridWrapper>
-          </div>
         </section>
 
         {/* My Site Section */}
