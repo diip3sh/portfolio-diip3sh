@@ -5,7 +5,7 @@ import {
   useSpring,
   useTransform,
   useVelocity,
-} from "framer-motion";
+} from "motion/react";
 
 export function useRotationVelocity(initialRotation: number) {
   const x = useMotionValue(0);

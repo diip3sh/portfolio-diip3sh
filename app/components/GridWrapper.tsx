@@ -3,12 +3,15 @@ import clsx from "clsx";
 export function GridWrapper({
   children,
   className,
+  style,
 }: {
   children: React.ReactNode;
   className?: string;
+  style?: React.CSSProperties;
 }) {
   return (
     <div
+      style={style}
       className={clsx(
         className,
         "relative w-full",

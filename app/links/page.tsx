@@ -35,7 +35,7 @@ export default async function LinksPage() {
           </div>
         </GridWrapper>
         <GridWrapper>
-          <div className="text-center text-sm font-medium text-indigo-600">
+          <div className="text-center text-sm font-medium text-sky-500">
             <span>Socials</span>
           </div>
         </GridWrapper>

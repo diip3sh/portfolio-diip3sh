@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { Photo } from "./Photo";
 import { useEffect, useState } from "react";
 
@@ -79,7 +79,7 @@ export const PhotoGallery = ({
       y: "15px",
       zIndex: 50, // Highest z-index (on top)
       direction: "left" as Direction,
-      src: "/braydon_headshot_3.jpg",
+      src: "https://images.unsplash.com/photo-1756894256833-934a85a42df9?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       id: 2,
@@ -88,7 +88,7 @@ export const PhotoGallery = ({
       y: "32px",
       zIndex: 40,
       direction: "left" as Direction,
-      src: "/braydon_speaking_photo.jpeg",
+      src: "https://images.unsplash.com/photo-1739296385054-778ab2b92e8a?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       id: 3,
@@ -97,7 +97,7 @@ export const PhotoGallery = ({
       y: "8px",
       zIndex: 30,
       direction: "right" as Direction,
-      src: "/braydon_headshot_1.jpeg",
+      src: "https://images.unsplash.com/photo-1647102653691-0894804f86c5?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       id: 4,
@@ -106,7 +106,7 @@ export const PhotoGallery = ({
       y: "22px",
       zIndex: 20,
       direction: "right" as Direction,
-      src: "/c3_speaker_head.png",
+      src: "https://images.unsplash.com/photo-1746881523816-7693c797c3b4?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       id: 5,
@@ -115,7 +115,7 @@ export const PhotoGallery = ({
       y: "44px",
       zIndex: 10, // Lowest z-index (at bottom)
       direction: "left" as Direction,
-      src: "/braydon_headshot_4.jpg",
+      src: "https://images.unsplash.com/photo-1664737063287-e12ada26fde0?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
   ];
 

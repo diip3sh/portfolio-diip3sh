@@ -24,7 +24,7 @@ export default function AboutPage() {
         <GridWrapper className="space-y-12">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-around lg:px-24">
             <div className="order-2 mx-auto max-w-lg lg:order-1 lg:m-0 lg:max-w-3xl lg:pr-12">
-              <div className="text-center text-sm font-medium text-indigo-600 lg:text-left">
+              <div className="text-center text-sm font-medium text-sky-500 lg:text-left">
                 <span>{timeOfDayGreeting}</span>
               </div>
               <h1 className="mx-auto max-w-2xl text-balance text-center text-4xl font-medium leading-tight tracking-tighter text-text-primary md:text-5xl lg:text-left lg:text-6xl lg:leading-[64px]">
@@ -75,7 +75,7 @@ export default function AboutPage() {
         <div className="relative space-y-8 text-center">
           <div className="space-y-4">
             <GridWrapper>
-              <div className="text-center text-sm font-medium text-indigo-600">
+              <div className="text-center text-sm font-medium text-sky-500">
                 <span>About</span>
               </div>
             </GridWrapper>
@@ -254,7 +254,7 @@ export default function AboutPage() {
         <div className="relative space-y-8 text-center">
           <div className="space-y-4">
             <GridWrapper>
-              <div className="text-center text-sm font-medium text-indigo-600">
+              <div className="text-center text-sm font-medium text-sky-500">
                 <span>Experience</span>
               </div>
             </GridWrapper>
@@ -277,7 +277,7 @@ export default function AboutPage() {
         <section className="relative space-y-16">
           <div className="space-y-4">
             <GridWrapper>
-              <div className="text-center text-sm font-medium text-indigo-600">
+              <div className="text-center text-sm font-medium text-sky-500">
                 <span>More</span>
               </div>
             </GridWrapper>

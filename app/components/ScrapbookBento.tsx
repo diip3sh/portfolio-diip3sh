@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import { useClickAnyWhere, useMediaQuery } from "usehooks-ts";
 
 import { cn } from "../lib/utils";

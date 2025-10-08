@@ -5,6 +5,8 @@ import { SocialPill } from "./SocialPill";
 import { usePathname } from "next/navigation";
 import { CloseButton, Dialog, DialogPanel } from "@headlessui/react";
 import { useEffect, useState } from "react";
+import Image from "next/image";
+import { LogoSVG } from "./logo-svg";
 
 type NavigationLink = {
   name: string;
@@ -42,11 +44,14 @@ function DesktopNav() {
     >
       <div className="w-[104px]">
         <Link href="/" aria-label="Home">
-          <img
+          {/* <Image
             className="h-6 w-6"
+            width={24}
+            height={24}
             src="/bcoyerlogo_dark.svg"
             alt="Braydon's Logo"
-          />
+          /> */}
+          <LogoSVG />
         </Link>
       </div>
       <ul className="flex place-items-center space-x-4 rounded-full border border-border-primary px-5 py-2 text-sm text-gray-500">

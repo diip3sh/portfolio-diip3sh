@@ -12,10 +12,11 @@ export default {
       fontFamily: {
         sans: "var(--font-geist-sans), system-ui, sans-serif",
         mono: ["var(--font-geist-mono)"],
+        italic: ["var(--font-italic)"],
       },
       colors: {
         "bg-primary": "#F7F7F8",
-        "border-primary": "#D6DADE",
+        "border-primary": "#C9C9C9",
         "dark-primary": "#3C3C3F",
         "purple-primary": "#6C47FF",
         "purple-secondary": "#E6E2F9",

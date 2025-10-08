@@ -26,7 +26,7 @@ export default function ToolboxPage() {
         {/* Applications */}
         <div className="relative">
           <GridWrapper>
-            <div className="text-center text-sm font-medium text-indigo-600">
+            <div className="text-center text-sm font-medium text-sky-500">
               <span>Applications</span>
             </div>
           </GridWrapper>
@@ -66,7 +66,7 @@ export default function ToolboxPage() {
         {/* Hardware */}
         <div className="relative">
           <GridWrapper>
-            <div className="text-center text-sm font-medium text-indigo-600">
+            <div className="text-center text-sm font-medium text-sky-500">
               <span>Hardware</span>
             </div>
           </GridWrapper>

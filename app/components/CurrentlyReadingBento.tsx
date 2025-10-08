@@ -1,7 +1,7 @@
 import { Changelog } from "@/.velite";
 import { fetchAndSortChangelogEntrees } from "app/lib/utils";
 import { BentoCard } from "./BentoCard";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 export function CurrentlyReadingBento() {
   return (

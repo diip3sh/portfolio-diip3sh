@@ -1,19 +1,21 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 
 export function ProfilePicture() {
-  const [imageSrc, setImageSrc] = useState("/braydon_headshot_1.jpeg");
+  const [imageSrc, setImageSrc] = useState(
+    "https://images.unsplash.com/photo-1664737063287-e12ada26fde0?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  );
   const [isChanging, setIsChanging] = useState(false);
 
   const changeImage = () => {
     setIsChanging(true);
     const images = [
-      "/braydon_headshot_1.jpeg",
-      "/braydon_headshot_3.jpg",
-      "/braydon_speaking_photo.jpeg",
-      "/braydon_headshot_4.jpg",
+      "https://images.unsplash.com/photo-1756894256833-934a85a42df9?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1739296385054-778ab2b92e8a?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1647102653691-0894804f86c5?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1664737063287-e12ada26fde0?q=80&w=1364&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     ];
     const availableImages = images.filter((img) => img !== imageSrc);
     const randomIndex = Math.floor(Math.random() * availableImages.length);

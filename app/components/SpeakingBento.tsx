@@ -1,7 +1,7 @@
 "use client";
 
 import { BentoCard } from "./BentoCard";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import React from "react";
 
 export function SpeakingBento() {

@@ -1,6 +1,6 @@
 "use client";
 
-import { useScroll, motion } from "framer-motion";
+import { useScroll, motion } from "motion/react";
 import React, { useEffect, useRef, useState } from "react";
 
 export function AboutTrackPattern() {

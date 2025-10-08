@@ -54,7 +54,7 @@ export default function ProjectPage() {
                   {project.description}
                 </p>
                 <a
-                  className="inline-flex items-center text-sm font-medium text-indigo-600"
+                  className="inline-flex items-center text-sm font-medium text-sky-500"
                   href={project.url}
                 >
                   Visit {project.title}

@@ -1,7 +1,7 @@
 "use client";
 
 import { BentoCard } from "./BentoCard";
-import { motion, useAnimation } from "framer-motion";
+import { motion, useAnimation } from "motion/react";
 import clsx from "clsx";
 
 export function ConnectionsBento({

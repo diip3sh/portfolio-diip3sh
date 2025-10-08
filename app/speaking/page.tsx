@@ -198,7 +198,7 @@ export default function SpeakingPage() {
                 <div className="relative col-span-7 flex flex-col space-y-8">
                   {/* Title */}
                   <div className="col-span-5 flex w-3/4 flex-col items-start space-y-3 text-balance">
-                    <div className="text-left text-sm font-medium text-indigo-600">
+                    <div className="text-left text-sm font-medium text-sky-500">
                       <span>Biography</span>
                     </div>
                     <h2 className="text-3xl font-semibold text-text-primary">
@@ -239,7 +239,7 @@ export default function SpeakingPage() {
                 </div>
                 <div className="col-span-5 flex flex-col items-start space-y-8">
                   <div className="flex flex-col items-start space-y-4">
-                    <div className="text-left text-sm font-medium text-indigo-600">
+                    <div className="text-left text-sm font-medium text-sky-500">
                       <span>Headshots</span>
                     </div>
                     <h2 className="text-3xl font-semibold text-text-primary">

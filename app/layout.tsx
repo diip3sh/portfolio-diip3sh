@@ -5,9 +5,8 @@ import { siteMetadata } from "app/data/siteMetadata";
 import { Footer } from "./components/Footer";
 import { BgGradient } from "./components/BgGradient";
 import { cx } from "./lib/utils";
-import { GeistMono } from "geist/font/mono";
-import { GeistSans } from "geist/font/sans";
 import Script from "next/script";
+import { fontItalic, publicSans } from "./lib/local-font";
 
 export const metadata: Metadata = {
   description: siteMetadata.description,
@@ -39,7 +38,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`bg-bg-primary ${GeistMono.variable} ${GeistSans.variable} antialiased`}
+      className={`bg-bg-primary ${publicSans.className} ${fontItalic.variable} antialiased`}
     >
       <body className="flex min-h-screen flex-col font-sans md:max-w-7xl lg:mx-auto lg:flex-row">
         <main

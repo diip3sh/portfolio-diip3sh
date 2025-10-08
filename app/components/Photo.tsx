@@ -2,7 +2,7 @@
 
 import { Ref, forwardRef, useState, useEffect } from "react";
 import Image, { ImageProps } from "next/image";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 
 import { cn } from "../lib/utils";
 import { getRandomNumberInRange } from "@/app/lib/getRandomNumberInRange";
