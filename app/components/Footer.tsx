@@ -1,6 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import { SocialPill } from "./SocialPill";
 import { GridWrapper } from "./GridWrapper";
+import Logo from "./logo-svg";
+import { GridPattern } from "./grid-pattern";
 
 interface FooterLink {
   href: string;
@@ -23,24 +27,21 @@ const footerSections: FooterSection[] = [
     ],
   },
   {
-    title: "Specifics",
-    links: [
-      { href: "/toolbox", label: "Toolbox" },
-      { href: "/speaking", label: "Speaking" },
-      {
-        href: "https://braydoncoyer.lemonsqueezy.com/",
-        label: "Products",
-        isExternal: true,
-      },
-      { href: "/community-wall", label: "Community Wall" },
-    ],
-  },
-  {
     title: "Extra",
     links: [
       { href: "/changelog", label: "Changelog" },
       { href: "/connections", label: "Connections" },
       { href: "/links", label: "Links" },
+    ],
+  },
+  {
+    title: "Links",
+    //TODO: add the actual links
+    links: [
+      { href: "", label: "LinkedIn" },
+      { href: "", label: "GitHub" },
+      { href: "", label: "X" },
+      { href: "", label: "Mail" },
     ],
   },
 ];
@@ -65,27 +66,23 @@ export function Footer(): JSX.Element {
             <div className="flex w-full py-6 text-sm">
               <div>
                 <div className="flex-grow space-y-6">
-                  <Link className="inline-block" href="/">
-                    <img
-                      className="h-10 w-10"
-                      src="/bcoyerlogo_dark.svg"
-                      alt="Braydon's Logo"
-                    />
+                  <Link href="/" aria-label="Home">
+                    <Logo />
                   </Link>
                   <p className="w-60 leading-5 text-gray-500">
-                    I&apos;m Braydon - a senior front-end developer and public
-                    speaker. Thanks for checking out my site!
+                    Hey, I&apos;m Dip3sh - a front-end developer who enjoys
+                    creating websites.
                   </p>
                 </div>
                 <p className="mt-6 text-gray-500">
-                  © {new Date().getFullYear()} Braydon Coyer
+                  © {new Date().getFullYear()} dip3sh
                 </p>
               </div>
               <div className="flex w-full items-end justify-end pr-16">
                 <SocialPill />
               </div>
             </div>
-            <div className="flex w-full flex-col items-end py-6 text-xs lg:pl-16">
+            <div className="mx-auto flex w-full flex-col items-end py-6 text-xs lg:pl-16">
               <div className="ld:space-x-0 flex w-full justify-between md:justify-start md:space-x-36 lg:justify-between">
                 {footerSections.map((section) => (
                   <div key={section.title}>
@@ -105,6 +102,18 @@ export function Footer(): JSX.Element {
             </div>
           </div>
         </GridWrapper>
+
+        {/* <GridWrapper className="mt-2">
+          <div className="grid grid-cols-4 gap-4 md:grid-cols-8">
+            <h3 className="col-span-3 md:col-span-6">Dipesh</h3>
+            <div className="col-span-1">
+              <GridPattern>
+                <div />
+              </GridPattern>
+            </div>
+            <span className="col-span-1 md:col-span-2">© 2025</span>
+          </div>
+        </GridWrapper> */}
       </div>
       <div className="relative h-8 w-full [background-image:linear-gradient(45deg,theme(colors.border-primary)_12.50%,transparent_12.50%,transparent_50%,theme(colors.border-primary)_50%,theme(colors.border-primary)_62.50%,transparent_62.50%,transparent_100%)] [background-size:5px_5px]"></div>
     </>

@@ -9,6 +9,7 @@ import Script from "next/script";
 import { fontItalic, publicSans } from "./lib/local-font";
 
 export const metadata: Metadata = {
+  title: siteMetadata.title,
   description: siteMetadata.description,
   openGraph: {
     title: siteMetadata.title,

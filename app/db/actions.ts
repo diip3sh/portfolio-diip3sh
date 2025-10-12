@@ -8,6 +8,10 @@ import {
   type CurrentlyPlaying,
   getCurrentlyPlaying as getSpotifyCurrentlyPlaying,
 } from "./spotify";
+import {
+  type GithubContribution,
+  getGithubContributions as fetchGithubContributions,
+} from "./github";
 
 type ReactionType = "like" | "heart" | "celebrate" | "insightful";
 const VALID_REACTIONS: ReactionType[] = [
@@ -257,5 +261,15 @@ export async function getCurrentlyPlaying(): Promise<CurrentlyPlaying | null> {
   } catch (error) {
     console.error("Error fetching Spotify data:", error);
     return null;
+  }
+}
+
+export async function getGithubContributions(): Promise<GithubContribution[]> {
+  try {
+    const result = await fetchGithubContributions();
+    return result || [];
+  } catch (error) {
+    console.error("Error fetching GitHub contributions:", error);
+    return [];
   }
 }

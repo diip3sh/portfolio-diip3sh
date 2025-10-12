@@ -14,6 +14,11 @@ import { AnimatedMobilePhotos } from "./components/AnimatedMobilePhotos";
 import { GridWrapper } from "./components/GridWrapper";
 import { H2Tag, HeaderTag, ParagraphTag, SpanTag } from "./components/html-tag";
 import MagneticEffect from "./components/magnetic-effect";
+import { GridPattern } from "./components/grid-pattern";
+import { GithubBento } from "./components/github-bento";
+
+// Enable ISR with 24-hour revalidation for GitHub contributions
+export const revalidate = 86400;
 
 export default async function Home() {
   const PROFILE_DELAY = 0;
@@ -63,15 +68,19 @@ export default async function Home() {
               </div>
             </GridWrapper>
           </div>
-          <div>
-            {/* Desktop Photos */}
-            <div className="relative hidden h-fit w-full items-center justify-center lg:flex">
-              <PhotoGallery animationDelay={PHOTOS_DELAY} />
-            </div>
+          <GridPattern>
+            <GridWrapper>
+              <div>
+                {/* Desktop Photos */}
+                <div className="relative hidden h-fit w-full items-center justify-center lg:flex">
+                  <PhotoGallery animationDelay={PHOTOS_DELAY} />
+                </div>
 
-            {/* Mobile Photos */}
-            <AnimatedMobilePhotos delay={PHOTOS_DELAY} />
-          </div>
+                {/* Mobile Photos */}
+                <AnimatedMobilePhotos delay={PHOTOS_DELAY} />
+              </div>
+            </GridWrapper>
+          </GridPattern>
         </section>
 
         {/* About Section */}
@@ -96,61 +105,14 @@ export default async function Home() {
           </div>
 
           {/* Content grid with background */}
-          <div className="relative">
-            {/* Background grid pattern */}
-            <div
-              className="absolute inset-0 z-0"
-              style={{
-                backgroundImage: `
-          linear-gradient(to right, #a8a8a8 1px, transparent 1px),
-          linear-gradient(to bottom, #a8a8a8 1px, transparent 1px)
-        `,
-                backgroundSize: "20px 20px",
-                backgroundPosition: "0 0, 0 0",
-                maskImage: `
-          repeating-linear-gradient(
-            to right,
-            black 0px,
-            black 3px,
-            transparent 3px,
-            transparent 8px
-          ),
-          repeating-linear-gradient(
-            to bottom,
-            black 0px,
-            black 3px,
-            transparent 3px,
-            transparent 8px
-          )
-        `,
-                WebkitMaskImage: `
-          repeating-linear-gradient(
-            to right,
-            black 0px,
-            black 3px,
-            transparent 3px,
-            transparent 8px
-          ),
-          repeating-linear-gradient(
-            to bottom,
-            black 0px,
-            black 3px,
-            transparent 3px,
-            transparent 8px
-          )
-        `,
-                maskComposite: "intersect",
-                WebkitMaskComposite: "source-in",
-              }}
-            />
-
-            <GridWrapper className="relative z-10">
-              <div className="grid grid-cols-1 gap-2 md:grid-cols-12 lg:grid-rows-[14]">
-                <div className="col-span-1 m-2 md:col-span-5 lg:col-span-5 lg:row-span-6">
+          <GridPattern>
+            <GridWrapper className="relative z-10 py-10">
+              <div className="m-2 grid grid-cols-1 gap-2 md:grid-cols-12 lg:grid-rows-[14]">
+                <div className="col-span-1 md:col-span-5 lg:col-span-5 lg:row-span-6">
                   <AboutMeBento linkTo="/about" />
                 </div>
 
-                <div className="m-2 md:col-span-12 lg:col-span-7 lg:row-span-8">
+                <div className="md:col-span-12 lg:col-span-7 lg:row-span-8">
                   <ConnectionsBento linkTo="/connections" />
                 </div>
 
@@ -162,16 +124,20 @@ export default async function Home() {
                   <CalendarBento />
                 </div>
 
-                <div className="md:col-span-7 md:row-start-1 lg:col-span-5 lg:row-span-7">
-                  <ToolboxBento linkTo="/toolbox" />
+                <div className="md:col-span-7 md:row-start-1 lg:col-span-3 lg:row-span-7">
+                  <GithubBento />
                 </div>
 
-                <div className="md:col-span-12 lg:col-span-7 lg:row-span-5">
-                  <CalendarBento />
+                <div className="md:col-span-12 lg:col-span-6 lg:row-span-7">
+                  {/* <GithubBento /> */}
+                </div>
+
+                <div className="md:col-span-7 md:row-start-1 lg:col-span-3 lg:row-span-7">
+                  <ToolboxBento linkTo="/toolbox" />
                 </div>
               </div>
             </GridWrapper>
-          </div>
+          </GridPattern>
         </section>
 
         {/* Newsletter Section */}
