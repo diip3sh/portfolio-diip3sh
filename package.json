@@ -12,6 +12,7 @@
     "@headlessui/react": "^2.2.9",
     "@paper-design/shaders-react": "^0.0.57",
     "@radix-ui/react-select": "^2.2.6",
+    "@rive-app/react-canvas": "^4.23.4",
     "@supabase/ssr": "^0.5.2",
     "@supabase/supabase-js": "^2.75.0",
     "@uiw/react-heat-map": "^2.3.3",

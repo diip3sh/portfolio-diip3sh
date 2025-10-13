@@ -16,6 +16,8 @@ import { H2Tag, HeaderTag, ParagraphTag, SpanTag } from "./components/html-tag";
 import MagneticEffect from "./components/magnetic-effect";
 import { GridPattern } from "./components/grid-pattern";
 import { GithubBento } from "./components/github-bento";
+import { ColorToggleBento } from "./components/color-toggle-bento";
+import { AnimatedIllustrationBento } from "./components/animated-illustration-bento";
 
 // Enable ISR with 24-hour revalidation for GitHub contributions
 export const revalidate = 86400;
@@ -107,7 +109,7 @@ export default async function Home() {
           {/* Content grid with background */}
           <GridPattern>
             <GridWrapper className="relative z-10 py-10">
-              <div className="m-2 grid grid-cols-1 gap-2 md:grid-cols-12 lg:grid-rows-[14]">
+              {/* <div className="m-2 grid grid-cols-1 gap-2 md:grid-cols-12 lg:grid-rows-[14]">
                 <div className="col-span-1 md:col-span-5 lg:col-span-5 lg:row-span-6">
                   <AboutMeBento linkTo="/about" />
                 </div>
@@ -129,11 +131,32 @@ export default async function Home() {
                 </div>
 
                 <div className="md:col-span-12 lg:col-span-6 lg:row-span-7">
-                  {/* <GithubBento /> */}
+                  <ToolboxBento linkTo="/toolbox" />
                 </div>
 
                 <div className="md:col-span-7 md:row-start-1 lg:col-span-3 lg:row-span-7">
-                  <ToolboxBento linkTo="/toolbox" />
+                  <ColorToggleBento />
+                </div>
+              </div> */}
+
+              <div className="grid gap-4 md:grid-cols-6 md:grid-rows-12 lg:grid-cols-12 lg:grid-rows-10">
+                <div className="bg-red-500 md:col-span-2 md:row-span-7 lg:col-span-6 lg:row-span-6">
+                  <AboutMeBento linkTo="/about" />
+                </div>
+                <div className="bg-violet-500 md:col-span-4 md:col-start-3 md:row-span-4 lg:col-span-6 lg:col-start-7 lg:row-span-3">
+                  <ConnectionsBento linkTo="/connections" />
+                </div>
+                <div className="bg-blue-500 md:col-span-4 md:col-start-3 md:row-span-3 md:row-start-5 lg:col-span-6 lg:col-start-7 lg:row-span-3 lg:row-start-4">
+                  <ConnectionsBento linkTo="/connections" />
+                </div>
+                <div className="bg-green-500 md:col-span-3 md:row-span-3 md:row-start-8 lg:col-span-3 lg:row-span-4 lg:row-start-7">
+                  <GithubBento />
+                </div>
+                <div className="bg-yellow-500 md:col-span-6 md:col-start-1 md:row-span-2 md:row-start-11 lg:col-span-6 lg:col-start-4 lg:row-span-4 lg:row-start-7">
+                  <ToolboxBento />
+                </div>
+                <div className="bg-pink-500 md:col-span-3 md:col-start-4 md:row-span-3 md:row-start-8 lg:col-span-3 lg:col-start-10 lg:row-span-4 lg:row-start-7">
+                  <ColorToggleBento />
                 </div>
               </div>
             </GridWrapper>

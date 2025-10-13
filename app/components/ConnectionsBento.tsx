@@ -12,7 +12,7 @@ export function ConnectionsBento({
   const controls = useAnimation();
 
   return (
-    <BentoCard height="h-[300px]" linkTo={linkTo}>
+    <BentoCard height="h-[100%]" linkTo={linkTo}>
       <div
         className="flex h-full flex-col"
         onMouseEnter={() => controls.start("active")}

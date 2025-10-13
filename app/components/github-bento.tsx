@@ -64,7 +64,10 @@ export function GithubBento() {
   }, []);
 
   return (
-    <BentoCard height="md:h-[304px] lg:h-[300px]">
+    <BentoCard
+      height="md:h-[304px] lg:h-[300px]"
+      linkTo="https://github.com/diip3sh"
+    >
       <div className="flex h-full flex-col gap-4">
         {/* Contribution grid */}
         <div className="overflow-hidden">
