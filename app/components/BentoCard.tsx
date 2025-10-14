@@ -5,7 +5,7 @@ import Link from "next/link";
 import { cn } from "../lib/utils";
 import type { HTMLMotionProps, Variants } from "motion/react";
 import { motion, useAnimation, useReducedMotion } from "motion/react";
-import { forwardRef, useImperativeHandle, useRef } from "react";
+import { forwardRef, useImperativeHandle, useMemo, useRef } from "react";
 import ClickSpark from "./animations/click-spark";
 
 interface BentoCardProps {
@@ -22,19 +22,36 @@ interface BentoCardProps {
 export function BentoCard({
   children,
   height = "h-auto",
-  rowSpan = 8,
-  colSpan = 7,
+  rowSpan,
+  colSpan,
   className = "",
   showHoverGradient = true,
   hideOverflow = true,
   linkTo,
 }: BentoCardProps) {
+  const gridStyle = useMemo(() => {
+    const computed: React.CSSProperties = {};
+
+    if (rowSpan) {
+      computed.gridRow = `span ${rowSpan} / span ${rowSpan}`;
+    }
+
+    if (colSpan) {
+      computed.gridColumn = `span ${colSpan} / span ${colSpan}`;
+    }
+
+    return computed;
+  }, [rowSpan, colSpan]);
+
+  const cardClasses = cn(
+    "group relative flex flex-col rounded-[9px] border border-border-primary bg-bg-primary p-3",
+    hideOverflow ? "overflow-hidden" : "overflow-visible",
+    height,
+    className,
+  );
+
   const cardContent = (
-    <div
-      className={`group relative flex flex-col rounded-[9px] border border-border-primary bg-bg-primary p-3 ${
-        hideOverflow ? "overflow-hidden" : "overflow-visible"
-      } ${height} row-span-${rowSpan} col-span-${colSpan} ${className}`}
-    >
+    <div className={cardClasses} style={gridStyle}>
       {linkTo && (
         <div className="absolute bottom-4 right-4 z-[999] flex h-9 w-9 rotate-6 items-center justify-center rounded-full bg-indigo-200 opacity-0 transition-all duration-300 ease-in-out group-hover:translate-y-[-8px] group-hover:rotate-0 group-hover:opacity-100">
           <InfoIcon />

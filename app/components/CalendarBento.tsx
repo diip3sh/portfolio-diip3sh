@@ -63,7 +63,7 @@ export function CalendarBento() {
   };
 
   return (
-    <BentoCard height="h-[220px]" linkTo={bookingLink}>
+    <BentoCard className="min-h-[220px]" height="h-full" linkTo={bookingLink}>
       <div className="group grid h-full grid-cols-12 gap-5">
         <div className="col-span-5 text-balance md:col-span-5">
           <h2 className="mb-4 text-base font-medium">Book a call with me</h2>

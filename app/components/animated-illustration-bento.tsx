@@ -1,13 +1,17 @@
 "use client";
 
-import { useRive } from "@rive-app/react-canvas";
 import { BentoCard } from "./BentoCard";
 import { FloatingDock } from "./animations/dock";
 import { Home, SectionIcon, SquaresExclude, Terminal } from "lucide-react";
+import { cn } from "../lib/utils";
 
-export function AnimatedIllustrationBento() {
+export function AnimatedIllustrationBento({
+  className,
+}: {
+  className?: string;
+}) {
   return (
-    <BentoCard height="h-[300px]">
+    <BentoCard className={cn("min-h-[240px]", className)} height="h-full">
       <FloatingDock items={links} />
     </BentoCard>
   );

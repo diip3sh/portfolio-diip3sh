@@ -2,13 +2,13 @@
 
 import { BentoCard } from "./BentoCard";
 import { motion } from "motion/react";
-import React from "react";
+import { useState } from "react";
 
-export function SpeakingBento() {
-  const [isHovered, setIsHovered] = React.useState(false);
+export function SpeakingBento({ className }: { className?: string }) {
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <BentoCard linkTo="/speaking" height="h-[276px]">
+    <BentoCard className={className} linkTo="/speaking" height="h-full">
       <div
         className="group h-full"
         onMouseEnter={() => setIsHovered(true)}

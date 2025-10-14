@@ -28,19 +28,30 @@ const items = softwareData
   ))
   .slice(0, 5);
 
-export function ToolboxBento({ linkTo }: { linkTo?: string }) {
+export function ToolboxBento({
+  linkTo,
+  className,
+}: {
+  linkTo?: string;
+  className?: string;
+}) {
   return (
-    <BentoCard linkTo={linkTo}>
-      <div className="group-hover:from-bg-white absolute inset-y-0 left-0 z-20 w-1/5 bg-gradient-to-r from-bg-primary to-transparent"></div>
-      <div className="group-hover:from-bg-white absolute inset-y-0 right-0 z-20 w-1/5 bg-gradient-to-l from-bg-primary to-transparent"></div>
-      <div className="z-20 text-center">
-        <h2 className="text-base font-medium">Toolbox</h2>
-        <p className="mt-1 text-text-secondary">
-          Check out my favorite tools and spots around the web.
-        </p>
-      </div>
-      <div className="mt-10 flex items-center justify-center gap-3 transition-all duration-500 ease-in-out md:mt-12">
-        {items}
+    <BentoCard className={className} height="h-full" linkTo={linkTo}>
+      <div className="flex h-full flex-col">
+        <div className="relative flex flex-1 items-center justify-center gap-4 rounded-[8px] border border-border-primary">
+          <div
+            className="absolute inset-0 z-0"
+            style={{
+              backgroundImage: `
+        radial-gradient(circle at 1px 1px, rgba(0,0,0,0.08) 1px, transparent 0),
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.02) 2px, rgba(0,0,0,0.02) 4px),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,0,0,0.02) 2px, rgba(0,0,0,0.02) 4px)
+      `,
+              backgroundSize: "8px 8px, 32px 32px, 32px 32px",
+            }}
+          />
+        </div>
+        <div className="mt-5">Toolbox</div>
       </div>
     </BentoCard>
   );

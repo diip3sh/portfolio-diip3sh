@@ -8,8 +8,8 @@ export function GridPattern({ children }: { children: React.ReactNode }) {
         className="absolute inset-0 z-0"
         style={{
           backgroundImage: `
-        linear-gradient(to right, #C9C9C9 0.5px, transparent 1px),
-        linear-gradient(to bottom, #C9C9C9 0.5px, transparent 1px)
+        linear-gradient(to left, #C9C9C9 0.5px, transparent 1px),
+        linear-gradient(to top, #C9C9C9 0.5px, transparent 1px)
       `,
           backgroundSize: "40px 40px",
         }}
