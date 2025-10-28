@@ -57,6 +57,9 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      gsap:
+        specifier: ^3.13.0
+        version: 3.13.0
       lenis:
         specifier: ^1.3.11
         version: 1.3.11(react@19.2.0)

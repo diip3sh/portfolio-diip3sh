@@ -1,17 +1,7 @@
-import Providers from "@/components/providers";
+import { instrumentSerif, inter } from "@/components/ui/fonts";
+import Providers from "@/context/providers";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "../index.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "portfolio",
@@ -26,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${inter.variable} ${instrumentSerif.variable} font-medium font-sans antialiased`}
       >
         <Providers>
           <div className="h-svh">{children}</div>

@@ -2,8 +2,24 @@
 
 import { Moon, Sun } from "lucide-react";
 import type { MotionValue } from "motion/react";
-import { ModeToggle } from "./mode-toggle";
-import GlowingScrollIndicator from "./scroll-indicator";
+import dynamic from "next/dynamic";
+import GlowingScrollIndicator from "../animated-ui/scroll-indicator";
+
+// Dynamically import ModeToggle to avoid hydration mismatch
+const ModeToggle = dynamic(
+  () =>
+    import("../animated-ui/mode-toggle").then((mod) => ({
+      default: mod.ModeToggle,
+    })),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="relative flex h-[32px] w-[32px] items-center justify-center overflow-hidden rounded-full">
+        <div className="h-4 w-4 animate-spin rounded-full border-2 border-gray-300 border-t-gray-600" />
+      </div>
+    ),
+  }
+);
 
 type FooterProps = {
   scrollYProgress: MotionValue<number>;

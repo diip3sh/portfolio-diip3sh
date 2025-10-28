@@ -1,6 +1,7 @@
 "use client";
 
-import { Footer } from "@/components/footer";
+import { Section1 } from "@/components/section-1";
+import { Footer } from "@/components/section/footer";
 import Lenis from "lenis";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useEffect, useRef } from "react";
@@ -62,7 +63,7 @@ export default function Home() {
   }, []);
 
   // Calculate the scroll distance based on content width
-  const x = useTransform(scrollYProgress, [0, 1], ["0vw", "-600vw"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["0vw", "-400vw"]);
 
   return (
     <div
@@ -78,21 +79,17 @@ export default function Home() {
           style={{ x }}
         >
           <div className="flex h-full w-screen shrink-0 items-center justify-center bg-background font-bold text-6xl">
-            Section 1
+            <Section1 />
           </div>
-          <div className="h-screen w-[50vw] shrink-0 bg-background" />
           <div className="flex h-full w-screen shrink-0 items-center justify-center bg-background font-bold text-6xl">
             Section 2
           </div>
-          <div className="h-screen w-[50vw] shrink-0 bg-background" />
           <div className="flex h-full w-screen shrink-0 items-center justify-center bg-background font-bold text-6xl">
             Section 3
           </div>
-          <div className="h-screen w-[50vw] shrink-0 bg-background" />
           <div className="flex h-full w-screen shrink-0 items-center justify-center bg-background font-bold text-6xl">
             Section 4
           </div>
-          <div className="h-screen w-[50vw] shrink-0 bg-background" />
           <div className="flex h-full w-screen shrink-0 items-center justify-center bg-background font-bold text-6xl">
             Section 5
           </div>
