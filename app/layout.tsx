@@ -1,6 +1,6 @@
-import { instrumentSerif, inter } from "@/components/ui/fonts";
-import Providers from "@/context/providers";
 import type { Metadata } from "next";
+import { instrumentSerif, inter } from "../components/ui/fonts";
+import Providers from "../context/providers";
 import "../index.css";
 
 export const metadata: Metadata = {

@@ -1,10 +1,10 @@
 "use client";
 
-import { Section1 } from "@/components/section-1";
-import { Footer } from "@/components/section/footer";
 import Lenis from "lenis";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useEffect, useRef } from "react";
+import { Footer } from "@/components/section/footer";
+import { Section1 } from "@/components/section-1";
 
 // Import your GlowingScrollIndicator component here
 // import { GlowingScrollIndicator } from "@/components/ui/glowing-scroll-indicator";
