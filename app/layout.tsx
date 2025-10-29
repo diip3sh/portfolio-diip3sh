@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { instrumentSerif, inter } from "../components/ui/fonts";
+import { ebGaramond } from "../lib/fonts";
 import Providers from "../context/providers";
 import "../index.css";
 import { Footer } from "@/components/section/footer";
@@ -17,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${instrumentSerif.variable} font-medium font-sans antialiased`}
+        className={`${inter.variable} ${instrumentSerif.variable} ${ebGaramond.variable} font-medium font-sans antialiased`}
       >
         <Providers>
           <div className="h-svh">

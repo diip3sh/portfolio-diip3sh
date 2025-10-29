@@ -29,12 +29,12 @@ export default function CraftPreview({
 
   return (
     <Link
-      className="group h-auto w-full rounded-xl outline-none ring-neutral-950 focus-visible:ring-1 dark:ring-neutral-50"
+      className="group h-auto w-full rounded-xl outline-none ring-ring focus-visible:ring-1"
       href={href as Route}
       prefetch={true}
       target={target}
     >
-      <div className="h-auto w-full rounded-xl border border-neutral-300 bg-linear-to-t from-neutral-300 to-neutral-200 p-1 dark:border-neutral-850 dark:from-neutral-850 dark:to-neutral-925">
+      <div className="h-auto w-full rounded-xl border border-border bg-background/20 p-1">
         <div
           className="relative h-auto w-full overflow-hidden rounded-lg"
           style={{
@@ -56,7 +56,7 @@ export default function CraftPreview({
             width={resolution.width}
           />
           <div
-            className="absolute top-0 left-0 z-10 h-full w-full bg-cover bg-no-repeat blur-lg"
+            className="absolute top-0 left-0 z-10 h-full w-full bg-cover bg-no-repeat"
             style={{
               backgroundImage: `url(${placeholder})`,
             }}
