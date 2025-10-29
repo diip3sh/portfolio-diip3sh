@@ -99,7 +99,7 @@ export function ThemeToggleButton() {
   return (
     <button
       aria-label="Toggle theme"
-      className="relative flex h-12 w-12 items-center justify-center rounded-full bg-black transition-transform duration-300 active:scale-95"
+      className="relative flex h-8 w-8 items-center justify-center rounded-full bg-black transition-transform duration-300 active:scale-95"
       onClick={toggleTheme}
       type="button"
     >

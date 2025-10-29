@@ -21,8 +21,8 @@ export default function RootLayout({
       >
         <Providers>
           <div className="h-svh">
-            <div className="relative min-h-screen w-full bg-background">
-              {/* Paper Texture */}
+            <div className="relative min-h-screen w-full">
+              {/* Paper Texture
               <div
                 className="absolute inset-0 z-0"
                 style={{
@@ -33,7 +33,7 @@ export default function RootLayout({
       `,
                   backgroundSize: "8px 8px, 32px 32px, 32px 32px",
                 }}
-              />
+              /> */}
               {children}
             </div>
             <Footer />
