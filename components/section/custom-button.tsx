@@ -30,7 +30,7 @@ export const NavigationButton = ({
   const variants = {
     initial: (direction: number) => ({
       x: -16 * direction,
-      scale: 0,
+      scale: 0.9,
       filter: "blur(3px)",
       opacity: 0,
     }),
@@ -42,7 +42,7 @@ export const NavigationButton = ({
     },
     exit: (direction: number) => ({
       x: -16 * direction,
-      scale: 0,
+      scale: 0.9,
       filter: "blur(3px)",
       opacity: 0,
     }),

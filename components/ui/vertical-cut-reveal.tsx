@@ -220,7 +220,7 @@ const VerticalCutReveal = forwardRef<VerticalCutRevealRef, TextProps>(
                     elementLevelClassName,
                     "relative whitespace-pre-wrap"
                   )}
-                  key={`char-${wordObj.characters.join("")}-${char}`}
+                  key={`char-${previousCharsCount + charIndex}`}
                 >
                   <motion.span
                     animate={isAnimating ? "visible" : "hidden"}

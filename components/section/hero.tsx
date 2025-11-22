@@ -95,7 +95,7 @@ export const HeroSection = () => (
         >
           <Link
             className="group flex items-center gap-2"
-            href={"/work" as Route}
+            href={"/project" as Route}
           >
             <VerticalCutReveal
               containerClassName={cn(
@@ -112,7 +112,7 @@ export const HeroSection = () => (
                 delay: 0.9,
               }}
             >
-              Work
+              Projects
             </VerticalCutReveal>
             <ArrowUpRight className="block size-[120px] transition-all duration-250 ease-in-out" />
           </Link>

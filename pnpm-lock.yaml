@@ -11,6 +11,9 @@ importers:
       '@gsap/react':
         specifier: ^2.1.2
         version: 2.1.2(gsap@3.13.0)(react@19.2.0)
+      '@radix-ui/react-slot':
+        specifier: ^1.2.3
+        version: 1.2.3(@types/react@19.2.2)(react@19.2.0)
       '@tanstack/react-form':
         specifier: ^1.12.3
         version: 1.23.8(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
