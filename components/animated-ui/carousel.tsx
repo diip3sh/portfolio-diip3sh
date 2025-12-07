@@ -5,17 +5,17 @@ import { forwardRef, useRef } from "react";
 import { cn } from "@/lib/utils"; // Your utility for merging Tailwind classes
 
 // Define the type for a single report item
-export type Report = {
+export interface Report {
   imageSrc: string;
-};
+}
 
 // Define the props for the main component
-type ShareholderReportsProps = {
+interface ShareholderReportsProps {
   reports: Report[];
   title?: string;
   subtitle?: string;
   className?: string;
-};
+}
 
 export const Carousel = forwardRef<HTMLDivElement, ShareholderReportsProps>(
   (
@@ -48,7 +48,10 @@ export const Carousel = forwardRef<HTMLDivElement, ShareholderReportsProps>(
             >
               {/* Report Card */}
               <div className="group cursor-pointer">
-                <div className="group-hover:-translate-y-1 relative mb-3 overflow-hidden rounded-lg border border-border bg-card transition-all duration-300 ease-in-out group-hover:shadow-lg">
+                <div
+                  className="group-hover:-translate-y-1 relative mb-3 overflow-hidden rounded-lg border border-border bg-card transition-all duration-200 ease-[var(--ease-out-quart)] group-hover:shadow-lg motion-reduce:transform-none motion-reduce:shadow-none motion-reduce:transition-none"
+                  role="presentation"
+                >
                   <Image
                     alt={`Report for ${report.imageSrc}`}
                     className="h-[400px] w-[700px] rounded-lg object-cover shadow-md sm:h-[380px]"

@@ -12,13 +12,12 @@ import React, { useEffect } from "react";
 
 const BARS = 40;
 
-const ScrollBar = ({
-  index,
-  scrollProgress,
-}: {
+interface ScrollBarProps {
   index: number;
   scrollProgress: MotionValue<number>;
-}) => {
+}
+
+const ScrollBar = ({ index, scrollProgress }: ScrollBarProps) => {
   const thisBarPosition = index / BARS;
   const preStep = Math.max(0, (index - 3) / BARS);
   const postStep = Math.min(1, (index + 3) / BARS);
@@ -51,15 +50,24 @@ const ScrollBar = ({
   );
 };
 
+interface ScrollIndicatorBarsProps {
+  container: HTMLElement;
+  direction: "vertical" | "horizontal";
+  externalScrollProgress?: MotionValue<number>;
+}
+
 const ScrollIndicatorBars = ({
   container,
   direction,
   externalScrollProgress,
-}: {
-  container: HTMLElement;
-  direction: "vertical" | "horizontal";
-  externalScrollProgress?: MotionValue<number>;
-}) => {
+}: ScrollIndicatorBarsProps) => {
+  const prefersReducedMotion =
+    typeof window !== "undefined" &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (prefersReducedMotion) {
+    return null;
+  }
   const ref = React.useRef<HTMLElement>(container);
 
   // Update ref if container changes
@@ -97,15 +105,20 @@ const ScrollIndicatorBars = ({
   );
 };
 
+interface ScrollIndicatorProps {
+  scrollContainerId: string;
+  direction: "vertical" | "horizontal";
+  externalScrollProgress?: MotionValue<number>;
+}
+
 const ScrollIndicator = ({
   scrollContainerId,
   direction,
   externalScrollProgress,
-}: {
-  scrollContainerId: string;
-  direction: "vertical" | "horizontal";
-  externalScrollProgress?: MotionValue<number>;
-}) => {
+}: ScrollIndicatorProps) => {
+  const prefersReducedMotion =
+    typeof window !== "undefined" &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const [container, setContainer] = React.useState<HTMLElement | null>(null);
 
   useEffect(() => {
@@ -115,7 +128,7 @@ const ScrollIndicator = ({
     }
   }, [scrollContainerId]);
 
-  if (!container) {
+  if (!container || prefersReducedMotion) {
     return null;
   }
 
@@ -128,15 +141,17 @@ const ScrollIndicator = ({
   );
 };
 
+interface GlowingScrollIndicatorProps {
+  scrollContainerId?: string;
+  direction?: "vertical" | "horizontal";
+  externalScrollProgress?: MotionValue<number>;
+}
+
 const GlowingScrollIndicator = ({
   scrollContainerId = "scroll-target",
   direction = "vertical",
   externalScrollProgress,
-}: {
-  scrollContainerId?: string;
-  direction?: "vertical" | "horizontal";
-  externalScrollProgress?: MotionValue<number>;
-}) => {
+}: GlowingScrollIndicatorProps) => {
   const pathname = usePathname();
 
   return (

@@ -6,7 +6,7 @@ import { useEffect, useRef } from "react";
 const SHORTHAND_HEX_REGEX = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
 const FULL_HEX_REGEX = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i;
 
-type LetterGlitchProps = {
+interface LetterGlitchProps {
   glitchColors?: string[];
   glitchSpeed?: number;
   centerVignette?: boolean;
@@ -16,7 +16,7 @@ type LetterGlitchProps = {
   children?: ReactNode;
   className?: string;
   contentClassName?: string;
-};
+}
 
 const LetterGlitch = ({
   glitchColors = [
@@ -51,6 +51,9 @@ const LetterGlitch = ({
   const highlightIndex = useRef<number | null>(null);
 
   const lettersAndSymbols = Array.from(characters);
+  const prefersReducedMotion =
+    typeof window !== "undefined" &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   const fontSize = 16;
   const charWidth = 10;
@@ -301,6 +304,9 @@ const LetterGlitch = ({
 
   // biome-ignore lint/correctness/useExhaustiveDependencies: animation loop uses stable refs
   useEffect(() => {
+    if (prefersReducedMotion) {
+      return;
+    }
     const canvas = canvasRef.current;
     if (!canvas) {
       return;
@@ -332,6 +338,20 @@ const LetterGlitch = ({
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  if (prefersReducedMotion) {
+    return (
+      <div
+        className={`relative isolate w-full overflow-hidden bg-background ${className}`}
+      >
+        <div
+          className={`relative z-10 flex w-full flex-col ${contentClassName}`}
+        >
+          {children}
+        </div>
+      </div>
+    );
+  }
 
   return (
     // biome-ignore lint/a11y/noStaticElementInteractions: pointer tracking drives canvas highlight
