@@ -17,7 +17,7 @@ PARTIALLY_STAGED=$(git diff --name-only)
 
 # Stash unstaged changes to preserve working directory
 # --keep-index keeps staged changes in working tree
-git stash push --quiet --keep-index --message "pre-commit-stash" || true
+git stash push --quiet --keep-index --message "pre-commit-stash"
 STASHED=$?
 
 # Run formatter on the staged files
@@ -34,10 +34,10 @@ if [ $STASHED -eq 0 ]; then
       fi
     done
   fi
-  
+
   # Restore unstaged changes
   git stash pop --quiet || true
-  
+
   # Restore partial staging if files were partially staged
   if [ -n "$PARTIALLY_STAGED" ]; then
     for file in $PARTIALLY_STAGED; do

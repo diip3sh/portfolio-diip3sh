@@ -5,8 +5,10 @@ import type { Frame } from "@/components/animated-ui/dynamic-frame-layout";
 export const craft: Frame[] = [
   {
     id: 1,
+    // video:
+    //   "https://static.cdn-luma.com/files/981e483f71aa764b/Company%20Thing%20Exported.mp4",
     video:
-      "https://static.cdn-luma.com/files/981e483f71aa764b/Company%20Thing%20Exported.mp4",
+      "https://stream.mux.com/oNYVQP021ec3M02sGL8BPQCrN5PNdHYUW01DVP5jRzMVs4.m3u8",
     defaultPos: { x: 0, y: 0, w: 4, h: 4 },
     mediaSize: 1,
     isHovered: false,
@@ -14,7 +16,7 @@ export const craft: Frame[] = [
   {
     id: 2,
     video:
-      "https://static.cdn-luma.com/files/58ab7363888153e3/WebGL%20Exported%20(1).mp4",
+      "https://stream.mux.com/Yi4k02Amb9bIZXITroOz8YO9sfXIvC0200Vo7oe02MBqDCs.m3u8",
     defaultPos: { x: 4, y: 0, w: 4, h: 4 },
     mediaSize: 1,
     isHovered: false,

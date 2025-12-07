@@ -11,10 +11,10 @@ export const metadata: Metadata = {
 
 export default function ProjectPage() {
   return (
-    <>
+    <div className="relative flex h-full min-h-0 flex-col bg-background">
       <Header title="Projects" />
-      <main className="relative flex h-full w-full items-start justify-center overflow-x-hidden px-4 pt-24 pb-28 sm:items-center sm:px-8 sm:pt-28 sm:pb-28 md:px-20 lg:items-start lg:pt-32 lg:pb-16 xl:px-0">
-        <div className="flex h-full w-full max-w-3xl flex-col items-start justify-center gap-4">
+      <main className="scrollbar-hide flex min-h-0 flex-1 items-start justify-center overflow-y-auto overflow-x-hidden pt-20 pb-16 sm:items-start">
+        <div className="flex w-full max-w-3xl flex-col items-start gap-4">
           <p className="pb-4 text-md leading-5">
             Sometimes I design things out of fun. One-offs, things that might
             not be related to a big project. So in no particular order,
@@ -22,11 +22,11 @@ export default function ProjectPage() {
           </p>
           {works.map((work) => (
             <div className="w-full" key={work.id}>
-              <DraggableGallery className="w-[calc(50vw+50%)]">
+              <DraggableGallery className="w-full">
                 {work.image.map((image) => (
                   <Image
                     alt={work.company}
-                    className="h-[400px] w-[700px] rounded-lg shadow-md"
+                    className="aspect-7/4 h-auto w-full max-w-[720px] rounded-lg object-cover shadow-md"
                     draggable={false}
                     height={400}
                     key={image}
@@ -48,6 +48,8 @@ export default function ProjectPage() {
           ))}
         </div>
       </main>
-    </>
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[8dvh] bg-linear-to-t from-background" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-[10dvh] bg-linear-to-b from-background" />
+    </div>
   );
 }

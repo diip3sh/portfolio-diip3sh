@@ -7,11 +7,12 @@ export const works: WorkItem[] = [
     position: "Frontend Engineer",
     badge: "Blockchain Technology | AI Marketplace",
     date: "March 2025 – Present",
-    image: ["/images/portdex-dashboard.png", "/images/portdex-auth.png", ""],
+    image: [
+      "https://images.unsplash.com/photo-1761602545494-4cd002b4d2b2?auto=format&fit=crop&q=80&w=2242",
+      "https://images.unsplash.com/photo-1600585154340-0ef3c08e9793?auto=format&fit=crop&q=80&w=1600",
+    ],
     description: [
-      "Integrated advanced AI SDKs with Model Context Protocols into Next.js applications to enhance product functionality and user experience.",
-      "Built secure and responsive user interfaces for blockchain-based panels using React, TypeScript, and Docker.",
-      "Implemented Azure Entra ID authentication to ensure seamless and secure user access across platforms.",
+      "The iMessage Tapback bubble, accurately recreated in Figma using a combination of blend modes and fully using auto layout. Available on the Figma Community.",
     ],
     link: [
       {
@@ -35,14 +36,11 @@ export const works: WorkItem[] = [
     badge: "E-Commerce | FinTech",
     date: "August 2024 – December 2024",
     image: [
-      "/images/ecommerce-platform.png",
-      "/images/stripe-integration.png",
-      "/images/backendlessdb-dashboard.png",
+      "https://images.unsplash.com/photo-1502880195258-5f8b27c282e8?auto=format&fit=crop&q=80&w=2000",
+      "https://images.unsplash.com/photo-1483478550801-ceba5fe50e8e?auto=format&fit=crop&q=80&w=2000",
     ],
     description: [
-      "Developed a fully responsive e-commerce platform with React and TailwindCSS, improving dealer engagement by 30%.",
-      "Integrated Stripe SDK for automated payments, reducing transaction times by 45%.",
-      "Built a scalable backend with BackendLessDB for managing invoices, customer data, and payment workflows.",
+      "The iMessage Tapback bubble, accurately recreated in Figma using a combination of blend modes and fully using auto layout. Available on the Figma Community.",
     ],
     link: [
       {
@@ -65,9 +63,12 @@ export const works: WorkItem[] = [
     position: "React Native Developer",
     badge: "Mobile Development",
     date: "August 2023 – December 2023",
-    image: ["/images/meon-app.png", "/images/meon-dashboard.png"],
+    image: [
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=2000",
+      "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=2000",
+    ],
     description: [
-      "Developed mobile features and interfaces using React Native, ensuring smooth cross-platform performance and scalability.",
+      "The iMessage Tapback bubble, accurately recreated in Figma using a combination of blend modes and fully using auto layout. Available on the Figma Community.",
     ],
     link: [
       {
@@ -87,14 +88,11 @@ export const works: WorkItem[] = [
     badge: "Healthcare Technology",
     date: "February 2022 – July 2023",
     image: [
-      "/images/emids-app.png",
-      "/images/emids-dashboard.png",
-      "/images/nodejs-dashboard.png",
+      "https://images.unsplash.com/photo-1472289065668-ce650ac443d2?auto=format&fit=crop&q=80&w=2000",
+      "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&q=80&w=2000",
     ],
     description: [
-      "Built a malnutrition detection app for newborns, cutting detection time by 40%.",
-      "Developed an asynchronous data-transfer tracking system with REST APIs, improving efficiency by 20%.",
-      "Optimised offline data storage using Node.js, React, and PostgreSQL for reliable healthcare data management.",
+      "The iMessage Tapback bubble, accurately recreated in Figma using a combination of blend modes and fully using auto layout. Available on the Figma Community.",
     ],
     link: [
       {
@@ -113,9 +111,12 @@ export const works: WorkItem[] = [
     position: "React Native Developer",
     badge: "Startup Accelerator",
     date: "August 2021 – February 2022",
-    image: ["/images/bridgelabz-app.png", "/images/bridgelabz-dashboard.png"],
+    image: [
+      "https://images.unsplash.com/photo-1483478550801-ceba5fe50e8e?auto=format&fit=crop&q=80&w=2000",
+      "https://images.unsplash.com/photo-1502880195258-5f8b27c282e8e?auto=format&fit=crop&q=80&w=2000",
+    ],
     description: [
-      "Contributed to mobile app projects under the BridgeLabz innovation programme, focusing on React Native component design and state management.",
+      "The iMessage Tapback bubble, accurately recreated in Figma using a combination of blend modes and fully using auto layout. Available on the Figma Community.",
     ],
     link: [
       {
