@@ -1,0 +1,28 @@
+---
+alwaysApply: true
+---
+
+- Use functional components and hooks for state management
+- Keep components small and focused on a single responsibility
+- Use PropTypes or TypeScript for type checking
+- Optimize performance with React.memo and useCallback
+- Use the App Router for better performance
+- Implement proper error boundaries
+- Use proper data fetching patterns with suspense
+- Optimize images with the Next.js Image component
+- Use strict null checks
+- Prefer interface over type
+- Use type guards and assertions
+- Implement proper type inference
+- Use Tailwind CSS for styling
+- Follow Shadcn UI component guidelines
+- Ensure UI is responsive and accessible
+- Avoid inline styles; use Tailwind classes instead
+- Use pnpm for faster installations and better disk space management
+- Lock dependencies with a lockfile to ensure consistency
+- Use workspaces for managing monorepos effectively
+- Regularly update dependencies to keep the project secure
+- Always use Shadcn components instead of creating basic components from scratch
+- If a required component is not available, install it and customize as needed
+- Follow the Shadcn documentation for component usage and customization
+- Ensure components are reusable and maintainable

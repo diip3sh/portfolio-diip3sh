@@ -1,135 +1,177 @@
-# AGENTS.md: AI Collaboration Guide
+# Animations Guidelines
 
-This document provides essential context for AI models interacting with this project. Adhering to these guidelines will ensure consistency and maintain code quality.
+## Keep your animations fast
 
-## 1. Project Overview & Purpose
+- Default to use `ease-out` for most animations.
+- Animations should never be longer than 1s (unless it’s illustrative), most of them should be around 0.2s to 0.3s.
 
-- **Primary Goal:** This is a personal portfolio/blogfolio website for Braydon Coyer, a senior front-end developer. The site showcases work, blog posts, speaking engagements, tools, and serves as a playground for experimenting with new ideas and technologies.
-- **Business Domain:** Personal branding, content creation, and web development showcase. The site demonstrates modern React/Next.js patterns and serves as both a portfolio and technical blog.
+## Easing rules
 
-## 2. Core Technologies & Stack
+- Don’t use built-in CSS easings unless it’s `ease` or `linear`.
+- Use the following easings for their described use case:
+  - **`ease-in`**: (Starts slow, speeds up) Should generally be avoided as it makes the UI feel slow.
+    - `ease-in-quad`: `cubic-bezier(.55, .085, .68, .53)`
+    - `ease-in-cubic`: `cubic-bezier(.550, .055, .675, .19)`
+    - `ease-in-quart`: `cubic-bezier(.895, .03, .685, .22)`
+    - `ease-in-quint`: `cubic-bezier(.755, .05, .855, .06)`
+    - `ease-in-expo`: `cubic-bezier(.95, .05, .795, .035)`
+    - `ease-in-circ`: `cubic-bezier(.6, .04, .98, .335)`
 
-- **Languages:** TypeScript (5.x), JavaScript (ES2018+), HTML, CSS
-- **Frameworks & Runtimes:** Next.js 15.1.2 (App Router), React 18, Node.js
-- **Databases:** Supabase (PostgreSQL) for dynamic data, static data files for tools/hardware
-- **Key Libraries/Dependencies:**
-  - **UI/Styling:** TailwindCSS 3.4.7, Framer Motion 11.3.19, @headlessui/react 2.1.8, Geist fonts
-  - **Content:** Velite 0.1.1 (MDX processing), next-mdx-remote 4.4.1, rehype-raw 7.0.0
-  - **Data Fetching:** SWR 2.2.5, @supabase/ssr 0.5.2, @supabase/supabase-js 2.49.1
-  - **Utilities:** clsx 2.1.1, tailwind-merge 2.5.4, usehooks-ts 3.1.0, uuid 11.1.0
-- **Platforms:** Web (responsive design for desktop, tablet, mobile)
-- **Package Manager:** npm (with package-lock.json)
+  - **`ease-out`**: (Starts fast, slows down) Best for elements entering the screen or user-initiated interactions.
+    - `ease-out-quad`: `cubic-bezier(.25, .46, .45, .94)`
+    - `ease-out-cubic`: `cubic-bezier(.215, .61, .355, 1)`
+    - `ease-out-quart`: `cubic-bezier(.165, .84, .44, 1)`
+    - `ease-out-quint`: `cubic-bezier(.23, 1, .32, 1)`
+    - `ease-out-expo`: `cubic-bezier(.19, 1, .22, 1)`
+    - `ease-out-circ`: `cubic-bezier(.075, .82, .165, 1)`
 
-## 3. Architectural Patterns
+  - **`ease-in-out`**: (Smooth acceleration and deceleration) Perfect for elements moving within the screen.
+    - `ease-in-out-quad`: `cubic-bezier(.455, .03, .515, .955)`
+    - `ease-in-out-cubic`: `cubic-bezier(.645, .045, .355, 1)`
+    - `ease-in-out-quart`: `cubic-bezier(.77, 0, .175, 1)`
+    - `ease-in-out-quint`: `cubic-bezier(.86, 0, .07, 1)`
+    - `ease-in-out-expo`: `cubic-bezier(1, 0, 0, 1)`
+    - `ease-in-out-circ`: `cubic-bezier(.785, .135, .15, .86)`
 
-- **Overall Architecture:** Modern React application using Next.js App Router with a bento-style grid layout. The architecture follows a component-based design with server-side rendering and static generation capabilities.
-- **Directory Structure Philosophy:**
-  - `/app`: Next.js App Router directory containing all pages, components, and API routes
-  - `/app/components`: Reusable UI components following a bento card design system
-  - `/app/data`: Static data files and site metadata
-  - `/app/db`: Database operations, server actions, and data fetching logic
-  - `/app/lib`: Utility functions, custom hooks, and helper modules
-  - `/content`: MDX content files processed by Velite
-  - `/public`: Static assets including images, icons, and other media files
-- **Module Organization:** Components are organized by functionality with clear separation of concerns. Each component is self-contained with its own styling and logic.
 
-## 4. Coding Conventions & Style Guide
+## Hover transitions
 
-- **Formatting:** Uses Prettier with TailwindCSS plugin for consistent code formatting. Follows Next.js and React best practices with 2-space indentation.
-- **Naming Conventions:**
-  - Components: PascalCase (`BentoCard`, `AnimatedText`)
-  - Files: PascalCase for components (`BentoCard.tsx`), camelCase for utilities (`utils.ts`)
-  - Variables and functions: camelCase (`formatDate`, `getCurrentlyPlaying`)
-  - Constants: SCREAMING_SNAKE_CASE (`VALID_REACTIONS`)
-  - CSS classes: kebab-case with Tailwind utilities
-- **API Design:**
-  - **Style:** Primarily functional with React hooks and server actions. Uses composition over inheritance.
-  - **Abstraction:** Components are designed to be reusable with clear prop interfaces. Server actions handle data mutations.
-  - **Extensibility:** Components accept className props for customization and use compound component patterns where appropriate.
-  - **Trade-offs:** Prioritizes developer ergonomics and maintainability while maintaining good performance through Next.js optimizations.
-- **Common Patterns & Idioms:**
-  - **Component Composition:** Heavy use of compound components and children props for flexibility
-  - **Server Actions:** Uses Next.js server actions for data mutations with proper error handling
-  - **Type Safety:** TypeScript with strict null checks enabled, proper typing for all props and data
-  - **Animation:** Framer Motion for smooth animations with staggered delays
-  - **State Management:** Uses React hooks, SWR for server state, and cookies for client state
-- **Error Handling:** Uses try-catch blocks in server actions, proper error boundaries, and graceful fallbacks for external API calls.
+- Use the built-in CSS `ease` with a duration of `200ms` for simple hover transitions like `color`, `background-color`, `opacity`.
+- Fall back to easing rules for more complex hover transitions.
+- Disable hover transitions on touch devices with the `@media (hover: hover) and (pointer: fine)` media query.
 
-## 5. Key Files & Entrypoints
+## Accessibility
 
-- **Main Entrypoint:** `app/layout.tsx` (root layout), `app/page.tsx` (homepage)
-- **Configuration:**
-  - `next.config.mjs` - Next.js configuration with redirects and Velite integration
-  - `tailwind.config.ts` - TailwindCSS configuration with custom colors and typography
-  - `velite.config.ts` - Content processing configuration for MDX files
-  - `tsconfig.json` - TypeScript configuration with path mapping
-- **CI/CD Pipeline:** No GitHub Actions workflows detected in the current codebase
+- If `transform` is used in the animation, disable it in the `prefers-reduced-motion` media query.
 
-## 6. Development & Testing Workflow
+## Origin-aware animations
 
-- **Local Development Environment:**
-  - **Prerequisites:** Node.js, npm
-  - **Setting up the project:**
-    1. Clone the repository
-    2. Run `npm install` to install dependencies
-    3. Set up environment variables for Supabase and external APIs
-    4. Run `npm run dev` to start the development server
-- **Task Configuration:**
-  - **npm Scripts:**
-    - `npm run dev` - Start development server
-    - `npm run build` - Build for production
-    - `npm run start` - Start production server
-    - `npm run lint` - Run ESLint
-- **Testing:** No formal testing framework detected. Consider adding Jest/React Testing Library for unit tests and Playwright for E2E tests.
-- **CI/CD Process:** No automated CI/CD pipeline detected. Manual deployment process likely used.
+- Elements should animate from the trigger. If you open a dropdown or a popover it should animate from the button. Change `transform-origin` according to the trigger position.
 
-## 7. Specific Instructions for AI Collaboration
+## Performance
 
-- **Contribution Guidelines:**
-  - Follow existing code style and patterns
-  - Use TypeScript for all new code
-  - Maintain the bento card design system consistency
-  - Ensure responsive design for all new components
-  - Use server actions for data mutations
-  - Follow the established component composition patterns
-- **Security:**
-  - Never hardcode API keys or secrets
-  - Use environment variables for sensitive configuration
-  - Validate all user inputs in server actions
-  - Use proper CORS and authentication for external API calls
-- **Dependencies:**
-  - When adding new dependencies, use `npm install <package>`
-  - Update package-lock.json by running `npm install`
-  - Consider bundle size impact when adding new libraries
-  - Prefer lightweight, well-maintained packages
-- **Commit Messages:**
-  - Use descriptive commit messages
-  - Follow conventional commit format when possible (feat:, fix:, docs:, etc.)
-  - Include context about what was changed and why
+- Stick to opacity and transforms when possible. Example: Animate using `transform` instead of `top`, `left`, etc. when trying to move an element.
+- Do not animate drag gestures using CSS variables.
+- Do not animate blur values higher than 20px.
+- Use `will-change` to optimize your animation, but use it only for: `transform`, `opacity`, `clipPath`, `filter`.
+- When using Motion/Framer Motion use `transform` instead of `x` or `y` if you need animations to be hardware accelerated.
 
-## 8. Project-Specific Patterns
+## Spring animations
 
-- **Bento Grid System:** The site uses a bento-style grid layout with `GridWrapper` and `BentoCard` components. New components should follow this pattern for consistency.
-- **Animation System:** Uses Framer Motion with staggered delays. Animation delays are calculated relative to each other (e.g., `HEADING_DELAY = PROFILE_DELAY + 0.2`).
-- **Content Management:** MDX files are processed by Velite and stored in the `.velite` directory. Content is type-safe and follows defined schemas.
-- **Data Flow:** Server actions handle data mutations, SWR manages client-side data fetching, and cookies store user preferences.
-- **Styling Approach:** TailwindCSS with custom color palette and typography. Uses CSS variables for theming and custom utility classes for specific design patterns.
+- Default to spring animations when using Framer Motion.
+- Avoid using bouncy spring animations unless you are working with drag gestures.
 
-## 9. Performance Considerations
+Concise rules for building accessible, fast, delightful UIs Use MUST/SHOULD/NEVER to guide decisions
 
-- **Image Optimization:** Use Next.js Image component for all images
-- **Bundle Size:** Be mindful of import sizes, use dynamic imports for heavy components
-- **Caching:** Leverage Next.js caching strategies and SWR for data caching
-- **SEO:** Proper meta tags, structured data, and semantic HTML are important for this portfolio site
+## Interactions
 
-## 10. Areas for Improvement
+- Keyboard
+  - MUST: Full keyboard support per [WAI-ARIA APG](https://www.w3.org/WAI/ARIA/apg/patterns/)
+  - MUST: Visible focus rings (`:focus-visible`; group with `:focus-within`)
+  - MUST: Manage focus (trap, move, and return) per APG patterns
+- Targets & input
+  - MUST: Hit target ≥24px (mobile ≥44px) If visual <24px, expand hit area
+  - MUST: Mobile `<input>` font-size ≥16px or set:
+    ```html
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+    ```
+  - NEVER: Disable browser zoom
+  - MUST: `touch-action: manipulation` to prevent double-tap zoom; set `-webkit-tap-highlight-color` to match design
+- Inputs & forms (behavior)
+  - MUST: Hydration-safe inputs (no lost focus/value)
+  - NEVER: Block paste in `<input>/<textarea>`
+  - MUST: Loading buttons show spinner and keep original label
+  - MUST: Enter submits focused text input In `<textarea>`, ⌘/Ctrl+Enter submits; Enter adds newline
+  - MUST: Keep submit enabled until request starts; then disable, show spinner, use idempotency key
+  - MUST: Don’t block typing; accept free text and validate after
+  - MUST: Allow submitting incomplete forms to surface validation
+  - MUST: Errors inline next to fields; on submit, focus first error
+  - MUST: `autocomplete` + meaningful `name`; correct `type` and `inputmode`
+  - SHOULD: Disable spellcheck for emails/codes/usernames
+  - SHOULD: Placeholders end with ellipsis and show example pattern (eg, `+1 (123) 456-7890`, `sk-012345…`)
+  - MUST: Warn on unsaved changes before navigation
+  - MUST: Compatible with password managers & 2FA; allow pasting one-time codes
+  - MUST: Trim values to handle text expansion trailing spaces
+  - MUST: No dead zones on checkboxes/radios; label+control share one generous hit target
+- State & navigation
+  - MUST: URL reflects state (deep-link filters/tabs/pagination/expanded panels) Prefer libs like [nuqs](https://nuqs.dev)
+  - MUST: Back/Forward restores scroll
+  - MUST: Links are links—use `<a>/<Link>` for navigation (support Cmd/Ctrl/middle-click)
+- Feedback
+  - SHOULD: Optimistic UI; reconcile on response; on failure show error and rollback or offer Undo
+  - MUST: Confirm destructive actions or provide Undo window
+  - MUST: Use polite `aria-live` for toasts/inline validation
+  - SHOULD: Ellipsis (`…`) for options that open follow-ups (eg, "Rename…") and loading states (eg, "Loading…", "Saving…", "Generating…")
+- Touch/drag/scroll
+  - MUST: Design forgiving interactions (generous targets, clear affordances; avoid finickiness)
+  - MUST: Delay first tooltip in a group; subsequent peers no delay
+  - MUST: Intentional `overscroll-behavior: contain` in modals/drawers
+  - MUST: During drag, disable text selection and set `inert` on dragged element/containers
+  - MUST: No “dead-looking” interactive zones—if it looks clickable, it is
+- Autofocus
+  - SHOULD: Autofocus on desktop when there’s a single primary input; rarely on mobile (to avoid layout shift)
 
-- **Testing:** Add comprehensive test coverage with Jest and React Testing Library
-- **Accessibility:** Enhance ARIA labels and keyboard navigation
-- **Performance Monitoring:** Add error tracking and performance monitoring
-- **Documentation:** Add JSDoc comments and component documentation
-- **CI/CD:** Implement automated testing and deployment pipeline
+## Animation
 
----
+- MUST: Honor `prefers-reduced-motion` (provide reduced variant)
+- SHOULD: Prefer CSS > Web Animations API > JS libraries
+- MUST: Animate compositor-friendly props (`transform`, `opacity`); avoid layout/repaint props (`top/left/width/height`)
+- SHOULD: Animate only to clarify cause/effect or add deliberate delight
+- SHOULD: Choose easing to match the change (size/distance/trigger)
+- MUST: Animations are interruptible and input-driven (avoid autoplay)
+- MUST: Correct `transform-origin` (motion starts where it “physically” should)
 
-**Note:** This is a Next.js/React project, not a Nim project as initially requested. The analysis has been adapted to reflect the actual technology stack and patterns used in this codebase.
+## Layout
+
+- SHOULD: Optical alignment; adjust by ±1px when perception beats geometry
+- MUST: Deliberate alignment to grid/baseline/edges/optical centers—no accidental placement
+- SHOULD: Balance icon/text lockups (stroke/weight/size/spacing/color)
+- MUST: Verify mobile, laptop, ultra-wide (simulate ultra-wide at 50% zoom)
+- MUST: Respect safe areas (use env(safe-area-inset-*))
+- MUST: Avoid unwanted scrollbars; fix overflows
+
+## Content & Accessibility
+
+- SHOULD: Inline help first; tooltips last resort
+- MUST: Skeletons mirror final content to avoid layout shift
+- MUST: `<title>` matches current context
+- MUST: No dead ends; always offer next step/recovery
+- MUST: Design empty/sparse/dense/error states
+- SHOULD: Curly quotes (“ ”); avoid widows/orphans
+- MUST: Tabular numbers for comparisons (`font-variant-numeric: tabular-nums` or a mono like Geist Mono)
+- MUST: Redundant status cues (not color-only); icons have text labels
+- MUST: Don’t ship the schema—visuals may omit labels but accessible names still exist
+- MUST: Use the ellipsis character `…` (not ``)
+- MUST: `scroll-margin-top` on headings for anchored links; include a “Skip to content” link; hierarchical `<h1–h6>`
+- MUST: Resilient to user-generated content (short/avg/very long)
+- MUST: Locale-aware dates/times/numbers/currency
+- MUST: Accurate names (`aria-label`), decorative elements `aria-hidden`, verify in the Accessibility Tree
+- MUST: Icon-only buttons have descriptive `aria-label`
+- MUST: Prefer native semantics (`button`, `a`, `label`, `table`) before ARIA
+- SHOULD: Right-clicking the nav logo surfaces brand assets
+- MUST: Use non-breaking spaces to glue terms: `10&nbsp;MB`, `⌘&nbsp;+&nbsp;K`, `Vercel&nbsp;SDK`
+
+## Performance
+
+- SHOULD: Test iOS Low Power Mode and macOS Safari
+- MUST: Measure reliably (disable extensions that skew runtime)
+- MUST: Track and minimize re-renders (React DevTools/React Scan)
+- MUST: Profile with CPU/network throttling
+- MUST: Batch layout reads/writes; avoid unnecessary reflows/repaints
+- MUST: Mutations (`POST/PATCH/DELETE`) target <500 ms
+- SHOULD: Prefer uncontrolled inputs; make controlled loops cheap (keystroke cost)
+- MUST: Virtualize large lists (eg, `virtua`)
+- MUST: Preload only above-the-fold images; lazy-load the rest
+- MUST: Prevent CLS from images (explicit dimensions or reserved space)
+
+## Design
+
+- SHOULD: Layered shadows (ambient + direct)
+- SHOULD: Crisp edges via semi-transparent borders + shadows
+- SHOULD: Nested radii: child ≤ parent; concentric
+- SHOULD: Hue consistency: tint borders/shadows/text toward bg hue
+- MUST: Accessible charts (color-blind-friendly palettes)
+- MUST: Meet contrast—prefer [APCA](https://apcacontrast.com/) over WCAG 2
+- MUST: Increase contrast on `:hover/:active/:focus`
+- SHOULD: Match browser UI to bg
+- SHOULD: Avoid gradient banding (use masks when needed)

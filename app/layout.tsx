@@ -1,34 +1,14 @@
 import type { Metadata } from "next";
-import "./globals.css";
-import Navbar from "app/components/Navbar";
-import { siteMetadata } from "app/data/siteMetadata";
-import { Footer } from "./components/Footer";
-import { BgGradient } from "./components/BgGradient";
-import { cx } from "./lib/utils";
-import Script from "next/script";
-import { fontItalic, publicSans } from "./lib/local-font";
+import { instrumentSerif, inter } from "../components/ui/fonts";
+import Providers from "../context/providers";
+import { ebGaramond } from "../lib/fonts";
+import "../index.css";
+import { Footer } from "@/components/section/footer";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: siteMetadata.title,
-  description: siteMetadata.description,
-  openGraph: {
-    title: siteMetadata.title,
-    description: siteMetadata.description,
-    images: [
-      {
-        url: "/dip3sh_og.png", // Your default OG image
-        width: 1200,
-        height: 630,
-        alt: siteMetadata.title,
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: siteMetadata.title,
-    description: siteMetadata.description,
-    images: ["/dip3sh_og.png"],
-  },
+  title: "portfolio",
+  description: "portfolio",
 };
 
 export default function RootLayout({
@@ -37,41 +17,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`bg-bg-primary ${publicSans.className} ${fontItalic.variable} antialiased`}
-    >
-      <body className="flex min-h-screen flex-col font-sans md:max-w-7xl lg:mx-auto lg:flex-row">
-        <main
-          className={cx(
-            "relative flex flex-1 flex-col overflow-x-hidden border-x border-border-primary/50",
-          )}
-        >
-          <Navbar />
-          <div className="grid flex-1 grid-cols-1 lg:grid-cols-[32px_1fr_32px]">
-            <div className="hidden w-full border-r border-border-primary opacity-75 [background-image:linear-gradient(45deg,theme(colors.border-primary)_12.50%,transparent_12.50%,transparent_50%,theme(colors.border-primary)_50%,theme(colors.border-primary)_62.50%,transparent_62.50%,transparent_100%)] [background-size:5px_5px] lg:block"></div>
-            <div className="relative col-span-1 px-3 lg:px-0">
-              <BgGradient />
-              {children}
-            </div>
-            <div className="hidden w-full border-l border-border-primary opacity-75 [background-image:linear-gradient(45deg,theme(colors.border-primary)_12.50%,transparent_12.50%,transparent_50%,theme(colors.border-primary)_50%,theme(colors.border-primary)_62.50%,transparent_62.50%,transparent_100%)] [background-size:5px_5px] lg:block"></div>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${inter.variable} ${instrumentSerif.variable} ${ebGaramond.variable} bg-sidebar p-3 font-medium font-sans antialiased`}
+      >
+        <Providers>
+          <div
+            className={cn(
+              "h-[93svh] overflow-hidden rounded-[14px]",
+              "shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)]"
+            )}
+          >
+            <div className="relative h-full w-full">{children}</div>
           </div>
           <Footer />
-        </main>
+        </Providers>
       </body>
-
-      <Script id="vemetric-loader" strategy="afterInteractive">
-        {`
-          window.vmtrcq = window.vmtrcq || [];
-          window.vmtrc = window.vmtrc || ((...args) => window.vmtrcq.push(args));
-        `}
-      </Script>
-
-      <Script
-        src="https://cdn.vemetric.com/main.js"
-        data-token="HUO9AbX53v2wkzRu"
-        strategy="afterInteractive"
-      />
     </html>
   );
 }
