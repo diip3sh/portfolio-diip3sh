@@ -77,7 +77,7 @@ export const NavigationButton = ({
               )}
               <motion.p
                 className={cn(
-                  "whitespace-nowrap text-xs sm:text-sm",
+                  "whitespace-nowrap text-sm",
                   hovered && "underline underline-offset-2",
                   hovered && accent
                 )}
@@ -96,8 +96,10 @@ export const NavigationButton = ({
                   variants={variants}
                 >
                   <ArrowUpRight
-                    className={cn("h-full w-full", hovered && accent)}
-                    size={16}
+                    className={cn(
+                      "size-[clamp(16px,4.347vw,120px)]",
+                      hovered && accent
+                    )}
                     strokeWidth={2.5}
                   />
                 </motion.span>
