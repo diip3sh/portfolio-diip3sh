@@ -43,37 +43,35 @@ const socialLinks = [
 ];
 
 export const Footer = () => (
-  <div className="hidden md:block">
-    <footer className="fixed bottom-5 w-full px-[5svw]">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          {socialLinks.map((item) => (
-            <div key={item.label}>
-              <NavigationButton
-                accent={item.accent}
-                href={item.href}
-                icon={item.icon}
-                text={item.label}
-              />
-            </div>
-          ))}
-        </div>
-        <div className="flex items-center gap-4">
-          <span className="flex items-center gap-1 text-xs sm:text-sm">
-            Built with{" "}
-            <Typewriter
-              className="text-primary"
-              cursorChar={"_"}
-              deleteSpeed={40}
-              speed={70}
-              text={["Myself", "Cursor"]}
-              waitTime={2000}
+  <footer className="px-1.5 pt-2">
+    <div className="flex items-center justify-between">
+      <div className="flex items-center gap-2">
+        {socialLinks.map((item) => (
+          <div key={item.label}>
+            <NavigationButton
+              accent={item.accent}
+              href={item.href}
+              icon={item.icon}
+              text={item.label}
             />
-          </span>
-          <ThemeToggleButton />
-        </div>
-        {/* <div className="text-xs sm:text-sm">Copyright © 2025</div> */}
+          </div>
+        ))}
       </div>
-    </footer>
-  </div>
+      <div className="flex items-center gap-4">
+        <span className="flex items-center gap-1 text-xs sm:text-sm">
+          Built with{" "}
+          <Typewriter
+            className="text-primary"
+            cursorChar={"_"}
+            deleteSpeed={40}
+            speed={70}
+            text={["Myself", "Cursor"]}
+            waitTime={2000}
+          />
+        </span>
+        <ThemeToggleButton />
+      </div>
+      {/* <div className="text-xs sm:text-sm">Copyright © 2025</div> */}
+    </div>
+  </footer>
 );

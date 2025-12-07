@@ -10,7 +10,7 @@ type HeaderProps = {
 };
 
 export const Header = ({ title }: HeaderProps) => (
-  <header className="fixed top-0 z-10 w-full">
+  <header className="fixed top-0 z-50 w-full">
     <div
       className={cn(
         "relative mx-auto flex max-w-7xl items-center justify-between py-5 text-primary tracking-tighter",
