@@ -13,7 +13,7 @@ export default function ProjectPage() {
   return (
     <div className="relative flex h-full min-h-0 flex-col bg-background">
       <Header title="Projects" />
-      <main className="scrollbar-hide flex min-h-0 flex-1 items-start justify-center overflow-y-auto overflow-x-hidden pt-20 pb-16 sm:items-start">
+      <main className="scrollbar-hide flex min-h-0 flex-1 items-start justify-center overflow-y-auto overflow-x-hidden px-4 pt-20 pb-16 sm:items-start">
         <div className="flex w-full max-w-3xl flex-col items-start gap-4">
           <p className="pb-4 text-md leading-5">
             Sometimes I design things out of fun. One-offs, things that might

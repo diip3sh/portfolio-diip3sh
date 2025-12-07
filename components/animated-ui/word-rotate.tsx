@@ -54,6 +54,9 @@ export const Typewriter = ({
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
 
   const texts = Array.isArray(text) ? text : [text];
+  const prefersReducedMotion =
+    typeof window !== "undefined" &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   useEffect(() => {
     let timeout: NodeJS.Timeout;
@@ -123,6 +126,18 @@ export const Typewriter = ({
     initialDelay,
   ]);
 
+  if (prefersReducedMotion) {
+    const firstText = texts[0] ?? "";
+    return (
+      <div className={`inline whitespace-pre-wrap tracking-tight ${className}`}>
+        <span>{firstText}</span>
+        {showCursor && (
+          <span className={cn(cursorClassName)}>{cursorChar}</span>
+        )}
+      </div>
+    );
+  }
+
   return (
     <div className={`inline whitespace-pre-wrap tracking-tight ${className}`}>
       <span>{displayText}</span>
@@ -137,7 +152,19 @@ export const Typewriter = ({
               : ""
           )}
           initial="initial"
-          variants={cursorAnimationVariants}
+          variants={{
+            ...cursorAnimationVariants,
+            animate: {
+              ...cursorAnimationVariants.animate,
+              transition: {
+                duration: 0.01,
+                repeat: Number.POSITIVE_INFINITY,
+                repeatDelay: 0.4,
+                repeatType: "reverse",
+                ease: [0.25, 0.46, 0.45, 0.94],
+              },
+            },
+          }}
         >
           {cursorChar}
         </motion.span>

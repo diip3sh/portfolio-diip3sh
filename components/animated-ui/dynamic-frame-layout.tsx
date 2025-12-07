@@ -32,6 +32,7 @@ type FrameComponentProps = {
   borderSize: number;
   showFrame: boolean;
   isHovered: boolean;
+  prefersReducedMotion: boolean;
 };
 
 function FrameComponent({
@@ -47,6 +48,7 @@ function FrameComponent({
   borderSize,
   showFrame,
   isHovered,
+  prefersReducedMotion,
 }: FrameComponentProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -64,7 +66,9 @@ function FrameComponent({
       style={{
         width,
         height,
-        transition: "width 0.3s ease-in-out, height 0.3s ease-in-out",
+        transition: prefersReducedMotion
+          ? "none"
+          : "width 0.3s var(--ease-out-quart), height 0.3s var(--ease-out-quart)",
       }}
     >
       <div className="relative h-full w-full overflow-hidden">
@@ -72,7 +76,9 @@ function FrameComponent({
           className="absolute inset-0 flex items-center justify-center"
           style={{
             zIndex: 1,
-            transition: "all 0.3s ease-in-out",
+            transition: prefersReducedMotion
+              ? "none"
+              : "all 0.3s var(--ease-out-quart)",
             padding: showFrame ? `${borderThickness}px` : "0",
             width: showFrame ? `${borderSize}%` : "100%",
             height: showFrame ? `${borderSize}%` : "100%",
@@ -85,7 +91,9 @@ function FrameComponent({
             style={{
               transform: `scale(${mediaSize})`,
               transformOrigin: "center",
-              transition: "transform 0.3s ease-in-out",
+              transition: prefersReducedMotion
+                ? "none"
+                : "transform 0.3s var(--ease-out-quart)",
             }}
           >
             <video
@@ -187,6 +195,9 @@ export function DynamicFrameLayout({
   const [hovered, setHovered] = useState<{ row: number; col: number } | null>(
     null
   );
+  const prefersReducedMotion =
+    typeof window !== "undefined" &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   const getRowSizes = () => {
     if (hovered === null) {
@@ -224,8 +235,9 @@ export function DynamicFrameLayout({
         gridTemplateRows: getRowSizes(),
         gridTemplateColumns: getColSizes(),
         gap: `${gapSize}px`,
-        transition:
-          "grid-template-rows 0.4s ease, grid-template-columns 0.4s ease",
+        transition: prefersReducedMotion
+          ? "none"
+          : "grid-template-rows 0.4s var(--ease-out-quart), grid-template-columns 0.4s var(--ease-out-quart)",
       }}
     >
       {frames.map((frame) => {
@@ -244,7 +256,9 @@ export function DynamicFrameLayout({
             onMouseLeave={() => setHovered(null)}
             style={{
               transformOrigin,
-              transition: "transform 0.4s ease",
+              transition: prefersReducedMotion
+                ? "none"
+                : "transform 0.4s var(--ease-out-quart)",
             }}
           >
             <FrameComponent
@@ -257,6 +271,7 @@ export function DynamicFrameLayout({
               height="100%"
               isHovered={hovered?.row === row && hovered?.col === col}
               mediaSize={frame.mediaSize}
+              prefersReducedMotion={prefersReducedMotion}
               showFrame={showFrames}
               video={frame.video}
               width="100%"

@@ -10,12 +10,12 @@ import { VerticalCutReveal } from "../ui/vertical-cut-reveal";
 
 export const HeroSection = () => (
   <div className="z-10 h-[90svh] w-[95svw]">
-    <div className="flex h-full w-full flex-col items-center justify-center gap-10">
+    <div className="flex h-full w-full flex-col items-center justify-center">
       <div className="flex flex-col">
         <VerticalCutReveal
           containerClassName={cn(
             instrumentSerif.className,
-            "text-left font-bold text-[120px] italic leading-[1.1] tracking-tight"
+            "text-left font-bold text-[clamp(28.33px,8.333vw,213.33px)] italic leading-[1.1] tracking-tight"
           )}
           splitBy="characters"
           staggerDuration={0.05}
@@ -26,7 +26,7 @@ export const HeroSection = () => (
             damping: 25,
           }}
         >
-          Design,
+          design,
         </VerticalCutReveal>
         <HoverImageText
           images={[
@@ -47,7 +47,7 @@ export const HeroSection = () => (
             <VerticalCutReveal
               containerClassName={cn(
                 instrumentSerif.className,
-                "text-left text-[120px] italic leading-[1] tracking-tight"
+                "text-left text-[clamp(28.33px,8.333vw,213.33px)] text-primary italic leading-[1] tracking-tight"
               )}
               splitBy="characters"
               staggerDuration={0.05}
@@ -61,13 +61,13 @@ export const HeroSection = () => (
             >
               Craft
             </VerticalCutReveal>
-            <ArrowUpRight className="block size-[120px] transition-all duration-250 ease-in-out" />
+            <ArrowUpRight className="block size-[clamp(24px,6vw,120px)] transition-all duration-250 ease-in-out" />
           </Link>
         </HoverImageText>
         <VerticalCutReveal
           containerClassName={cn(
             instrumentSerif.className,
-            "text-right font-bold text-[120px] italic leading-[1.1] tracking-tight"
+            "text-right font-bold text-[clamp(28.33px,8.333vw,213.33px)] italic leading-[1.1] tracking-tight"
           )}
           splitBy="characters"
           staggerDuration={0.05}
@@ -100,7 +100,7 @@ export const HeroSection = () => (
             <VerticalCutReveal
               containerClassName={cn(
                 instrumentSerif.className,
-                "text-left text-[120px] italic leading-[1.1] tracking-tight underline"
+                "text-left text-[clamp(28.33px,8.333vw,213.33px)] text-primary italic leading-[1.1] tracking-tight underline"
               )}
               splitBy="characters"
               staggerDuration={0.05}
@@ -114,7 +114,7 @@ export const HeroSection = () => (
             >
               Projects
             </VerticalCutReveal>
-            <ArrowUpRight className="block size-[120px] transition-all duration-250 ease-in-out" />
+            <ArrowUpRight className="block size-[clamp(24px,6vw,120px)] transition-all duration-250 ease-in-out" />
           </Link>
         </HoverImageText>
       </div>

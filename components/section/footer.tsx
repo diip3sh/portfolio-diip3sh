@@ -44,8 +44,8 @@ const socialLinks = [
 
 export const Footer = () => (
   <footer className="px-1.5 pt-2">
-    <div className="flex items-center justify-between">
-      <div className="flex items-center gap-2">
+    <div className="flex items-center justify-end md:justify-between">
+      <div className="hidden items-center gap-2 md:flex">
         {socialLinks.map((item) => (
           <div key={item.label}>
             <NavigationButton
@@ -58,7 +58,7 @@ export const Footer = () => (
         ))}
       </div>
       <div className="flex items-center gap-4">
-        <span className="flex items-center gap-1 text-xs sm:text-sm">
+        <span className="flex items-center gap-1 font-light font-sans text-sm tracking-tight">
           Built with{" "}
           <Typewriter
             className="text-primary"
@@ -71,7 +71,6 @@ export const Footer = () => (
         </span>
         <ThemeToggleButton />
       </div>
-      {/* <div className="text-xs sm:text-sm">Copyright © 2025</div> */}
     </div>
   </footer>
 );

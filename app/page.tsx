@@ -5,7 +5,7 @@ import { HeroSection } from "@/components/section/hero";
 
 export default function Home() {
   return (
-    <LetterGlitch className="z-10 flex flex-1 flex-col items-center justify-center">
+    <LetterGlitch className="z-10 flex h-full flex-1 items-center justify-center">
       <HeroSection />
     </LetterGlitch>
   );
