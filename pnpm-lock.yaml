@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@aliimam/icons':
+        specifier: ^0.1.9
+        version: 0.1.9(react@19.2.1)
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -53,6 +56,11 @@ importers:
         version: 5.9.3
 
 packages:
+
+  '@aliimam/icons@0.1.9':
+    resolution: {integrity: sha512-swL7tQ/YtCPBDQqB5wJz2s1aEHIJ681ZgTwjToeB8fbbHGGXPapAQU1K1Ny9LIXDasOwrZR41z22CskfHcDB7g==}
+    peerDependencies:
+      react: ^16.x || ^17.x || ^18.x || ^19.x
 
   '@alloc/quick-lru@5.2.0':
     resolution: {integrity: sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==}
@@ -657,6 +665,10 @@ packages:
     resolution: {integrity: sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==}
 
 snapshots:
+
+  '@aliimam/icons@0.1.9(react@19.2.1)':
+    dependencies:
+      react: 19.2.1
 
   '@alloc/quick-lru@5.2.0': {}
 

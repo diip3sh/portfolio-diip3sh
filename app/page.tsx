@@ -1,6 +1,8 @@
 import { Plus } from "lucide-react";
 import Image from "next/image";
 import { Container } from "@/components/container";
+import { PageFooter } from "@/components/page-footer";
+import { Accordion04 } from "@/components/ui/accordion-04";
 import { SocialButton } from "@/components/ui/buttons";
 import { WorkExperience } from "@/components/work-experience";
 import {
@@ -172,8 +174,12 @@ const HomeGridTwo = () => {
           Got questions? I&apos;ve got answers. Here&apos;s everything you need
           to know about working with me.
         </p>
-        <div></div>
+        <div>
+          <Accordion04 />
+        </div>
       </div>
+
+      <PageFooter />
     </div>
   );
 };

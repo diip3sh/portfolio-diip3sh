@@ -10,6 +10,7 @@
     "format": "biome format --write"
   },
   "dependencies": {
+    "@aliimam/icons": "^0.1.9",
     "clsx": "^2.1.1",
     "lucide-react": "^0.561.0",
     "motion": "^12.23.26",
