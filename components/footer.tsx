@@ -114,9 +114,9 @@ const TABS = [
     icon: <HugeiconsIcon icon={FolderLibraryIcon} className="size-4" />,
     href: "/craft",
   },
-  {
-    name: "About",
-    icon: <HugeiconsIcon icon={UserIcon} className="size-4" />,
-    href: "/about",
-  },
+  // {
+  //   name: "About",
+  //   icon: <HugeiconsIcon icon={UserIcon} className="size-4" />,
+  //   href: "/about",
+  // },
 ];
