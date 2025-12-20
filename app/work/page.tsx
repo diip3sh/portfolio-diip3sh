@@ -1,20 +1,22 @@
+"use client";
+
 import { Container } from "@/components/container";
 import { PageFooter } from "@/components/page-footer";
 import Image from "next/image";
 
-export default function Craft() {
-  return <Container gridOne={<CraftGridOne />} gridTwo={<CraftGridTwo />} />;
+export default function Work() {
+  return <Container gridOne={<WorkGridOne />} gridTwo={<WorkGridTwo />} />;
 }
 
-const CraftGridOne = () => {
+const WorkGridOne = () => {
   return (
     <div className="flex xl:h-[calc(100vh-10.5rem)] flex-col justify-between">
       <section></section>
       <section className="flex flex-col gap-6">
         <h3 className="text-5xl font-sans font-semibold tracking-tight text-wrap">
-          Craft
-          <span className="text-muted-foreground text-sm align-top p-1.5">
-            6
+          Works
+          <span className="text-sm align-top pl-1.5 text-muted-foreground">
+            5
           </span>
         </h3>
         <p className="text-wrap text-muted-foreground max-w-3/4">
@@ -26,11 +28,12 @@ const CraftGridOne = () => {
   );
 };
 
-const CraftGridTwo = () => {
+const WorkGridTwo = () => {
   return (
-    <div className="flex flex-col gap-12">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {Array.from({ length: 10 }).map((_, i) => (
+    <div className="flex flex-col gap-6">
+      <h3 className="uppercase text-2xl font-medium">Projects</h3>
+      <div className="flex flex-col gap-6">
+        {Array.from({ length: 3 }).map((_, i) => (
           <div key={i} className="flex flex-col gap-4">
             <Image
               src={
