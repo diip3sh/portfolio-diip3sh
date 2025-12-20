@@ -1,4 +1,6 @@
-import { AppWindow, Banknote, Gamepad2, Gpu, ShoppingBag, Smartphone, Sparkles } from "lucide-react";
+// import { AppWindow, Banknote, Gamepad2, Gpu, ShoppingBag, Smartphone, Sparkles } from "lucide-react";
+
+import { Bitcoin01FreeIcons, Cash01FreeIcons, ProductLoadingFreeIcons, ShoppingBasket01FreeIcons, SmartPhone02FreeIcons, SparklesIcon, VideoConsoleFreeIcons } from "@hugeicons/core-free-icons";
 
 export const homeSection1 = [
   {
@@ -55,13 +57,13 @@ export const whatIBuildData = [
 ];
 
 export const domainsData = [
-  { label: "AI", logo: Sparkles },
-  { label: "SaaS", logo: AppWindow },
-  { label: "Fintech", logo: Banknote },
-  { label: "Crypto", logo: Gpu },
-  { label: "Ecommerce", logo: ShoppingBag },
-  { label: "Creators", logo: Smartphone },
-  { label: "Gaming", logo: Gamepad2 },
+  { label: "AI", logo: SparklesIcon },
+  { label: "SaaS", logo: ProductLoadingFreeIcons },
+  { label: "Fintech", logo: Cash01FreeIcons },
+  { label: "Crypto", logo: Bitcoin01FreeIcons },
+  { label: "Ecommerce", logo: ShoppingBasket01FreeIcons },
+  { label: "Creators", logo: SmartPhone02FreeIcons },
+  { label: "Gaming", logo: VideoConsoleFreeIcons },
 ];
 
 export const stackData = [

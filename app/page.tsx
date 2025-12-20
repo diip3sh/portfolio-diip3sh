@@ -1,4 +1,6 @@
-import { Plus } from "lucide-react";
+"use client";
+
+import { Add01FreeIcons } from "@hugeicons/core-free-icons";
 import Image from "next/image";
 import { Container } from "@/components/container";
 import { PageFooter } from "@/components/page-footer";
@@ -13,6 +15,7 @@ import {
 } from "@/lib/data/home";
 import { Gmail } from "@/lib/svg/gmail";
 import { XformerlyTwitter } from "@/lib/svg/x";
+import { HugeiconsIcon } from "@hugeicons/react";
 
 export default function Home() {
   return <Container gridOne={<HomeGridOne />} gridTwo={<HomeGridTwo />} />;
@@ -20,7 +23,7 @@ export default function Home() {
 
 const HomeGridOne = () => {
   return (
-    <div className="flex flex-col gap-10">
+    <div className="flex xl:h-[calc(100vh-10.5rem)] flex-col relative lg:justify-between gap-10">
       <section className="flex flex-col">
         {homeSection1.map((item) => (
           <div
@@ -54,8 +57,6 @@ const HomeGridOne = () => {
             <span>Mail Me</span>
           </SocialButton>
         </div>
-      </section>
-      <section>
         <WorkExperience />
       </section>
     </div>
@@ -116,7 +117,10 @@ const HomeGridTwo = () => {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
               {whatIBuildData.map((text, index) => (
                 <div key={index} className="font-sans flex gap-4 items-center">
-                  <Plus className="text-muted-foreground" />
+                  <HugeiconsIcon
+                    icon={Add01FreeIcons}
+                    className="text-muted-foreground"
+                  />
                   <span>{text}</span>
                 </div>
               ))}
@@ -134,7 +138,11 @@ const HomeGridTwo = () => {
                   key={entry.label}
                   className="font-sans flex gap-4 items-center"
                 >
-                  <entry.logo className="text-muted-foreground" size={16} />
+                  <HugeiconsIcon
+                    icon={entry.logo}
+                    className="text-muted-foreground"
+                    size={16}
+                  />
                   <span>{entry.label}</span>
                 </div>
               ))}
@@ -174,9 +182,7 @@ const HomeGridTwo = () => {
           Got questions? I&apos;ve got answers. Here&apos;s everything you need
           to know about working with me.
         </p>
-        <div>
-          <Accordion04 />
-        </div>
+        <div>{/* <Accordion04 /> */}</div>
       </div>
 
       <PageFooter />
