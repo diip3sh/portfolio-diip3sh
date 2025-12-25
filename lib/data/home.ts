@@ -1,6 +1,14 @@
 // import { AppWindow, Banknote, Gamepad2, Gpu, ShoppingBag, Smartphone, Sparkles } from "lucide-react";
 
-import { Bitcoin01FreeIcons, Cash01FreeIcons, ProductLoadingFreeIcons, ShoppingBasket01FreeIcons, SmartPhone02FreeIcons, SparklesIcon, VideoConsoleFreeIcons } from "@hugeicons/core-free-icons";
+import {
+  Bitcoin01FreeIcons,
+  Cash01FreeIcons,
+  ProductLoadingFreeIcons,
+  ShoppingBasket01FreeIcons,
+  SmartPhone02FreeIcons,
+  SparklesIcon,
+  VideoConsoleFreeIcons,
+} from "@hugeicons/core-free-icons";
 
 export const homeSection1 = [
   {
@@ -40,8 +48,8 @@ export const workExperience = [
   },
   {
     company: "Graduation",
-    date: "2017 - 2021"
-  }
+    date: "2017 - 2021",
+  },
 ];
 
 export const whatIBuildData = [
@@ -102,23 +110,33 @@ export const stackData = [
 
 export const faqs = [
   {
-    question: "How do you approach building user interfaces that balance design and engineering constraints?",
-    answer: "I start by understanding the user goal and the design intent, then map that to a component-based system that’s realistic to build and scale. I collaborate early with design, question edge cases, and make trade-offs explicit—performance, accessibility, and maintainability usually guide final decisions."
+    question:
+      "How do you approach building user interfaces that balance design and engineering constraints?",
+    answer:
+      "I start by understanding the user goal and the design intent, then map that to a component-based system that’s realistic to build and scale. I collaborate early with design, question edge cases, and make trade-offs explicit—performance, accessibility, and maintainability usually guide final decisions.",
   },
   {
-    question: "How do you ensure performance and accessibility in modern frontend applications?",
-    answer: "I treat performance and accessibility as baseline requirements, not optimizations. That means semantic HTML, keyboard navigation, proper contrast, and testing with screen readers. On performance, I focus on bundle size, rendering behavior, and real user metrics rather than synthetic scores alone."
+    question:
+      "How do you ensure performance and accessibility in modern frontend applications?",
+    answer:
+      "I treat performance and accessibility as baseline requirements, not optimizations. That means semantic HTML, keyboard navigation, proper contrast, and testing with screen readers. On performance, I focus on bundle size, rendering behavior, and real user metrics rather than synthetic scores alone.",
   },
   {
-    question: "What does your component architecture look like in a large codebase?",
-    answer: "I favor small, composable components with clear responsibilities. Shared primitives live close to a design system, while product-specific components stay isolated. Strong typing, predictable state boundaries, and consistent naming conventions keep the system understandable as it grows."
+    question:
+      "What does your component architecture look like in a large codebase?",
+    answer:
+      "I favor small, composable components with clear responsibilities. Shared primitives live close to a design system, while product-specific components stay isolated. Strong typing, predictable state boundaries, and consistent naming conventions keep the system understandable as it grows.",
   },
   {
-    question: "How do you collaborate with designers, product managers, and backend engineers?",
-    answer: "I work best with tight feedback loops. I review designs early, flag technical risks before implementation, and keep communication async-friendly through docs and clear PRs. I also try to speak both design and engineering so decisions don’t get lost in translation."
+    question:
+      "How do you collaborate with designers, product managers, and backend engineers?",
+    answer:
+      "I work best with tight feedback loops. I review designs early, flag technical risks before implementation, and keep communication async-friendly through docs and clear PRs. I also try to speak both design and engineering so decisions don’t get lost in translation.",
   },
   {
-    question: "How do you stay current with frontend tools and evolving best practices?",
-    answer: "I stay curious but selective. I follow core platform changes, read RFCs, and experiment in side projects before adopting anything at work. I’m cautious of hype—tools earn their place by solving real problems better than what we already have."
-  }
-]
+    question:
+      "How do you stay current with frontend tools and evolving best practices?",
+    answer:
+      "I stay curious but selective. I follow core platform changes, read RFCs, and experiment in side projects before adopting anything at work. I’m cautious of hype—tools earn their place by solving real problems better than what we already have.",
+  },
+];

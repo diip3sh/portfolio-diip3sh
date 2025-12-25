@@ -1,6 +1,6 @@
+import Image from "next/image";
 import { Container } from "@/components/container";
 import { PageFooter } from "@/components/page-footer";
-import Image from "next/image";
 
 export default function Craft() {
   return <Container gridOne={<CraftGridOne />} gridTwo={<CraftGridTwo />} />;

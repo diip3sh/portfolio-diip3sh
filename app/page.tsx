@@ -1,6 +1,5 @@
-"use client";
-
 import { Add01FreeIcons } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
 import Image from "next/image";
 import { Container } from "@/components/container";
 import { PageFooter } from "@/components/page-footer";
@@ -15,7 +14,6 @@ import {
 } from "@/lib/data/home";
 import { Gmail } from "@/lib/svg/gmail";
 import { XformerlyTwitter } from "@/lib/svg/x";
-import { HugeiconsIcon } from "@hugeicons/react";
 
 export default function Home() {
   return <Container gridOne={<HomeGridOne />} gridTwo={<HomeGridTwo />} />;
@@ -182,7 +180,8 @@ const HomeGridTwo = () => {
           Got questions? I&apos;ve got answers. Here&apos;s everything you need
           to know about working with me.
         </p>
-        <div>{/* <Accordion04 /> */}</div>
+
+        <Accordion04 />
       </div>
 
       <PageFooter />

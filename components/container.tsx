@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import React from "react";
+import type React from "react";
 
 type ContainerType = {
   gridOne: React.ReactNode;

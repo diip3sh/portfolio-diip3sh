@@ -1,16 +1,14 @@
-/** biome-ignore-all lint/correctness/useExhaustiveDependencies: <explanation> */
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
-import { HugeiconsIcon } from "@hugeicons/react";
 import {
   Briefcase09Icon,
   FolderLibraryIcon,
   Home09Icon,
-  UserIcon,
 } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 
 export default function Footer() {
   const pathname = usePathname();
@@ -37,13 +35,13 @@ export default function Footer() {
         const clipLeft = offsetLeft;
         const clipRight = offsetLeft + offsetWidth;
         container.style.clipPath = `inset(0 ${Number(
-          100 - (clipRight / container.offsetWidth) * 100
+          100 - (clipRight / container.offsetWidth) * 100,
         ).toFixed()}% 0 ${Number(
-          (clipLeft / container.offsetWidth) * 100
+          (clipLeft / container.offsetWidth) * 100,
         ).toFixed()}% round 17px)`;
       }
     }
-  }, [activeTab, activeTabElementRef, containerRef]);
+  }, [activeTab]);
 
   return (
     <div className="h-15 w-full flex items-center justify-between">
