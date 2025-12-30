@@ -1,6 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Container } from "@/components/container";
 import { PageFooter } from "@/components/page-footer";
+import { Video } from "@/components/ui/video";
+import { craftData } from "@/lib/data/craft";
+import { XformerlyTwitter } from "@/lib/svg/x";
 
 export default function Craft() {
   return <Container gridOne={<CraftGridOne />} gridTwo={<CraftGridTwo />} />;
@@ -29,27 +33,44 @@ const CraftGridOne = () => {
 const CraftGridTwo = () => {
   return (
     <div className="flex flex-col gap-12">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {Array.from({ length: 10 }).map((_, i) => (
-          <div key={i} className="flex flex-col gap-4">
-            <Image
-              src={
-                "https://framerusercontent.com/images/GMRu9EwZtu12CzGtRcBYmg5yXvo.png"
-              }
-              alt="work"
-              height={840}
-              width={500}
-              className="h-auto w-full lg:w-[max(min(100vw - 56px, 720px), 1px)] rounded-lg"
-              sizes="(max-width: 720px) calc(100vw - 56px), 720px"
-            />
-            <div className="">
-              <h3 className="font-medium uppercase">Vesta</h3>
-              <p className="text-muted-foreground font-sans">
-                Product Design & Engineering
-              </p>
+      <div className="grid grid-cols-1 gap-6">
+        {[...craftData]
+          .sort((a, b) => b.id - a.id)
+          .map((item) => (
+            <div
+              key={item.id}
+              className="flex flex-col rounded-xl border border-border bg-card lg:w-[max(min(100vw-56px,720px),1px)]"
+            >
+              <div className="relative p-1.5">
+                <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-muted shadow-sm">
+                  {item.video.includes(".gif") ? (
+                    <Image
+                      src={item.video}
+                      alt={item.alt}
+                      width={500}
+                      height={500}
+                      className="h-full w-full object-cover"
+                    />
+                  ) : (
+                    <Video
+                      src={item.video}
+                      className="h-full w-full rounded-none object-cover lg:w-full"
+                    />
+                  )}
+                  <div className="absolute bottom-3 left-3 z-10">
+                    <Link
+                      href={item.xlink}
+                      target="_blank"
+                      className="inline-flex items-center gap-2 rounded-md border border-white/20 bg-black/10 px-2 py-1 text-xs font-medium text-white backdrop-blur-md transition-colors hover:bg-black/70 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                    >
+                      <XformerlyTwitter className="h-3 w-3 fill-white" />
+                      View
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
       </div>
       <PageFooter />
     </div>

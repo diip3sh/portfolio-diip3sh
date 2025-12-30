@@ -13,7 +13,7 @@ import {
 export const homeSection1 = [
   {
     title: "Timezone",
-    value: "UTC +2",
+    value: "UTC +5:30",
   },
   {
     title: "Location",
@@ -21,15 +21,15 @@ export const homeSection1 = [
   },
   {
     title: "Experience",
-    value: "10+ years",
+    value: "3+ years",
   },
   {
-    title: "Languages",
-    value: "English, Hindi",
+    title: "Roles",
+    value: "Design Engineer, Frontend Engineer",
   },
   {
     title: "Skillset",
-    value: "Product, Design and Strategy",
+    value: "Design, Code and Strategy",
   },
 ];
 
@@ -140,3 +140,9 @@ export const faqs = [
       "I stay curious but selective. I follow core platform changes, read RFCs, and experiment in side projects before adopting anything at work. I’m cautious of hype—tools earn their place by solving real problems better than what we already have.",
   },
 ];
+
+
+// const selectedWorks = [
+//   {
+//     title: ""
+//   }

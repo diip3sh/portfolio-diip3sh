@@ -39,8 +39,8 @@ const HomeGridOne = () => {
       </section>
       <section className="flex flex-col gap-4 lg:max-w-3/4">
         <div className="text-5xl font-sans font-semibold tracking-tight text-wrap">
-          Method is a design studio that helps founder build world-class
-          products, fast
+          I turn beautiful designs into code that actually ships—and stays
+          pretty.
         </div>
         <div className="flex gap-2.5 items-center w-full">
           <SocialButton>
