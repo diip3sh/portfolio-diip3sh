@@ -15,17 +15,6 @@ const geistMono = Geist_Mono({
 });
 
 const siteUrl = "https://dip3sh.com";
-const siteTitle = "Method Studio — Product Design & Engineering";
-const siteDescription =
-  "Method is a boutique product design and engineering studio helping founders ship bold, user-first digital products with clarity and speed.";
-const siteKeywords = [
-  "product design",
-  "design systems",
-  "product engineering",
-  "founder design partner",
-  "nextjs portfolio",
-  "method studio",
-];
 const openGraphImage = "/android-chrome-512x512.png";
 
 export const metadata: Metadata = {
