@@ -31,13 +31,36 @@ const openGraphImage = "/android-chrome-512x512.png";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: siteTitle,
-    template: "%s | Method Studio",
+    default: "diip3sh — Design & Frontend Engineer",
+    template: "%s | diip3sh",
   },
-  description: siteDescription,
-  keywords: siteKeywords,
-  authors: [{ name: "Method Studio", url: siteUrl }],
-  applicationName: "Method Studio Portfolio",
+  description:
+    "diip3sh is a Design & Frontend Engineer with 3+ years of experience building high-performance web and mobile applications. Specialized in React, Next.js, TypeScript, React Native, and AI-driven platforms with a strong focus on UX, accessibility, and performance.",
+  keywords: [
+    "diip3sh",
+    "Design Engineer",
+    "Frontend Engineer",
+    "Design & Frontend Engineer",
+    "React Developer",
+    "Next.js Developer",
+    "TypeScript",
+    "React Native",
+    "UI Engineering",
+    "UX Engineering",
+    "AI Marketplace",
+    "Web Performance",
+    "Accessibility",
+    "AWS",
+    "Serverless Applications",
+    "Portfolio",
+  ],
+  authors: [
+    {
+      name: "diip3sh",
+      url: siteUrl,
+    },
+  ],
+  applicationName: "diip3sh Portfolio",
   colorScheme: "dark",
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#f8fafc" },
@@ -48,10 +71,11 @@ export const metadata: Metadata = {
     shortcut: "/favicon.ico",
   },
   openGraph: {
-    title: siteTitle,
-    description: siteDescription,
+    title: "diip3sh — Design & Frontend Engineer",
+    description:
+      "Design & Frontend Engineer building scalable, user-centric web and mobile apps using React, Next.js, TypeScript, and React Native. Experience across AI platforms, fintech, and cloud-native systems.",
     url: siteUrl,
-    siteName: "Method Studio",
+    siteName: "diip3sh Portfolio",
     type: "website",
     locale: "en_US",
     images: [
@@ -59,15 +83,16 @@ export const metadata: Metadata = {
         url: openGraphImage,
         width: 512,
         height: 512,
-        alt: "Method Studio marks",
+        alt: "diip3sh — Design & Frontend Engineer Portfolio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: siteTitle,
-    description: siteDescription,
-    creator: "@methodstudio",
+    title: "diip3sh — Design & Frontend Engineer",
+    description:
+      "Design & Frontend Engineer specializing in React, Next.js, TypeScript, and React Native. Building fast, accessible, AI-powered interfaces.",
+    creator: "@diip3sh",
     images: [openGraphImage],
   },
   robots: {
