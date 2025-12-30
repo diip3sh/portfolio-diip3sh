@@ -1,4 +1,3 @@
-"use client";
 import { GitHub } from "@/lib/svg/github";
 import { LinkedInIcon } from "@/lib/svg/linkedin";
 import { XformerlyTwitter } from "@/lib/svg/x";

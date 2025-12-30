@@ -1,8 +1,5 @@
-/* eslint-disable react/jsx-key */
-
 "use client";
 
-import { Plus, X } from "@aliimam/icons";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -13,7 +10,7 @@ interface AccordionItem {
 }
 
 interface AccordionProps {
-  items: AccordionItem[];
+  items?: AccordionItem[];
   defaultValue?: string;
   className?: string;
 }

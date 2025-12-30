@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 
 export default function Navbar() {
@@ -26,4 +24,3 @@ export default function Navbar() {
     </div>
   );
 }
-``;

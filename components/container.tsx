@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import React from "react";
+import type React from "react";
 
 type ContainerType = {
   gridOne: React.ReactNode;
@@ -47,7 +47,7 @@ export const Container = ({ gridOne, gridTwo }: ContainerType) => {
         {gridOne}
       </motion.section>
       <motion.section
-        className="p-6 overflow-y-auto max-h-full"
+        className="p-6 overflow-y-auto max-h-full no-scrollbar"
         variants={itemVariants}
       >
         <div className="space-y-6">{gridTwo}</div>
