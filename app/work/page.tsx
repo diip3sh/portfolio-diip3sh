@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Container } from "@/components/container";
 import { PageFooter } from "@/components/page-footer";
+import { SubHeadingText, TitleText } from "@/components/ui/text";
 
 export default function Work() {
   return <Container gridOne={<WorkGridOne />} gridTwo={<WorkGridTwo />} />;
@@ -11,13 +12,8 @@ const WorkGridOne = () => {
     <div className="flex xl:h-[calc(100vh-10.5rem)] flex-col justify-between">
       <section></section>
       <section className="flex flex-col gap-6">
-        <h3 className="text-5xl font-sans font-semibold tracking-tight text-wrap">
-          Works
-          <span className="text-sm align-top pl-1.5 text-muted-foreground">
-            5
-          </span>
-        </h3>
-        <p className="text-wrap text-muted-foreground max-w-3/4">
+        <TitleText title="Works" />
+        <p className="text-wrap text-muted-foreground max-w-3/4 font-sans">
           From zero to shipped, from startups to market leaders — here’s a few
           projects we’ve designed along the way.
         </p>
@@ -29,7 +25,7 @@ const WorkGridOne = () => {
 const WorkGridTwo = () => {
   return (
     <div className="flex flex-col gap-6">
-      <h3 className="uppercase text-2xl font-medium">Projects</h3>
+      <SubHeadingText text="Projects" />
       <div className="flex flex-col gap-6">
         {Array.from({ length: 3 }).map((_, i) => (
           <div key={i} className="flex flex-col gap-4">

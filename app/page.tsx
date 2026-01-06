@@ -5,6 +5,8 @@ import { Container } from "@/components/container";
 import { PageFooter } from "@/components/page-footer";
 import { Accordion04 } from "@/components/ui/accordion-04";
 import { SocialButton } from "@/components/ui/buttons";
+import { LineShadowText } from "@/components/ui/line-shadow-text";
+import { SubHeadingText } from "@/components/ui/text";
 import { WorkExperience } from "@/components/work-experience";
 import {
   domainsData,
@@ -65,10 +67,7 @@ const HomeGridTwo = () => {
   return (
     <div className="flex flex-col gap-12">
       <div className="flex flex-col gap-4">
-        <h3 className="uppercase text-2xl font-medium">
-          Selected works
-          <span className="text-xs align-top pl-1.5">3</span>
-        </h3>
+        <SubHeadingText text="Few Works" />
 
         <div className="flex flex-col gap-6">
           {Array.from({ length: 3 }).map((_, i) => (
@@ -94,12 +93,9 @@ const HomeGridTwo = () => {
         </div>
       </div>
       <div className="flex flex-col gap-4">
-        <h3 className="uppercase text-2xl font-medium">
-          Services
-          <span className="text-xs align-top pl-1.5">3</span>
-        </h3>
+        <SubHeadingText text="Services" />
 
-        <p className="lg:max-w-3/4 text-muted-foreground text-wrap">
+        <p className="lg:max-w-[80%] text-muted-foreground text-wrap font-sans">
           Design with intent - sharp, functional and user-first. No fluff, just
           digital experiences that feel right and work fast. From startups to
           market leaders, we&apos;ve done this for over 10 years for companies
@@ -113,8 +109,8 @@ const HomeGridTwo = () => {
               What I Build
             </h4>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-              {whatIBuildData.map((text, index) => (
-                <div key={index} className="font-sans flex gap-4 items-center">
+              {whatIBuildData.map((text) => (
+                <div key={text} className="font-sans flex gap-4 items-center">
                   <HugeiconsIcon
                     icon={Add01FreeIcons}
                     className="text-muted-foreground"
@@ -174,9 +170,9 @@ const HomeGridTwo = () => {
       </div>
 
       <div className="flex flex-col gap-4">
-        <h3 className="uppercase text-2xl font-medium">Faq's</h3>
+        <SubHeadingText text="Frequently Asked Questions" />
 
-        <p className="lg:max-w-3/4 text-muted-foreground text-wrap">
+        <p className="lg:max-w-3/4 text-muted-foreground text-wrap font-sans">
           Got questions? I&apos;ve got answers. Here&apos;s everything you need
           to know about working with me.
         </p>

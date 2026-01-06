@@ -4,14 +4,14 @@ import { XformerlyTwitter } from "@/lib/svg/x";
 
 export const PageFooter = () => {
   return (
-    <div className="flex flex-col gap-2 text-muted-foreground text-sm">
+    <div className="flex flex-col gap-2 text-muted-foreground text-sm font-sans">
       <span>
         Designed and Build by{" "}
         <span className="text-primary font-medium">@diip3sh</span>
       </span>
       <span>
         Source code on{" "}
-        <span className="underline font-bold uppercase tracking-normal">
+        <span className="underline font-bold uppercase tracking-normal font-mono">
           GitHub
         </span>
       </span>

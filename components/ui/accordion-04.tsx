@@ -104,7 +104,7 @@ export const Accordion04 = ({
   };
 
   return (
-    <div className={cn("w-full max-w-xl", className)}>
+    <div className={cn("w-full max-w-xl font-sans", className)}>
       <div className="w-full space-y-2">
         {propItems.map((item) => (
           <AccordionItemComponent

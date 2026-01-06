@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Dithering } from "@paper-design/shaders-react";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
+import { cn } from "@/lib/utils";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -110,10 +112,23 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased font-mono`}
       >
-        <div className="flex flex-col bg-foreground/10 min-h-screen px-3">
+        <div className="flex flex-col min-h-screen px-3">
+          <Dithering
+            colorBack="#e5e5e5"
+            colorFront="#ff6a00"
+            shape="wave"
+            type="8x8"
+            size={2.2}
+            speed={0.86}
+            scale={0.68}
+            className="absolute top-0 left-0 w-full h-screen -z-10 opacity-20"
+          />
           <Navbar />
           <div
-            className="bg-background rounded-[14px] overflow-auto"
+            className={cn(
+              "bg-background overflow-auto rounded-[25px] corner-squircle",
+              "shadow-[0px_4px_16px_rgba(17,17,26,0.1),0px_8px_24px_rgba(17,17,26,0.1),0px_16px_56px_rgba(17,17,26,0.1)]",
+            )}
             style={{ height: `calc(100dvh - 120px)` }}
           >
             {children}
