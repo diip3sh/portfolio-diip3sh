@@ -1,5 +1,6 @@
 "use client";
 
+import { Heatmap } from "@paper-design/shaders-react";
 import { cn } from "@/lib/utils";
 
 export const SocialButton = ({ children }: { children: React.ReactNode }) => {
@@ -13,5 +14,31 @@ export const SocialButton = ({ children }: { children: React.ReactNode }) => {
     >
       {children}
     </button>
+  );
+};
+
+export const HeatMapButton = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
+  return (
+    <Heatmap
+      image="/rectangle.svg"
+      colors={["#e6e6e6", "#ff6a00"]}
+      colorBack="#1c1c1c"
+      contour={0.5}
+      angle={72}
+      noise={0}
+      innerGlow={0.57}
+      outerGlow={0}
+      speed={1}
+      scale={3}
+      className={className}
+    >
+      {children}
+    </Heatmap>
   );
 };

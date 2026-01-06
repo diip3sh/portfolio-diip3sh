@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@toolwind/corner-shape";
 
 :root {
   --background: oklch(1 0 0);
@@ -124,6 +125,18 @@
 
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  --animate-line-shadow: line-shadow 15s linear infinite;
+ 
+  @keyframes line-shadow {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 100% -100%;
+    }
+  }
+
 }
 
 body {

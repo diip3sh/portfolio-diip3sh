@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/container";
 import { PageFooter } from "@/components/page-footer";
+import { TitleText } from "@/components/ui/text";
 import { Video } from "@/components/ui/video";
 import { craftData } from "@/lib/data/craft";
 import { XformerlyTwitter } from "@/lib/svg/x";
@@ -15,13 +16,8 @@ const CraftGridOne = () => {
     <div className="flex xl:h-[calc(100vh-10.5rem)] flex-col justify-between">
       <section></section>
       <section className="flex flex-col gap-6">
-        <h3 className="text-5xl font-sans font-semibold tracking-tight text-wrap">
-          Craft
-          <span className="text-muted-foreground text-sm align-top p-1.5">
-            6
-          </span>
-        </h3>
-        <p className="text-wrap text-muted-foreground max-w-3/4">
+        <TitleText title="Craft" />
+        <p className="text-wrap text-muted-foreground max-w-3/4 font-sans">
           From zero to shipped, from startups to market leaders — here’s a few
           projects we’ve designed along the way.
         </p>
