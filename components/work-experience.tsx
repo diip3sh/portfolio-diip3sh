@@ -16,10 +16,6 @@ export const WorkExperience = () => {
   }, []);
   return (
     <div className="flex flex-col gap-6 w-full">
-      <h3 className="cursor-pointer hover:text-primary hover:transition-all text-muted-foreground uppercase text-sm font-semibold text-end">
-        Know more
-      </h3>
-
       {/* Timeline Container */}
       <div className="relative w-full">
         {/* Horizontal Line SVG */}
@@ -28,6 +24,7 @@ export const WorkExperience = () => {
             className="w-full h-full overflow-visible"
             preserveAspectRatio="none"
           >
+            <title>Work Experience Timeline</title>
             {/* Background Line */}
             <line
               x1="0"
