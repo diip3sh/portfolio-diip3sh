@@ -36,7 +36,7 @@
   --sidebar-ring: oklch(0.705 0.213 47.604);
   --font-sans: Geist, ui-sans-serif, sans-serif, system-ui;
   --font-serif: Source Serif 4, serif;
-  --font-mono: Geist Mono, ui-monospace, monospace;
+  --font-mono: Jet Brains Mono, ui-monospace, monospace;
   --radius: 0.375rem;
   --shadow-x: 0px;
   --shadow-y: 4px;
@@ -99,8 +99,9 @@
   --color-sidebar-ring: var(--sidebar-ring);
 
   --font-sans: var(--font-sans);
-  --font-mono: var(--font-mono);
+  --font-mono: var(--font-jet-brains-mono);
   --font-serif: var(--font-serif);
+  --font-geist-mono: var(--font-geist-mono);
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -127,7 +128,7 @@
   --animate-accordion-up: accordion-up 0.2s ease-out;
 
   --animate-line-shadow: line-shadow 15s linear infinite;
- 
+
   @keyframes line-shadow {
     0% {
       background-position: 0 0;
@@ -136,7 +137,6 @@
       background-position: 100% -100%;
     }
   }
-
 }
 
 body {
@@ -161,14 +161,40 @@ body {
   }
 }
 
-@layer utilities{
+@layer utilities {
   /* Hide scrollbar for Chrome, Safari and Opera */
-      .no-scrollbar::-webkit-scrollbar {
-          display: none;
-      }
-     /* Hide scrollbar for IE, Edge and Firefox */
-      .no-scrollbar {
-          -ms-overflow-style: none;  /* IE and Edge */
-          scrollbar-width: 0;  /* Firefox */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: 0; /* Firefox */
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .dithering-effect {
+      opacity: 0.05 !important;
     }
+    .animate-line-shadow {
+      animation: none !important;
+    }
+    @keyframes accordion-down {
+      from {
+        height: 0;
+      }
+      to {
+        height: var(--radix-accordion-content-height);
+      }
+    }
+
+    @keyframes accordion-up {
+      from {
+        height: var(--radix-accordion-content-height);
+      }
+      to {
+        height: 0;
+      }
+    }
+  }
 }

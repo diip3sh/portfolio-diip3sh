@@ -56,7 +56,7 @@ export default function Footer() {
                 onClick={() => {
                   setActiveTab(tab.name);
                 }}
-                className="px-3 py-1.5 flex items-center gap-2 text-black"
+                className="px-3 py-1.5 flex items-center gap-2 text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-md touch-manipulation"
               >
                 {tab.icon}
                 {tab.name}
@@ -79,7 +79,7 @@ export default function Footer() {
                   onClick={() => {
                     setActiveTab(tab.name);
                   }}
-                  className="px-3 py-1.5 flex items-center gap-2 text-primary font-semibold"
+                  className="px-3 py-1.5 flex items-center gap-2 text-primary font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-md touch-manipulation"
                   tabIndex={-1}
                 >
                   {tab.icon}
@@ -91,7 +91,9 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="hidden md:block">terms</div>
+      <div className="hidden md:block text-sm text-muted-foreground uppercase tracking-tight">
+        2026 © diip3sh. Open to use for free
+      </div>
     </div>
   );
 }

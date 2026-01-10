@@ -65,6 +65,7 @@ export function Video({ src, className }: VideoProps) {
       onBlur={handlePause}
       onMouseEnter={handlePlay}
       onMouseLeave={handlePause}
+      aria-label={`Video: ${src.split("/").pop() || "project video"}`}
     >
       <source src={src} type="video/mp4" />
       <track kind="captions" srcLang="en" label="English" default />

@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Geist, Geist_Mono, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Dithering } from "@paper-design/shaders-react";
 import Footer from "@/components/footer";
@@ -16,13 +16,18 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const jetBrainsMono = JetBrains_Mono({
+  variable: "--font-jet-brains-mono",
+  subsets: ["latin"],
+});
+
 const siteUrl = "https://dip3sh.com";
 const openGraphImage = "/android-chrome-512x512.png";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "diip3sh — Design & Frontend Engineer",
+    default: "Design & Frontend Engineer",
     template: "%s | diip3sh",
   },
   description:
@@ -80,7 +85,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "diip3sh — Design & Frontend Engineer",
+    title: "Design & Frontend Engineer",
     description:
       "Design & Frontend Engineer specializing in React, Next.js, TypeScript, and React Native. Building fast, accessible, AI-powered interfaces.",
     creator: "@diip3sh",
@@ -102,6 +107,14 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  themeColor: "#030712",
+  viewportFit: "cover",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -110,8 +123,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased font-mono`}
+        className={`${geistSans.variable} ${geistMono.variable} ${jetBrainsMono.variable} antialiased font-mono`}
       >
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-background focus:text-foreground"
+        >
+          Skip to content
+        </a>
         <div className="flex flex-col min-h-screen px-3">
           <Dithering
             colorBack="#e5e5e5"
@@ -121,10 +140,11 @@ export default function RootLayout({
             size={2.2}
             speed={0.86}
             scale={0.68}
-            className="absolute top-0 left-0 w-full h-screen -z-10 opacity-20"
+            className="absolute top-0 left-0 w-full h-screen -z-10 opacity-20 dithering-effect"
           />
           <Navbar />
           <div
+            id="main-content"
             className={cn(
               "bg-background overflow-auto rounded-[25px] corner-squircle",
               "shadow-[0px_4px_16px_rgba(17,17,26,0.1),0px_8px_24px_rgba(17,17,26,0.1),0px_16px_56px_rgba(17,17,26,0.1)]",

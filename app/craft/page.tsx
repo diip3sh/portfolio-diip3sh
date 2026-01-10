@@ -57,7 +57,7 @@ const CraftGridTwo = () => {
                     <Link
                       href={item.xlink}
                       target="_blank"
-                      className="inline-flex items-center gap-2 rounded-md border border-white/20 bg-black/10 px-2 py-1 text-xs font-medium text-white backdrop-blur-md transition-colors hover:bg-black/70 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                      className="inline-flex items-center gap-2 rounded-md border border-white/20 bg-black/10 px-2 py-1 text-xs font-medium text-white backdrop-blur-md transition-colors hover:bg-black/70 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 touch-manipulation"
                     >
                       <XformerlyTwitter className="h-3 w-3 fill-white" />
                       View

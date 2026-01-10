@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { HeatMapButton } from "./ui/buttons";
 
@@ -7,13 +8,19 @@ export default function Navbar() {
     <div className="h-[60px] w-full py-2.5">
       <div className="flex items-center justify-between">
         <div className="p-px bg-muted rounded-xl ml-1.5">
-          <Image
-            src="/logo.png"
-            alt="Globe"
-            width={512}
-            height={512}
-            className="text-black size-8 rounded-xl"
-          />
+          <Link
+            href="/"
+            className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-xl"
+            aria-label="Home - diip3sh portfolio"
+          >
+            <Image
+              src="/logo.png"
+              alt="Globe"
+              width={512}
+              height={512}
+              className="text-black size-8 rounded-xl"
+            />
+          </Link>
         </div>
         <HeatMapButton className="rounded-full flex gap-2 items-center cursor-pointer uppercase p-[3px]">
           <div

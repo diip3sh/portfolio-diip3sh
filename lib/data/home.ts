@@ -57,10 +57,7 @@ export const whatIBuildData = [
   "Web Apps",
   "Frontend Architecture",
   "Landing Pages",
-  "UX to DX",
   "Interaction Design",
-  "Refactors",
-  "Design Tokens",
   "A11y Audits",
 ];
 
@@ -71,7 +68,6 @@ export const domainsData = [
   { label: "Crypto", logo: Bitcoin01FreeIcons },
   { label: "Ecommerce", logo: ShoppingBasket01FreeIcons },
   { label: "Creators", logo: SmartPhone02FreeIcons },
-  { label: "Gaming", logo: VideoConsoleFreeIcons },
 ];
 
 export const stackData = [
@@ -104,8 +100,6 @@ export const stackData = [
   // Tools
   { label: "Git", logo: "/git.svg" },
   { label: "Figma", logo: "/figma.svg" },
-  // { label: "Vercel", logo: "/vercel.svg" },
-  // { label: "Cursor", logo: "/cursor.svg" },
 ];
 
 export const faqs = [
