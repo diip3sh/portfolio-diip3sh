@@ -17,11 +17,21 @@ export const PageFooter = () => {
       </span>
       <div className="flex gap-2 items-center">
         <span>Follow on</span>
-        <XformerlyTwitter fill="#00000a" height={12} width={12} />,
-        <LinkedInIcon fill="#00000a" height={16} width={16} /> OR
-        <GitHub fill="#00000a" height={16} width={16} />
+        <XformerlyTwitter
+          fill="#00000a"
+          height={12}
+          width={12}
+          aria-label="X (formerly Twitter)"
+        />
+        ,{" "}
+        <LinkedInIcon
+          fill="#00000a"
+          height={16}
+          width={16}
+          aria-label="LinkedIn"
+        />{" "}
+        OR <GitHub fill="#00000a" height={16} width={16} aria-label="GitHub" />
       </div>
-      <span>© 2025 diip3sh. Open to use for free.</span>
     </div>
   );
 };

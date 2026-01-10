@@ -16,6 +16,7 @@ export const AccordianComponent = ({ data }: { data: DataProp[] }) => {
         <Accordion.Root
           className="flex w-full flex-col gap-4 justify-center font-sans tracking-wide"
           keepMounted
+          suppressHydrationWarning
         >
           {data.map((item) => (
             <Accordion.Item

@@ -5,7 +5,6 @@ import { Container } from "@/components/container";
 import { PageFooter } from "@/components/page-footer";
 import { AccordianComponent } from "@/components/ui/accordion";
 import { SocialButton } from "@/components/ui/buttons";
-import { LineShadowText } from "@/components/ui/line-shadow-text";
 import { SubHeadingText } from "@/components/ui/text";
 import { WorkExperience } from "@/components/work-experience";
 import {
@@ -69,14 +68,13 @@ const HomeGridTwo = () => {
     <div className="flex flex-col gap-12">
       <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-4">
-          <SubHeadingText text="Services" />
+          <SubHeadingText text="fields of work" />
 
-          <p className="lg:max-w-[80%] text-muted-foreground text-wrap font-sans">
-            Design with intent - sharp, functional and user-first. No fluff,
-            just digital experiences that feel right and work fast. From
-            startups to market leaders, we&apos;ve done this for over 10 years
-            for companies in a wide range of categories, using the best and
-            latest tools.
+          <p className="lg:max-w-[90%] text-muted-foreground text-wrap font-sans">
+            Design & code with intent. Sharp. Functional. User-first. Zero
+            fluff. Pure digital experiences that feel right and load/perform
+            fast. 3+ years moving from promising startups to category-defining
+            companies — wide range of verticals, latest tools, no compromises.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-1 gap-8">
@@ -151,16 +149,16 @@ const HomeGridTwo = () => {
         <SubHeadingText text="Few Works" />
 
         <div className="flex flex-col gap-6">
-          {Array.from({ length: 3 }).map((_, i) => (
-            <div key={i} className="flex flex-col gap-4">
+          {Array.from({ length: 3 }).map((_) => (
+            <div key={Math.random()} className="flex flex-col gap-4">
               <Image
                 src={
                   "https://framerusercontent.com/images/GMRu9EwZtu12CzGtRcBYmg5yXvo.png"
                 }
-                alt="work"
+                alt="Vesta project showcase - Product Design & Engineering"
                 height={840}
                 width={500}
-                className="h-auto w-full lg:w-[max(min(100vw - 56px, 720px), 1px)] rounded-lg"
+                className="h-[30dvh] w-full lg:w-[max(min(100vw - 56px, 720px), 1px)] rounded-lg"
                 sizes="(max-width: 720px) calc(100vw - 56px), 720px"
               />
               <div className="">

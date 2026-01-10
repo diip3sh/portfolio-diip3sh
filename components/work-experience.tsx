@@ -48,7 +48,7 @@ export const WorkExperience = () => {
                 reduceMotion
                   ? { duration: 0 }
                   : {
-                      duration: 5,
+                      duration: 0.8,
                       ease: "linear",
                       repeat: Number.POSITIVE_INFINITY,
                     }

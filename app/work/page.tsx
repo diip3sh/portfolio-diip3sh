@@ -33,7 +33,7 @@ const WorkGridTwo = () => {
               src={
                 "https://framerusercontent.com/images/GMRu9EwZtu12CzGtRcBYmg5yXvo.png"
               }
-              alt="work"
+              alt="Vesta project showcase - Product Design & Engineering"
               height={840}
               width={500}
               className="h-auto w-full lg:w-[max(min(100vw - 56px, 720px), 1px)] rounded-lg"
