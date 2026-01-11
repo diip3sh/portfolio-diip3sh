@@ -22,11 +22,11 @@ export default function Navbar() {
             />
           </Link>
         </div>
-        <HeatMapButton className="rounded-full flex gap-2 items-center cursor-pointer uppercase p-[3px]">
+        <HeatMapButton className="rounded-full flex gap-2 items-center cursor-pointer uppercase p-1">
           <div
             className={cn(
               "flex items-center gap-2 rounded-full bg-background px-4 py-1",
-              "shadow-[0_8px_30px_rgb(0,0,0,0.12)]",
+              "shadow-[0px_2px_0px_0px_var(--color-neutral-50)_inset,0px_0.5px_1px_0px_var(--color-neutral-400)]",
             )}
           >
             <div className="size-2 bg-green-500 rounded-full animate-pulse"></div>

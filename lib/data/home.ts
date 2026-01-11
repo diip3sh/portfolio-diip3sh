@@ -9,6 +9,7 @@ import {
   SparklesIcon,
   VideoConsoleFreeIcons,
 } from "@hugeicons/core-free-icons";
+import { title } from "process";
 
 export const homeSection1 = [
   {
@@ -136,7 +137,19 @@ export const faqs = [
 ];
 
 
-// const selectedWorks = [
-//   {
-//     title: ""
-//   }
+export const openSourceContributions = [
+  {
+    project: "MagicUI",
+    link: "https://magicui.design/",
+    description: "150+ free and open-source animated components and effects built with React, Typescript, Tailwind CSS, and Motion.",
+    image: "/magic-ui.svg",
+    stars: "19.6k"
+  },
+  {
+    project: "Motion Primitives",
+    link: "https://motion-primitives.com/",
+    description: "Beautifully designed motions components. Easy copy-paste. Customizable. Open Source. Built for engineers and designers.",
+    image: "/motion-primitives.svg",
+    stars: "5.3k"
+  }
+]
