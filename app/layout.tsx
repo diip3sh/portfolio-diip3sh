@@ -21,8 +21,12 @@ const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
 });
 
-const siteUrl = "https://dip3sh.com";
-const openGraphImage = "/android-chrome-512x512.png";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+
+if (!siteUrl) {
+  throw new Error("NEXT_PUBLIC_SITE_URL is not set");
+}
+const openGraphImage = "/og.png";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -57,11 +61,6 @@ export const metadata: Metadata = {
     },
   ],
   applicationName: "diip3sh Portfolio",
-  colorScheme: "dark",
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f8fafc" },
-    { media: "(prefers-color-scheme: dark)", color: "#030712" },
-  ],
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
