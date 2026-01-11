@@ -162,16 +162,6 @@ body {
 }
 
 @layer utilities {
-  /* Hide scrollbar for Chrome, Safari and Opera */
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  /* Hide scrollbar for IE, Edge and Firefox */
-  .no-scrollbar {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: 0; /* Firefox */
-  }
-
   @media (prefers-reduced-motion: reduce) {
     .dithering-effect {
       opacity: 0.05 !important;
@@ -197,4 +187,9 @@ body {
       }
     }
   }
+}
+
+/* width */
+::-webkit-scrollbar {
+    display: none;
 }

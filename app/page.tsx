@@ -1,19 +1,24 @@
-import { Add01FreeIcons } from "@hugeicons/core-free-icons";
+import { Add01FreeIcons, Attachment01Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import Image from "next/image";
+import Link from "next/link";
 import { Container } from "@/components/container";
 import { PageFooter } from "@/components/page-footer";
 import { AccordianComponent } from "@/components/ui/accordion";
 import { SocialButton } from "@/components/ui/buttons";
+import { ImageShowcase } from "@/components/ui/image-showcase";
 import { SubHeadingText } from "@/components/ui/text";
+import { WorkCardShuffle } from "@/components/work-card-shuffle";
 import { WorkExperience } from "@/components/work-experience";
 import {
   domainsData,
   faqs,
   homeSection1,
+  openSourceContributions,
   stackData,
   whatIBuildData,
 } from "@/lib/data/home";
+import { GitHub } from "@/lib/svg/github";
 import { Gmail } from "@/lib/svg/gmail";
 import { XformerlyTwitter } from "@/lib/svg/x";
 
@@ -76,6 +81,10 @@ const HomeGridTwo = () => {
             fast. 3+ years moving from promising startups to category-defining
             companies — wide range of verticals, latest tools, no compromises.
           </p>
+
+          <div className="hidden xl:block">
+            <WorkCardShuffle />
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-1 gap-8">
             {/* What I Build */}
@@ -149,7 +158,7 @@ const HomeGridTwo = () => {
         <SubHeadingText text="Few Works" />
 
         <div className="flex flex-col gap-6">
-          {Array.from({ length: 3 }).map((_) => (
+          {Array.from({ length: 2 }).map((_) => (
             <div key={Math.random()} className="flex flex-col gap-4">
               <Image
                 src={
@@ -167,6 +176,34 @@ const HomeGridTwo = () => {
                   Product Design & Engineering
                 </p>
               </div>
+            </div>
+          ))}
+        </div>
+
+        <SubHeadingText text="some open-source contributions" />
+
+        <div className="flex flex-col gap-6">
+          {openSourceContributions.map((item) => (
+            <div key={item.project} className="flex flex-col gap-4">
+              <ImageShowcase image={item.image} alt={item.project} />
+              <div className="flex justify-between items-end">
+                <Link
+                  href={item.link}
+                  className="font-medium uppercase flex items-center gap-2 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-md touch-manipulation hover:text-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <HugeiconsIcon icon={Attachment01Icon} className="size-4" />
+                  {item.project}
+                </Link>
+                <div className="inline-flex items-center gap-2 rounded-md border border-border px-2 py-1 text-xs font-medium backdrop-blur-md transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 touch-manipulation shadown-xl">
+                  <GitHub className="h-3 w-3 fill-muted-foreground" />
+                  {item.stars}
+                </div>
+              </div>
+              <p className="text-muted-foreground font-sans">
+                {item.description}
+              </p>
             </div>
           ))}
         </div>
