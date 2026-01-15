@@ -1,5 +1,3 @@
-// import { AppWindow, Banknote, Gamepad2, Gpu, ShoppingBag, Smartphone, Sparkles } from "lucide-react";
-
 import {
   Bitcoin01FreeIcons,
   Cash01FreeIcons,
@@ -7,9 +5,7 @@ import {
   ShoppingBasket01FreeIcons,
   SmartPhone02FreeIcons,
   SparklesIcon,
-  VideoConsoleFreeIcons,
 } from "@hugeicons/core-free-icons";
-import { title } from "process";
 
 export const homeSection1 = [
   {
@@ -18,19 +14,19 @@ export const homeSection1 = [
   },
   {
     title: "Location",
-    value: "Worldwide",
+    value: "India/",
   },
   {
     title: "Experience",
     value: "3+ years",
   },
   {
-    title: "Roles",
+    title: "Role",
     value: "Design Engineer, Frontend Engineer",
   },
   {
     title: "Skillset",
-    value: "Design, Code and Strategy",
+    value: "Design, Code and Agile",
   },
 ];
 

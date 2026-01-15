@@ -83,11 +83,6 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Design & Frontend Engineer",
-    description:
-      "Design & Frontend Engineer specializing in React, Next.js, TypeScript, and React Native. Building fast, accessible, AI-powered interfaces.",
-    creator: "@diip3sh",
     images: [openGraphImage],
   },
   robots: {

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { HeatMapButton } from "./ui/buttons";
+import { LiquidMetalButton } from "./ui/buttons";
 
 export default function Navbar() {
   return (
@@ -15,24 +15,34 @@ export default function Navbar() {
           >
             <Image
               src="/logo.png"
-              alt="Globe"
+              alt="diip3sh logo"
               width={512}
               height={512}
               className="text-black size-8 rounded-xl"
             />
           </Link>
         </div>
-        <HeatMapButton className="rounded-full flex gap-2 items-center cursor-pointer uppercase p-1">
-          <div
-            className={cn(
-              "flex items-center gap-2 rounded-full bg-background px-4 py-1",
-              "shadow-[0px_2px_0px_0px_var(--color-neutral-50)_inset,0px_0.5px_1px_0px_var(--color-neutral-400)]",
-            )}
-          >
-            <div className="size-2 bg-green-500 rounded-full animate-pulse"></div>
-            <span className="">Open for work</span>
-          </div>
-        </HeatMapButton>
+        <Link
+          href={"https://cal.com/pilla-dipesh-dnyt7l/15min"}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <LiquidMetalButton className="rounded-full flex gap-2 items-center cursor-pointer uppercase p-0.5">
+            <div
+              className={cn(
+                "flex items-center gap-2 rounded-full bg-background px-4 py-1",
+                "shadow-[0px_2px_0px_0px_var(--color-neutral-50)_inset,0px_0.5px_1px_0px_var(--color-neutral-400)]",
+              )}
+            >
+              {/* <div className="size-2 bg-primary rounded-full animate-ping opacity-75"></div> */}
+              <span className="relative flex size-2.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
+                <span className="relative inline-flex size-2.5 rounded-full bg-primary"></span>
+              </span>
+              <span className="font-semibold text-primary">Hire me</span>
+            </div>
+          </LiquidMetalButton>
+        </Link>
       </div>
     </div>
   );

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { GitHub } from "@/lib/svg/github";
 import { LinkedInIcon } from "@/lib/svg/linkedin";
 import { XformerlyTwitter } from "@/lib/svg/x";
@@ -11,26 +12,50 @@ export const PageFooter = () => {
       </span>
       <span>
         Source code on{" "}
-        <span className="underline font-bold uppercase tracking-normal font-mono">
+        <a
+          href="https://github.com/dip3sh/portfolio"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline font-bold uppercase tracking-normal font-mono hover:text-primary transition-colors"
+        >
           GitHub
-        </span>
+        </a>
       </span>
       <div className="flex gap-2 items-center">
         <span>Follow on</span>
-        <XformerlyTwitter
-          fill="#00000a"
-          height={12}
-          width={12}
-          aria-label="X (formerly Twitter)"
-        />
-        ,{" "}
-        <LinkedInIcon
-          fill="#00000a"
-          height={16}
-          width={16}
-          aria-label="LinkedIn"
-        />{" "}
-        OR <GitHub fill="#00000a" height={16} width={16} aria-label="GitHub" />
+        <Link
+          href={"https://www.x.com/diip3sh"}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <XformerlyTwitter
+            fill="#00000a"
+            height={12}
+            width={12}
+            aria-label="X (formerly Twitter)"
+          />
+        </Link>
+        ,
+        <Link
+          href={"https://www.linkedin.com/in/diip3sh/"}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <LinkedInIcon
+            fill="#00000a"
+            height={16}
+            width={16}
+            aria-label="LinkedIn"
+          />
+        </Link>{" "}
+        OR{" "}
+        <Link
+          href={"https://github.com/diip3sh"}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <GitHub fill="#00000a" height={16} width={16} aria-label="GitHub" />
+        </Link>
       </div>
     </div>
   );
