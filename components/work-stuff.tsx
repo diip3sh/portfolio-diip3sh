@@ -41,6 +41,18 @@ export const WorkStuff = () => {
           </p>
         </div>
       </section>
+      <section className="flex flex-col gap-4">
+        <ImageShowcase
+          image="https://framerusercontent.com/images/GMRu9EwZtu12CzGtRcBYmg5yXvo.png"
+          alt="Vesta project showcase - Product Design & Engineering"
+        />
+        <div className="">
+          <h3 className="font-medium uppercase">Vesta</h3>
+          <p className="text-muted-foreground font-sans">
+            Product Design & Engineering
+          </p>
+        </div>
+      </section>
     </main>
   );
 };

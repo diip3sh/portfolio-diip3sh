@@ -27,19 +27,18 @@ export default function Navbar() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <LiquidMetalButton className="rounded-full flex gap-2 items-center cursor-pointer uppercase p-0.5">
+          <LiquidMetalButton className="rounded-full flex gap-2 items-center cursor-pointer p-0.5">
             <div
               className={cn(
                 "flex items-center gap-2 rounded-full bg-background px-4 py-1",
                 "shadow-[0px_2px_0px_0px_var(--color-neutral-50)_inset,0px_0.5px_1px_0px_var(--color-neutral-400)]",
               )}
             >
-              {/* <div className="size-2 bg-primary rounded-full animate-ping opacity-75"></div> */}
               <span className="relative flex size-2.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
-                <span className="relative inline-flex size-2.5 rounded-full bg-primary"></span>
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-600 opacity-75"></span>
+                <span className="relative inline-flex size-2.5 rounded-full bg-emerald-500"></span>
               </span>
-              <span className="font-semibold text-primary">Hire me</span>
+              <span className="font-sans">Open to roles</span>
             </div>
           </LiquidMetalButton>
         </Link>
