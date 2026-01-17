@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { LiquidMetalButton } from "./ui/buttons";
+// import { LiquidMetalButton } from "./ui/buttons";
+import { LiquidMetalButton } from "./ui/liquid-metal";
 
 export default function Navbar() {
   return (
@@ -27,18 +28,16 @@ export default function Navbar() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <LiquidMetalButton className="rounded-full flex gap-2 items-center cursor-pointer p-0.5">
-            <div
-              className={cn(
-                "flex items-center gap-2 rounded-full bg-background px-4 py-1",
-                "shadow-[0px_2px_0px_0px_var(--color-neutral-50)_inset,0px_0.5px_1px_0px_var(--color-neutral-400)]",
-              )}
-            >
+          <LiquidMetalButton
+            size="sm"
+            metalConfig={{ colorBack: "#064e3b", colorTint: "#10b981" }}
+          >
+            <div className="flex items-center gap-2">
               <span className="relative flex size-2.5">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-600 opacity-75"></span>
                 <span className="relative inline-flex size-2.5 rounded-full bg-emerald-500"></span>
               </span>
-              <span className="font-sans">Open to roles</span>
+              <span className="font-sans">Open To Roles</span>
             </div>
           </LiquidMetalButton>
         </Link>

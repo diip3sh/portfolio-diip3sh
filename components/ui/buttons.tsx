@@ -64,8 +64,8 @@ export const LiquidMetalButton = ({
 }) => {
   return (
     <LiquidMetal
-      colorBack="#f3f4f6"
-      // colorTint="#ffffff"
+      colorBack="#78350f"
+      colorTint="#fbbf24"
       shape="none"
       repetition={2.5}
       softness={0.25}
