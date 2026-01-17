@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { workExperience } from "@/lib/data/home";
+import { cn } from "@/lib/utils";
 
 export const WorkExperience = () => {
   const [reduceMotion, setReduceMotion] = useState(false);
@@ -16,12 +17,10 @@ export const WorkExperience = () => {
   }, []);
   return (
     <div className="flex flex-col gap-6 w-full">
-      {/* Timeline Container */}
       <div className="relative w-full">
-        {/* Horizontal Line SVG */}
         <div className="absolute top-[6px] left-0 right-0 h-[2px] overflow-visible z-0">
           <svg
-            className="w-full h-full overflow-visible"
+            className="w-full h-full overflow-visible z-0"
             preserveAspectRatio="none"
           >
             <title>Work Experience Timeline</title>
@@ -41,14 +40,14 @@ export const WorkExperience = () => {
               x2="0"
               y2="1"
               className="stroke-primary"
-              strokeWidth="1"
+              strokeWidth="2"
               initial={{ pathLength: 0 }}
               animate={{ pathLength: 1 }}
               transition={
                 reduceMotion
                   ? { duration: 0 }
                   : {
-                      duration: 0.8,
+                      duration: 10,
                       ease: "linear",
                       repeat: Number.POSITIVE_INFINITY,
                     }
@@ -70,28 +69,32 @@ export const WorkExperience = () => {
                 className="relative flex flex-col gap-2 min-w-0"
               >
                 {/* Dot */}
-                <div className="absolute left-0 -top-[24px] z-10 w-3 h-3 flex items-center justify-center">
+                <div className="absolute left-0 -top-[24px] z-20 w-3 h-3 flex items-center justify-center">
                   {isCurrent && (
                     <motion.div
-                      className="absolute inset-0 bg-primary/30 rounded-full"
+                      className="absolute inset-0 bg-primary rounded-full"
                       initial={{ scale: 1, opacity: 0.5 }}
                       animate={{ scale: 2.5, opacity: 0 }}
                       transition={
                         reduceMotion
                           ? { duration: 0 }
                           : {
-                              duration: 1.5,
+                              duration: 20,
                               repeat: Number.POSITIVE_INFINITY,
-                              ease: "easeOut",
+                              ease: "linear",
                             }
                       }
                     />
                   )}
-                  <div
-                    className={`w-2.5 h-2.5 rounded-full ring-4 ring-background ${
-                      isCurrent ? "bg-primary" : "bg-primary/50"
-                    }`}
-                  />
+                  <span className="relative flex size-2.5">
+                    <span
+                      className={cn(
+                        "absolute inline-flex h-full w-full rounded-full bg-primary opacity-75",
+                        isCurrent ? "animate-ping" : "hidden",
+                      )}
+                    />
+                    <span className="relative inline-flex size-2.5 rounded-full bg-primary"></span>
+                  </span>
                 </div>
 
                 {/* Content */}

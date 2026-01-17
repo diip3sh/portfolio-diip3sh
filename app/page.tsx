@@ -10,6 +10,7 @@ import { ImageShowcase } from "@/components/ui/image-showcase";
 import { SubHeadingText } from "@/components/ui/text";
 import { WorkCardShuffle } from "@/components/work-card-shuffle";
 import { WorkExperience } from "@/components/work-experience";
+import { WorkStuff } from "@/components/work-stuff";
 import {
   domainsData,
   faqs,
@@ -50,14 +51,14 @@ const HomeGridOne = () => {
           pretty.
         </div>
         <div className="flex gap-2.5 items-center w-full">
-          <SocialButton>
+          <SocialButton onClickAction={"https://x.com/diip3sh"}>
             <XformerlyTwitter fill="#00000a" height={12} width={12} />
             <span>Twitter DM</span>
           </SocialButton>
           <span className="text-xs text-muted-foreground font-semibold">
             OR
           </span>
-          <SocialButton>
+          <SocialButton onClickAction="mailto:pilla.dipesh@gmail.com">
             <Gmail fill="#00000a" height={12} width={12} />
             <span>Mail Me</span>
           </SocialButton>
@@ -155,34 +156,13 @@ const HomeGridTwo = () => {
           </div>
         </div>
 
-        <SubHeadingText text="Few Works" />
+        <SubHeadingText text="Features I Recently worked on" />
 
-        <div className="flex flex-col gap-6">
-          {Array.from({ length: 2 }).map((_) => (
-            <div key={Math.random()} className="flex flex-col gap-4">
-              <Image
-                src={
-                  "https://framerusercontent.com/images/GMRu9EwZtu12CzGtRcBYmg5yXvo.png"
-                }
-                alt="Vesta project showcase - Product Design & Engineering"
-                height={840}
-                width={500}
-                className="h-[30dvh] w-full lg:w-[max(min(100vw - 56px, 720px), 1px)] rounded-lg"
-                sizes="(max-width: 720px) calc(100vw - 56px), 720px"
-              />
-              <div className="">
-                <h3 className="font-medium uppercase">Vesta</h3>
-                <p className="text-muted-foreground font-sans">
-                  Product Design & Engineering
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
+        <WorkStuff />
 
-        <SubHeadingText text="some open-source contributions" />
+        <SubHeadingText text="open-source contributions" />
 
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col md:flex-row gap-6">
           {openSourceContributions.map((item) => (
             <div key={item.project} className="flex flex-col gap-4">
               <ImageShowcase image={item.image} alt={item.project} />

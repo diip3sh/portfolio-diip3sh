@@ -46,7 +46,7 @@ export const AccordianComponent = ({ data }: { data: DataProp[] }) => {
                 />
               }
               key={item.question}
-              className="data-open:bg-primary rounded-[14px] corner-squircle bg-[#e5e5e5] data-open:text-secondary"
+              className="data-open:bg-primary rounded-[14px] bg-[#e5e5e5] data-open:text-secondary"
             >
               <Accordion.Header className="">
                 <Accordion.Trigger className="group relative flex w-full items-start justify-between gap-4 py-2 pr-1 pl-3 text-left font-medium focus-visible:z-1 focus-visible:outline focus-visible:outline-primary">

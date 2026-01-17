@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { HeatMapButton } from "./ui/buttons";
+// import { LiquidMetalButton } from "./ui/buttons";
+import { LiquidMetalButton } from "./ui/liquid-metal";
 
 export default function Navbar() {
   return (
@@ -15,24 +16,31 @@ export default function Navbar() {
           >
             <Image
               src="/logo.png"
-              alt="Globe"
+              alt="diip3sh logo"
               width={512}
               height={512}
               className="text-black size-8 rounded-xl"
             />
           </Link>
         </div>
-        <HeatMapButton className="rounded-full flex gap-2 items-center cursor-pointer uppercase p-1">
-          <div
-            className={cn(
-              "flex items-center gap-2 rounded-full bg-background px-4 py-1",
-              "shadow-[0px_2px_0px_0px_var(--color-neutral-50)_inset,0px_0.5px_1px_0px_var(--color-neutral-400)]",
-            )}
+        <Link
+          href={"https://cal.com/pilla-dipesh-dnyt7l/15min"}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <LiquidMetalButton
+            size="sm"
+            metalConfig={{ colorBack: "#064e3b", colorTint: "#10b981" }}
           >
-            <div className="size-2 bg-green-500 rounded-full animate-pulse"></div>
-            <span className="">Open for work</span>
-          </div>
-        </HeatMapButton>
+            <div className="flex items-center gap-2">
+              <span className="relative flex size-2.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-600 opacity-75"></span>
+                <span className="relative inline-flex size-2.5 rounded-full bg-emerald-500"></span>
+              </span>
+              <span className="font-sans">Open To Roles</span>
+            </div>
+          </LiquidMetalButton>
+        </Link>
       </div>
     </div>
   );

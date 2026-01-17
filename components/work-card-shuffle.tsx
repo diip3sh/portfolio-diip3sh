@@ -45,7 +45,7 @@ export const WorkCardShuffle = () => {
         <motion.div
           onHoverStart={() => setHovered(true)}
           onHoverEnd={() => setHovered(false)}
-          className="relative flex items-center h-[250px] w-full pl-40 z-50 group"
+          className="relative flex items-center h-[250px] w-full pl-36 z-50 group"
         >
           {cards.map((card, index) => {
             const x = index * 60 - ((cards.length - 1) * 30) / 2;
@@ -55,7 +55,7 @@ export const WorkCardShuffle = () => {
               <motion.div
                 key={card.id}
                 className={cn(
-                  "absolute w-[220px] h-[200px] bg-card rounded-[20px] p-2 shadow-xl border border-border cursor-pointer will-change-transform",
+                  "absolute w-[220px] h-[200px] bg-card rounded-[20px] p-1 shadow-xl border border-border cursor-pointer will-change-transform",
                 )}
                 animate={{
                   rotate: 10,
@@ -71,7 +71,7 @@ export const WorkCardShuffle = () => {
                 <div className="w-full h-full relative overflow-hidden rounded-[14px]">
                   <Image
                     src={card.src}
-                    alt="Work card"
+                    alt={`Project ${card.id} showcase`}
                     fill
                     className="object-cover pointer-events-none"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -84,7 +84,7 @@ export const WorkCardShuffle = () => {
           })}
         </motion.div>
       </AnimatePresence>
-      <span className="text-primary text-sm absolute top-40 right-28 z-10 font-sans font-semibold">
+      <span className="text-primary text-sm absolute top-40 right-28 z-10 font-mono font-normal uppercase max-w-[120px] text-right">
         Let's make it
         <br />
         resonate.
