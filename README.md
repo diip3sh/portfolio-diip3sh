@@ -4,6 +4,8 @@ A modern, pixel-perfect portfolio showcasing design engineering work, featuring 
 
 → Check out the live site: [diip3sh.netlify.app](https://diip3sh.netlify.app)
 
+[![Portfolio Screenshot](https://i.ibb.co/Mbfdr7M/SCR-20260118-pncy.png)](https://diip3sh.netlify.app)
+
 ## Overview
 
 ### Stack
