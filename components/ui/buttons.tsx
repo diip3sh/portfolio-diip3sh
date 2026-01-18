@@ -1,6 +1,5 @@
 "use client";
 
-import { Heatmap, LiquidMetal } from "@paper-design/shaders-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
@@ -24,63 +23,5 @@ export const SocialButton = ({
     >
       {children}
     </Link>
-  );
-};
-
-export const HeatMapButton = ({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) => {
-  return (
-    <Heatmap
-      image="/rectangle.svg"
-      colors={["#e6e6e6", "#ff6a00"]}
-      colorBack="#1c1c1c"
-      contour={0.5}
-      angle={72}
-      noise={0}
-      innerGlow={0.57}
-      outerGlow={0}
-      speed={1}
-      scale={3}
-      className={cn(className, "touch-manipulation")}
-    >
-      {children}
-    </Heatmap>
-  );
-};
-
-export const LiquidMetalButton = ({
-  children,
-  className,
-  // onClickAction,
-}: {
-  children: React.ReactNode;
-  className?: string;
-  // onClickAction?: () => void;
-}) => {
-  return (
-    <LiquidMetal
-      colorBack="#78350f"
-      colorTint="#fbbf24"
-      shape="none"
-      repetition={2.5}
-      softness={0.25}
-      shiftRed={0.3}
-      shiftBlue={0.3}
-      distortion={0.1}
-      contour={0.4}
-      angle={90}
-      speed={1}
-      scale={1.5}
-      fit="contain"
-      className={cn(className, "touch-manipulation")}
-      // onClick={onClickAction}
-    >
-      {children}
-    </LiquidMetal>
   );
 };

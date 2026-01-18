@@ -45,7 +45,7 @@ export const WorkCardShuffle = () => {
         <motion.div
           onHoverStart={() => setHovered(true)}
           onHoverEnd={() => setHovered(false)}
-          className="relative flex items-center h-[250px] w-full pl-36 z-50 group"
+          className="relative flex items-center h-[250px] w-full xl:pl-36 z-50 group"
         >
           {cards.map((card, index) => {
             const x = index * 60 - ((cards.length - 1) * 30) / 2;
@@ -84,10 +84,8 @@ export const WorkCardShuffle = () => {
           })}
         </motion.div>
       </AnimatePresence>
-      <span className="text-primary text-sm absolute top-40 right-28 z-10 font-mono font-normal uppercase max-w-[120px] text-right">
-        Let's make it
-        <br />
-        resonate.
+      <span className="text-primary text-sm z-10 font-mono font-normal uppercase mr-10">
+        Let's make it resonate.
       </span>
     </div>
   );

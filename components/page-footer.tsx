@@ -7,8 +7,7 @@ export const PageFooter = () => {
   return (
     <div className="flex flex-col gap-2 text-muted-foreground text-sm font-sans">
       <span>
-        Designed and Build by{" "}
-        <span className="text-primary font-medium">@diip3sh</span>
+        Build by <span className="text-primary font-medium">@diip3sh</span>
       </span>
       <span>
         Source code on{" "}

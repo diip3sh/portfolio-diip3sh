@@ -149,3 +149,12 @@ export const openSourceContributions = [
     stars: "5.3k"
   }
 ]
+
+export const projectData = [
+  {
+    project: "Convertor",
+    link: "https://github.com/diip3sh/convertor",
+    description: "Converter any image, audio and video to any format without thinking of paywall or storage.",
+    video: "https://stream.mux.com/nrJtYqOx4Nizf8JPHUydH01rQ4ZSOb9y45mXUqoXPAHI.m3u8"
+  }
+]
