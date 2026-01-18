@@ -5,7 +5,6 @@
     "": {
       "name": "code",
       "dependencies": {
-        "@aliimam/icons": "^0.1.9",
         "@base-ui/react": "^1.0.0",
         "@hugeicons/core-free-icons": "^3.0.0",
         "@hugeicons/react": "^1.1.3",
@@ -32,8 +31,6 @@
     },
   },
   "packages": {
-    "@aliimam/icons": ["@aliimam/icons@0.1.9", "", { "peerDependencies": { "react": "^16.x || ^17.x || ^18.x || ^19.x" } }, "sha512-swL7tQ/YtCPBDQqB5wJz2s1aEHIJ681ZgTwjToeB8fbbHGGXPapAQU1K1Ny9LIXDasOwrZR41z22CskfHcDB7g=="],
-
     "@alloc/quick-lru": ["@alloc/quick-lru@5.2.0", "", {}, "sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw=="],
 
     "@babel/runtime": ["@babel/runtime@7.28.4", "", {}, "sha512-Q/N6JNWvIvPnLDvjlE1OUBLPQHH6l3CltCEsHIujp45zQUSSh8K+gHnaEX45yAT1nyngnINhvWtzN+Nb9D8RAQ=="],

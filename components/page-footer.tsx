@@ -11,14 +11,14 @@ export const PageFooter = () => {
       </span>
       <span>
         Source code on{" "}
-        <a
-          href="https://github.com/dip3sh/portfolio"
+        <Link
+          href="https://github.com/diip3sh/portfolio-diip3sh"
           target="_blank"
           rel="noopener noreferrer"
           className="underline font-bold uppercase tracking-normal font-mono hover:text-primary transition-colors"
         >
           GitHub
-        </a>
+        </Link>
       </span>
       <div className="flex gap-2 items-center">
         <span>Follow on</span>
