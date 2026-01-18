@@ -1,14 +1,289 @@
-# Animations Guidelines
+# AI Agent Guidelines for Portfolio Website
 
-## Keep your animations fast
+This guide provides essential information for AI agents working with the portfolio codebase - a Next.js dev portfolio website featuring work showcase, experience, and interactive components.
+
+## Project Overview
+
+Modern Next.js portfolio website with:
+
+- Interactive work showcase with shuffling animations
+- Work experience timeline
+- Craft/design section
+- Custom UI components with animations
+- Responsive design with dark/light mode support
+
+### Tech Stack
+
+- **Framework**: Next.js 14+ (App Router)
+- **Styling**: Tailwind CSS
+- **UI Components**: Custom components with shadcn/ui patterns
+- **Package Manager**: Bun
+- **Language**: TypeScript
+- **Animations**: CSS animations with performance optimizations
+- **Deployment**: Vercel
+
+## Project Structure
+
+### Key Directories
+
+- `app/` - Next.js App Router pages and layouts
+  - `page.tsx` - Homepage
+  - `work/page.tsx` - Work showcase page
+  - `craft/page.tsx` - Craft/design page
+  - `layout.tsx` - Root layout
+  - `globals.css` - Global styles
+- `components/` - Shared UI components
+  - `ui/` - Reusable UI components (buttons, text, etc.)
+  - `work-card-shuffle.tsx` - Interactive work card component
+  - `work-experience.tsx` - Experience timeline component
+  - `navbar.tsx` - Navigation component
+  - `footer.tsx` - Footer component
+- `lib/` - Utility libraries and data
+  - `data/` - Static data files (work, about, home content)
+  - `utils.ts` - Utility functions
+  - `svg/` - Custom SVG icon components
+- `public/` - Static assets (images, icons, etc.)
+
+### Important Files
+
+- `app/layout.tsx` - Root layout with metadata and fonts
+- `app/page.tsx` - Homepage component
+- `lib/data/home.ts` - Homepage content and configuration
+- `lib/data/work.ts` - Work showcase data
+- `lib/data/about.ts` - About section data
+- `components/work-card-shuffle.tsx` - Main interactive component
+- `components/work-experience.tsx` - Experience timeline
+- `tailwind.config.ts` - Tailwind configuration
+- `next.config.ts` - Next.js configuration
+
+## Component Architecture
+
+### Core Components
+
+**Work Card Shuffle** (`components/work-card-shuffle.tsx`):
+- Interactive card shuffling animation
+- Image gallery with smooth transitions
+- Responsive grid layout
+- Performance-optimized animations
+
+**Work Experience** (`components/work-experience.tsx`):
+- Timeline-based experience display
+- Smooth scrolling animations
+- Responsive design
+- Accessibility-compliant
+
+**UI Components** (`components/ui/`):
+- Reusable button, text, and layout components
+- Consistent styling patterns
+- Accessibility features
+
+### Animation System
+
+The project uses optimized CSS animations following these principles:
+
+- **Fast animations**: 0.2s-0.3s duration maximum
+- **Ease-out easing**: For natural motion
+- **Hardware acceleration**: Transform and opacity properties
+- **Reduced motion**: Respects `prefers-reduced-motion`
+
+## Development Guidelines
+
+### Getting Started
+
+```bash
+# Install dependencies
+bun install
+
+# Start development server
+bun dev  # Runs on default Next.js port (3000)
+
+# Build for production
+bun run build
+
+# Preview production build
+bun run start
+```
+
+### Code Standards
+
+- **TypeScript**: Strict mode with proper typing
+- **ESLint**: Biome configuration
+- **File naming**: kebab-case for components and files
+- **Component naming**: PascalCase for React components
+
+### Coding Guidelines
+
+When writing code for this project, follow these principles:
+
+- Write type-safe TypeScript code with explicit types
+- Use descriptive variable and function names
+- Prefer functional components with hooks
+- Implement accessibility features (ARIA labels, keyboard navigation)
+- Use Tailwind CSS classes for styling
+- Follow React best practices (keys, memoization when needed)
+- Keep components small and focused
+- Use early returns for cleaner code
+
+### Component Development
+
+1. Create component in `components/` directory
+2. Use TypeScript with proper prop types
+3. Implement accessibility features
+4. Add responsive design with Tailwind
+5. Include proper error handling
+6. Test component in different screen sizes
+
+## Working with Content
+
+### Portfolio Data Structure
+
+**Data Files** (`lib/data/`):
+
+- `home.ts` - Homepage hero section, featured work, stats
+- `work.ts` - Work showcase items with images, descriptions, links
+- `about.ts` - Personal information, skills, contact details
+- `craft.ts` - Craft/design projects data
+
+### Content Management
+
+- All content is managed through TypeScript data files
+- Images are stored in `public/` directory
+- SVG icons are React components in `lib/svg/`
+- Content supports internationalization-ready structure
+
+### Adding New Work
+
+1. Add work data to `lib/data/work.ts`
+2. Place images in `public/work/` directory
+3. Update component to handle new data structure
+4. Test responsive layout and animations
+
+## Animation Guidelines
+
+### Keep your animations fast
+
+- Default to use `ease-out` for most animations
+- Animations should never be longer than 1s (unless illustrative), most should be 0.2s-0.3s
+
+### Easing rules
+
+Use these custom easing functions for specific use cases:
+
+- **`ease-out`**: (Starts fast, slows down) Best for elements entering screen
+  - `ease-out-quad`: `cubic-bezier(.25, .46, .45, .94)`
+  - `ease-out-cubic`: `cubic-bezier(.215, .61, .355, 1)`
+  - `ease-out-quart`: `cubic-bezier(.165, .84, .44, 1)`
+
+### Performance Optimization
+
+- Use `transform` and `opacity` for animations
+- Avoid animating layout properties (`top`, `left`, `width`, `height`)
+- Respect `prefers-reduced-motion` media query
+- Use `will-change` sparingly for performance-critical animations
+
+## Environment & Configuration
+
+### Environment Variables
+
+The project uses minimal environment configuration:
+
+- Standard Next.js environment variables
+- No external API dependencies for core functionality
+- Vercel deployment configuration
+
+### Build Configuration
+
+- `next.config.ts` - Next.js configuration
+- `tailwind.config.ts` - Tailwind CSS configuration
+- `biome.json` - Code formatting and linting
+- `postcss.config.mjs` - PostCSS configuration
+
+## Common Tasks
+
+### Adding a New Work Item
+
+1. Update `lib/data/work.ts` with new work data
+2. Add corresponding images to `public/work/` directory
+3. Update `components/work-card-shuffle.tsx` if needed
+4. Test animations and responsive layout
+
+### Updating Personal Information
+
+1. Edit `lib/data/about.ts` for personal details
+2. Update `lib/data/home.ts` for homepage content
+3. Modify components to display new information
+4. Test all pages for consistency
+
+### Adding New Components
+
+1. Create component file in `components/` or `components/ui/`
+2. Implement with TypeScript and proper props
+3. Add accessibility features
+4. Use Tailwind classes for styling
+5. Import and use in appropriate pages
+
+### Styling Guidelines
+
+- Use Tailwind CSS utility classes
+- Follow existing color scheme and spacing
+- Implement responsive design (mobile-first)
+- Support both light and dark modes
+- Use CSS custom properties for theme colors
+
+## Important Notes
+
+### Performance Considerations
+
+- Components are optimized for fast loading
+- Images use Next.js Image component for optimization
+- Animations use CSS transforms for hardware acceleration
+- Bundle size is kept minimal
+
+### Accessibility Features
+
+- ARIA labels on interactive elements
+- Keyboard navigation support
+- Screen reader friendly
+- High contrast support
+- Reduced motion preferences respected
+
+### Browser Support
+
+- Modern browsers (Chrome, Firefox, Safari, Edge)
+- Mobile browsers (iOS Safari, Chrome Mobile)
+- Progressive enhancement approach
+
+### Personal Information
+
+When adapting this codebase, update ALL personal information:
+
+- `lib/data/about.ts` - Personal details and bio
+- `lib/data/home.ts` - Homepage content and branding
+- `lib/data/work.ts` - Work experience and projects
+- `public/` - Replace logo and images
+- Social media links in components
+
+## Build Commands
+
+```bash
+bun install          # Install dependencies
+bun dev              # Start development server
+bun run build        # Production build
+bun run start        # Start production server
+bun run lint         # Run linting
+```
+
+## Animations Guidelines
+
+### Keep your animations fast
 
 - Default to use `ease-out` for most animations.
-- Animations should never be longer than 1s (unless it’s illustrative), most of them should be around 0.2s to 0.3s.
+- Animations should never be longer than 1s (unless illustrative), most of them should be around 0.2s to 0.3s.
 
-## Easing rules
+### Easing rules
 
-- Don’t use built-in CSS easings unless it’s `ease` or `linear`.
-- Use the following easings for their described use case:
+Don't use built-in CSS easings unless it's `ease` or `linear`.
+Use the following easings for their described use case:
   - **`ease-in`**: (Starts slow, speeds up) Should generally be avoided as it makes the UI feel slow.
     - `ease-in-quad`: `cubic-bezier(.55, .085, .68, .53)`
     - `ease-in-cubic`: `cubic-bezier(.550, .055, .675, .19)`
@@ -61,117 +336,45 @@
 - Default to spring animations when using Framer Motion.
 - Avoid using bouncy spring animations unless you are working with drag gestures.
 
-Concise rules for building accessible, fast, delightful UIs Use MUST/SHOULD/NEVER to guide decisions
+---
 
-## Interactions
+# Add Documentation
 
-- Keyboard
-  - MUST: Full keyboard support per [WAI-ARIA APG](https://www.w3.org/WAI/ARIA/apg/patterns/)
-  - MUST: Visible focus rings (`:focus-visible`; group with `:focus-within`)
-  - MUST: Manage focus (trap, move, and return) per APG patterns
-- Targets & input
-  - MUST: Hit target ≥24px (mobile ≥44px) If visual <24px, expand hit area
-  - MUST: Mobile `<input>` font-size ≥16px or set:
-    ```html
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
-    ```
-  - NEVER: Disable browser zoom
-  - MUST: `touch-action: manipulation` to prevent double-tap zoom; set `-webkit-tap-highlight-color` to match design
-- Inputs & forms (behavior)
-  - MUST: Hydration-safe inputs (no lost focus/value)
-  - NEVER: Block paste in `<input>/<textarea>`
-  - MUST: Loading buttons show spinner and keep original label
-  - MUST: Enter submits focused text input In `<textarea>`, ⌘/Ctrl+Enter submits; Enter adds newline
-  - MUST: Keep submit enabled until request starts; then disable, show spinner, use idempotency key
-  - MUST: Don’t block typing; accept free text and validate after
-  - MUST: Allow submitting incomplete forms to surface validation
-  - MUST: Errors inline next to fields; on submit, focus first error
-  - MUST: `autocomplete` + meaningful `name`; correct `type` and `inputmode`
-  - SHOULD: Disable spellcheck for emails/codes/usernames
-  - SHOULD: Placeholders end with ellipsis and show example pattern (eg, `+1 (123) 456-7890`, `sk-012345…`)
-  - MUST: Warn on unsaved changes before navigation
-  - MUST: Compatible with password managers & 2FA; allow pasting one-time codes
-  - MUST: Trim values to handle text expansion trailing spaces
-  - MUST: No dead zones on checkboxes/radios; label+control share one generous hit target
-- State & navigation
-  - MUST: URL reflects state (deep-link filters/tabs/pagination/expanded panels) Prefer libs like [nuqs](https://nuqs.dev)
-  - MUST: Back/Forward restores scroll
-  - MUST: Links are links—use `<a>/<Link>` for navigation (support Cmd/Ctrl/middle-click)
-- Feedback
-  - SHOULD: Optimistic UI; reconcile on response; on failure show error and rollback or offer Undo
-  - MUST: Confirm destructive actions or provide Undo window
-  - MUST: Use polite `aria-live` for toasts/inline validation
-  - SHOULD: Ellipsis (`…`) for options that open follow-ups (eg, "Rename…") and loading states (eg, "Loading…", "Saving…", "Generating…")
-- Touch/drag/scroll
-  - MUST: Design forgiving interactions (generous targets, clear affordances; avoid finickiness)
-  - MUST: Delay first tooltip in a group; subsequent peers no delay
-  - MUST: Intentional `overscroll-behavior: contain` in modals/drawers
-  - MUST: During drag, disable text selection and set `inert` on dragged element/containers
-  - MUST: No “dead-looking” interactive zones—if it looks clickable, it is
-- Autofocus
-  - SHOULD: Autofocus on desktop when there’s a single primary input; rarely on mobile (to avoid layout shift)
+## Overview
 
-## Animation
+Add comprehensive documentation for the current code/feature and format it according to the project's documentation standards, including it in the appropriate location (README, docs folder, or inline comments).
 
-- MUST: Honor `prefers-reduced-motion` (provide reduced variant)
-- SHOULD: Prefer CSS > Web Animations API > JS libraries
-- MUST: Animate compositor-friendly props (`transform`, `opacity`); avoid layout/repaint props (`top/left/width/height`)
-- SHOULD: Animate only to clarify cause/effect or add deliberate delight
-- SHOULD: Choose easing to match the change (size/distance/trigger)
-- MUST: Animations are interruptible and input-driven (avoid autoplay)
-- MUST: Correct `transform-origin` (motion starts where it “physically” should)
+## Steps
 
-## Layout
+1. **Overview**
+    - What this code/feature does
+    - Why it exists and its purpose
+    - Key concepts and terminology
+2. **API Documentation**
+    - Function/method signatures
+    - Parameters and return values
+    - Example usage with code snippets
+    - Error handling and edge cases
+3. **Implementation Details**
+    - Architecture overview
+    - Important design decisions
+    - Dependencies and integrations
+4. **Examples**
+    - Common use cases with full examples
+    - Best practices and patterns
+    - Common pitfalls to avoid
 
-- SHOULD: Optical alignment; adjust by ±1px when perception beats geometry
-- MUST: Deliberate alignment to grid/baseline/edges/optical centers—no accidental placement
-- SHOULD: Balance icon/text lockups (stroke/weight/size/spacing/color)
-- MUST: Verify mobile, laptop, ultra-wide (simulate ultra-wide at 50% zoom)
-- MUST: Respect safe areas (use env(safe-area-inset-*))
-- MUST: Avoid unwanted scrollbars; fix overflows
+## Add Documentation Checklist
 
-## Content & Accessibility
-
-- SHOULD: Inline help first; tooltips last resort
-- MUST: Skeletons mirror final content to avoid layout shift
-- MUST: `<title>` matches current context
-- MUST: No dead ends; always offer next step/recovery
-- MUST: Design empty/sparse/dense/error states
-- SHOULD: Curly quotes (“ ”); avoid widows/orphans
-- MUST: Tabular numbers for comparisons (`font-variant-numeric: tabular-nums` or a mono like Geist Mono)
-- MUST: Redundant status cues (not color-only); icons have text labels
-- MUST: Don’t ship the schema—visuals may omit labels but accessible names still exist
-- MUST: Use the ellipsis character `…` (not ``)
-- MUST: `scroll-margin-top` on headings for anchored links; include a “Skip to content” link; hierarchical `<h1–h6>`
-- MUST: Resilient to user-generated content (short/avg/very long)
-- MUST: Locale-aware dates/times/numbers/currency
-- MUST: Accurate names (`aria-label`), decorative elements `aria-hidden`, verify in the Accessibility Tree
-- MUST: Icon-only buttons have descriptive `aria-label`
-- MUST: Prefer native semantics (`button`, `a`, `label`, `table`) before ARIA
-- SHOULD: Right-clicking the nav logo surfaces brand assets
-- MUST: Use non-breaking spaces to glue terms: `10&nbsp;MB`, `⌘&nbsp;+&nbsp;K`, `Vercel&nbsp;SDK`
-
-## Performance
-
-- SHOULD: Test iOS Low Power Mode and macOS Safari
-- MUST: Measure reliably (disable extensions that skew runtime)
-- MUST: Track and minimize re-renders (React DevTools/React Scan)
-- MUST: Profile with CPU/network throttling
-- MUST: Batch layout reads/writes; avoid unnecessary reflows/repaints
-- MUST: Mutations (`POST/PATCH/DELETE`) target <500 ms
-- SHOULD: Prefer uncontrolled inputs; make controlled loops cheap (keystroke cost)
-- MUST: Virtualize large lists (eg, `virtua`)
-- MUST: Preload only above-the-fold images; lazy-load the rest
-- MUST: Prevent CLS from images (explicit dimensions or reserved space)
-
-## Design
-
-- SHOULD: Layered shadows (ambient + direct)
-- SHOULD: Crisp edges via semi-transparent borders + shadows
-- SHOULD: Nested radii: child ≤ parent; concentric
-- SHOULD: Hue consistency: tint borders/shadows/text toward bg hue
-- MUST: Accessible charts (color-blind-friendly palettes)
-- MUST: Meet contrast—prefer [APCA](https://apcacontrast.com/) over WCAG 2
-- MUST: Increase contrast on `:hover/:active/:focus`
-- SHOULD: Match browser UI to bg
-- SHOULD: Avoid gradient banding (use masks when needed)
+- [ ] Explained what this code/feature does
+- [ ] Documented why it exists and its purpose
+- [ ] Defined key concepts and terminology
+- [ ] Documented function/method signatures
+- [ ] Documented parameters and return values
+- [ ] Included example usage with code snippets
+- [ ] Documented error handling and edge cases
+- [ ] Provided architecture overview
+- [ ] Documented important design decisions
+- [ ] Included common use cases with full examples
+- [ ] Documented best practices and patterns
+- [ ] Documented common pitfalls to avoid
