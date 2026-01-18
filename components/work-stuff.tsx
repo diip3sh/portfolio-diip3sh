@@ -4,14 +4,11 @@ import { Attachment01Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import Link from "next/link";
 import { projectData } from "@/lib/data/home";
-import { GitHub } from "@/lib/svg/github";
-import { ImageShowcase } from "./ui/image-showcase";
 import { Video } from "./ui/video";
 
 export const WorkStuff = () => {
   return (
     <main className="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {/* <section className="flex flex-col gap-4"> */}
       {projectData.map((item) => (
         <section className="flex flex-col gap-4" key={item.project}>
           <div className="rounded-xl border border-border bg-card p-1.5 shadow-md shadow-border">
@@ -36,53 +33,6 @@ export const WorkStuff = () => {
           </div>
         </section>
       ))}
-      {/* <ImageShowcase
-          image="https://framerusercontent.com/images/GMRu9EwZtu12CzGtRcBYmg5yXvo.png"
-          alt="Vesta project showcase - Product Design & Engineering"
-        />
-        <div className="">
-          <h3 className="font-medium uppercase">Vesta</h3>
-          <p className="text-muted-foreground font-sans">
-            Product Design & Engineering
-          </p>
-        </div>
-      </section>
-      <section className="flex flex-col gap-4">
-        <ImageShowcase
-          image="https://framerusercontent.com/images/GMRu9EwZtu12CzGtRcBYmg5yXvo.png"
-          alt="Vesta project showcase - Product Design & Engineering"
-        />
-        <div className="">
-          <h3 className="font-medium uppercase">Vesta</h3>
-          <p className="text-muted-foreground font-sans">
-            Product Design & Engineering
-          </p>
-        </div>
-      </section>
-      <section className="flex flex-col gap-4">
-        <ImageShowcase
-          image="https://framerusercontent.com/images/GMRu9EwZtu12CzGtRcBYmg5yXvo.png"
-          alt="Vesta project showcase - Product Design & Engineering"
-        />
-        <div className="">
-          <h3 className="font-medium uppercase">Vesta</h3>
-          <p className="text-muted-foreground font-sans">
-            Product Design & Engineering
-          </p>
-        </div>
-      </section>
-      <section className="flex flex-col gap-4">
-        <ImageShowcase
-          image="https://framerusercontent.com/images/GMRu9EwZtu12CzGtRcBYmg5yXvo.png"
-          alt="Vesta project showcase - Product Design & Engineering"
-        />
-        <div className="">
-          <h3 className="font-medium uppercase">Vesta</h3>
-          <p className="text-muted-foreground font-sans">
-            Product Design & Engineering
-          </p>
-        </div>
-      </section> */}
     </main>
   );
 };
