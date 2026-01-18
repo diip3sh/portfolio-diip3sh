@@ -1,153 +1,176 @@
- # Portfolio Workspace Overview
+# [diip3sh.netlify.app](https://diip3sh.netlify.app) &middot; [![GitHub License](https://img.shields.io/github/license/diip3sh/portfolio-2025?label=License)](https://github.com/diip3sh/portfolio-2025/blob/main/LICENSE)
 
- **What this portfolio does:**
- It showcases the current Next.js App Router site built with Tailwind, Shadcn UI, and rich reusable components that highlight craft, work, and contact data across `app/`, `components/`, and `lib/data`.
+A modern, pixel-perfect portfolio showcasing design engineering work, featuring clean animations, accessibility-first design, and performance-optimized components.
 
- **Why it exists:**
- Serves as both a real-world case study and a living resume that demonstrates modern React/Next.js patterns, accessibility-first animations, and responsive UI composability. It helps onboard new collaborators by providing a consistent, documented baseline for contribution.
+→ Check out the live site: [diip3sh.netlify.app](https://diip3sh.netlify.app)
 
- ## Key Concepts & Terminology
+## Overview
 
- - **App Router entry points** (`app/page.tsx`, `app/work/page.tsx`, etc.): define route-level data composition with a shared `layout` and global styles.
- - **Data modules** (`lib/data/*.ts`): export typed records for hero content, craft highlights, vault details, and work experiences so pages stay declarative.
- - **Reusable UI primitives** (`components/ui/*`): Tailwind-powered building blocks (text, video, buttons, accordion) that respect accessibility, motion, and responsiveness.
- - **Container + Layout helpers** (`components/container.tsx`, `components/navbar.tsx`, `components/footer.tsx`): share spacing, navigation, and footer patterns across the site.
+### Stack
 
- ## Project Structure & Conventions
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS v4
+- shadcn/ui
+- Motion (Framer Motion)
 
- - `app/` – App Router routes, nested layouts, and metadata. Every page is a functional component using hooks where needed, with strict null checks and defined props/interfaces.
- - `components/` – Presentational pieces arranged by responsibility (navigation, footers, experiences, UI primitives). Compose with `<Link>`/`<button>` to preserve native semantics.
- - `lib/` – Typed data definitions plus utilities (e.g., `lib/utils.ts`) consumed by pages and components. Prefer `interface` declarations and share them across modules.
- - `public/` – Static assets (icons, logos, GIFs) referenced via `next/image` or inline SVG components under `lib/svg/`.
- - `globals.css` – Tailwind base styles, animation easing definitions, and reduced-motion fallbacks.
- - `next.config.ts` & `tsconfig.json` – Configure App Router, strict TypeScript, and Tailwind integration.
+### Featured
 
- **Conventions**
- - Tailwind classes only; no inline styles (use `className` helpers).
- - Favor `const handleX = () =>` event handlers, with descriptive names.
- - Accessibility focus: `aria-label`s, `tabIndex`, polite `aria-live`, `prefers-reduced-motion` handling.
- - Animations use transform/opacity, `ease-out` easing, `will-change` hints, and are under 1s.
- - Follow Shadcn UI guidelines; install any missing dependencies via pnpm.
- - Always run `pnpm install` (lockfile is `bun.lock` but pnpm is preferred).
+- **Clean & Modern Design**: Minimalist aesthetic with custom dithering backgrounds and corner shapes
+- **Accessibility-First**: Full keyboard navigation, focus management, screen reader support, and reduced motion preferences
+- **Performance Optimized**: Hardware-accelerated animations, lazy loading, and optimized images
+- **Responsive & Mobile-First**: Seamless experience across all devices with touch-friendly interactions
+- **Type-Safe Architecture**: Strict TypeScript with comprehensive interfaces and type guards
+- **SEO Optimized**: Rich metadata, Open Graph images, and structured data for better discoverability
+- **Component Registry**: Reusable UI primitives built with shadcn/ui patterns
+- **Animation System**: Custom easing curves, transform-based animations, and motion preferences
 
- ## API Documentation & Usage
+### Portfolio Sections
 
- ### Data Modules
+- **Home**: Hero section with work experience, skills overview, and recent features
+- **Work**: Detailed showcase of professional projects and contributions
+- **Craft**: Design principles, development philosophy, and creative process
 
- ```ts
- // lib/data/about.ts
- export interface AboutBlock {
-   title: string;
-   description: string;
-   cta?: { label: string; href: string };
- }
- ```
- Each data file exports typed arrays/objects consumed by pages:
- - `home.ts`: hero, stat cards, skill badges, CTA copy.
- - `craft.ts`: craft principles, projects, timeline data.
- - `vault.ts`: curated resources or writing highlight entries.
- - `work.ts`: career history entries referenced by `components/work-experience.tsx`.
+### Component Architecture
 
- #### Example Usage
- ```tsx
- import { homeData } from "@/lib/data/home";
- import WorkExperience from "@/components/work-experience";
+A comprehensive component library featuring:
 
- const HeroSection = () => {
-   return (
-     <section>
-       <h1>{homeData.hero.title}</h1>
-       <p>{homeData.hero.subtitle}</p>
-       <WorkExperience items={homeData.workHistory} />
-     </section>
-   );
- };
- ```
- Provide proper `key` props and fallback content when mapping arrays.
+- **UI Primitives**: Text components, buttons, accordions, and image showcases
+- **Layout Components**: Container, navbar, footer with responsive navigation
+- **Specialized Components**: Work experience cards, infinite scroll containers, and animated elements
+- **Data-Driven**: Typed data modules for content management and easy updates
 
- ### Reusable Components
+## Development
 
- - `components/container.tsx`: wraps content with consistent padding + width caps.
- - `components/navbar.tsx`: responsive nav, `Link` usage, hover states, `aria-hidden` icons.
- - `components/infinite-scroll-container.tsx`: virtualization-ready wrapper (add `Virtua` if necessary).
- - `components/work-experience.tsx`: displays employment history; accepts `items` prop typed from `lib/data/work.ts`.
- - `components/page-footer.tsx` and `components/footer.tsx`: include CTA, social links, and accessibility cues (aria labels, focus rings).
+### Environment Setup
 
- **Props & Behavior**
- - Always type props with `interface`.
- - Components handle keyboard events, e.g., `handleKeyDown` for space/enter.
- - Use `React.memo`/`useCallback` where repeated renders would be costly.
+1. **Prerequisites**
+   - [bun](https://bun.sh/) and [pnpm](https://pnpm.io/) (pnpm preferred for scripts despite Bun's lockfile)
+   - Node.js 18+
 
- ## Implementation Details
+2. **Installation**
+   ```bash
+   pnpm install
+   ```
 
- - **Layout**: `app/layout.tsx` defines metadata, fonts, and global context providers. It imports `globals.css` (Tailwind + animation utilities) and wraps pages with `<body className="bg-slate-950 text-slate-100">`.
- - **Pages**: Each route is a functional component that composes data and UI primitives. Navigation flows leverage `next/link` for link semantics and `prefetch`.
- - **Animations**: Use CSS transitions with `ease-out-quad`/`ease-out-cubic` as defined in shared rules. For complex motion, prefer Framer Motion springs with `transform` props and reduced motion fallbacks.
- - **Accessibility**: Inputs/buttons include focus indicators and `aria-label`. Layout roots call `prefers-reduced-motion` media query to disable `transform`.
- - **Performance**: Lazy-load heavy sections, preload above-the-fold images via `<Image priority>`, and virtualize long lists. Avoid animating layout properties.
+3. **Development**
+   ```bash
+   pnpm dev          # Start development server
+   pnpm build        # Build for production
+   pnpm start        # Start production server
+   pnpm lint         # Run linting
+   pnpm format       # Format code with Biome
+   ```
 
- ## Onboarding New Developer
+### Project Structure
 
- 1. **Environment Setup**
-    - Install [bun](https://bun.sh/) and [pnpm](https://pnpm.io/) (pnpm runs scripts despite Bun’s lockfile).
-    - Run `pnpm install` from the repo root to generate `node_modules`.
-    - Create `.env.local` if integrating secrets; copy from `.env.example` (if available).
-    - Configure your editor for TypeScript + Tailwind support (format on save, tailwind CSS IntelliSense, linting).
+```
+├── app/                    # Next.js App Router pages
+│   ├── layout.tsx         # Root layout with metadata
+│   ├── page.tsx          # Home page
+│   ├── work/page.tsx     # Work showcase
+│   └── craft/page.tsx    # Craft & philosophy
+├── components/            # React components
+│   ├── ui/               # Reusable UI primitives
+│   ├── container.tsx     # Layout container
+│   ├── navbar.tsx        # Navigation component
+│   └── work-*.tsx        # Work-related components
+├── lib/
+│   ├── data/             # Typed content data
+│   ├── svg/              # Inline SVG components
+│   └── utils.ts          # Utility functions
+└── public/               # Static assets
+```
 
- 2. **Local Workflow**
-    - Start dev server: `pnpm dev`.
-    - Format: `pnpm format` (hooks run biome/other tools as configured).
-    - Lint: `pnpm lint`.
-    - Build: `pnpm build`.
-    - Preview production: `pnpm preview`.
-    - Run unit/integration tests if applicable (add `pnpm test` once defined).
+### Key Concepts
 
- 3. **Git & Contribution**
-    - Base branches from main; name feature branches like `feat/hero-section`.
-    - Run `pnpm lint` + `pnpm format` before commits.
-    - Stage relevant files and use `git commit -m` with context (why change).
-    - Push to remote, open PR with summary, testing steps, and any blockers.
+- **Data Modules**: Typed TypeScript interfaces for content management
+- **Component Composition**: Modular, reusable components following shadcn/ui patterns
+- **Animation System**: CSS-based animations with custom easing and motion preferences
+- **Accessibility**: WCAG compliant with keyboard navigation and screen reader support
+- **Performance**: Optimized images, lazy loading, and hardware-accelerated animations
 
- 4. **Onboarding Checklist**
-    - [x] Development environment ready (bun + pnpm)
-    - [x] Application runs locally via `pnpm dev`
-    - [x] Linting + formatting enforced by scripts
-    - [ ] First PR submitted (create your branch, commit, and open a PR)
+### API Documentation
 
- ## Best Practices & Common Pitfalls
+#### Data Modules
 
- - **Motion & Animation**
-   - Stick to `transform`/`opacity` only; avoid `top/left`. Use `will-change` sparingly and disable via `prefers-reduced-motion`.
-   - Apply `ease-out` curves for entry animations; keep duration ≤ 0.3s.
+```ts
+// lib/data/home.ts
+export interface WorkExperience {
+  title: string;
+  company: string;
+  period: string;
+  description: string;
+}
 
- - **Accessibility**
-   - Ensure hit targets ≥24px (≥44px on mobile) even if visual size is smaller—add padding via Tailwind.
-   - Provide `aria-label`s for icon-only buttons and use `aria-live` for dynamic updates.
-   - Manage focus when opening dialogs or panels; trap focus when needed.
+export interface StackItem {
+  label: string;
+  logo: string;
+}
+```
 
- - **Styling & Layout**
-   - Do not sprinkle inline styles; Tailwind classes only, composable via `className` helpers.
-   - Follow Shadcn component guidelines; install missing ones and customize rather than invent barebones versions.
-   - Use `scroll-margin-top` on anchor-linked headings and include “Skip to content”.
+#### Component Usage
 
- - **Content & Interaction**
-   - Use ellipsis `…` for states that lead to follow-up actions or loading.
-   - Provide redundant cues beyond color for statuses and ensure tables/labels have accessible names.
+```tsx
+import { Container } from "@/components/container";
+import { WorkExperience } from "@/components/work-experience";
+import { homeData } from "@/lib/data/home";
 
- - **Performance**
-   - Lazy-load content below the fold and set explicit width/height on images to avoid CLS.
-   - Keep HTTP mutations <500ms and batch layout reads/writes.
-   - Track renders via React DevTools; memoize heavy sections.
+export default function HomePage() {
+  return (
+    <Container
+      gridOne={<HeroSection />}
+      gridTwo={
+        <WorkExperience items={homeData.workExperience} />
+      }
+    />
+  );
+}
+```
 
- - **Common Pitfalls**
-   - Forgetting to wrap links/buttons in `Link` or `button`, breaking middle-click/keyboard behavior.
-   - Animating layout properties or dragging with CSS variables (forbidden).
-   - Missing `prefers-reduced-motion` variant for transforms.
-   - Not trimming inputs before submission or disallowing paste (both MUST be supported).
+## Best Practices
 
- ## Next Steps for New Developers
+### Animation & Motion
+- Use `transform` and `opacity` for hardware acceleration
+- Custom easing curves: `ease-out-quad`, `ease-out-cubic`
+- Respect `prefers-reduced-motion` media queries
+- Keep animations under 300ms
 
- - Explore each route in `app/` to map how data flows from `lib/data/*`.
- - Review `components/ui` for reusable patterns before adding new UI.
- - When adding new animations, document easing/duration and test `prefers-reduced-motion`.
- - Keep communication open—flag blockers early and document decisions in PR descriptions.
+### Accessibility
+- Minimum 24px touch targets (44px on mobile)
+- Full keyboard navigation support
+- Screen reader friendly with proper ARIA labels
+- Focus management and visible focus indicators
+
+### Performance
+- Lazy load images with explicit dimensions
+- Virtualize long lists when needed
+- Batch DOM reads/writes
+- Optimize re-renders with React.memo
+
+### Code Quality
+- Strict TypeScript with no `any` types
+- Descriptive component and function names
+- Event handlers prefixed with `handle`
+- Tailwind classes only (no inline styles)
+
+## License
+
+Licensed under the [MIT license](./LICENSE).
+
+You're free to use my code! Just make sure to <ins>remove all my personal information</ins> before publishing your website. It's awesome to see my code being useful to someone!
+
+## Acknowledgments
+
+- [React](https://react.dev)
+- [Next.js](https://nextjs.org)
+- [TypeScript](https://www.typescriptlang.org)
+- [Tailwind CSS](https://tailwindcss.com)
+- [shadcn/ui](https://ui.shadcn.com)
+- [Motion](https://motion.dev)
+- [Radix UI](https://www.radix-ui.com)
+- [Base UI](https://base-ui.com)
+- [HugeIcons](https://hugeicons.com)
+- [Paper Design Shaders](https://paper.design)
+- And many other open-source libraries used in `package.json`
