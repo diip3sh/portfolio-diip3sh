@@ -1,12 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
-// import { LiquidMetalButton } from "./ui/buttons";
 import { LiquidMetalButton } from "./ui/liquid-metal";
 
 export default function Navbar() {
   return (
-    <div className="h-[60px] w-full py-2.5">
+    <div className="h-[60px] w-full py-2">
       <div className="flex items-center justify-between">
         <div className="p-px bg-muted rounded-xl ml-1.5">
           <Link

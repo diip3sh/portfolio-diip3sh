@@ -74,7 +74,6 @@ const WorkGridTwo = () => {
           </ul>
         </div>
       ))}
-      {/* </div> */}
       <PageFooter />
     </div>
   );

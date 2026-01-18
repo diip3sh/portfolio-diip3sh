@@ -1,5 +1,5 @@
-import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono, JetBrains_Mono } from "next/font/google";
+import type { Metadata } from "next";
+import { Geist, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Dithering } from "@paper-design/shaders-react";
 import Footer from "@/components/footer";
@@ -11,21 +11,12 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 const jetBrainsMono = JetBrains_Mono({
   variable: "--font-jet-brains-mono",
   subsets: ["latin"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
-
-if (!siteUrl) {
-  throw new Error("NEXT_PUBLIC_SITE_URL is not set");
-}
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://diip3sh.netlify.app";
 const openGraphImage = "/og.png";
 
 export const metadata: Metadata = {
@@ -109,7 +100,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${jetBrainsMono.variable} antialiased font-mono`}
+        className={`${geistSans.variable} ${jetBrainsMono.variable} antialiased font-mono`}
       >
         <a
           href="#main-content"

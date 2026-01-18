@@ -91,7 +91,6 @@
   --font-sans: var(--font-sans);
   --font-mono: var(--font-jet-brains-mono);
   --font-serif: var(--font-serif);
-  --font-geist-mono: var(--font-geist-mono);
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
