@@ -1,4 +1,4 @@
-# [diip3sh.netlify.app](https://diip3sh.netlify.app) &middot; [![GitHub License](https://img.shields.io/github/license/diip3sh/portfolio-2025?label=License)](https://github.com/diip3sh/portfolio-2025/blob/main/LICENSE)
+# [diip3sh.dev](https://diip3sh.netlify.app) &middot; ![GitHub Repo Views](https://gitviews.com/repo/diip3sh/portfolio-diip3sh.svg)
 
 A modern, pixel-perfect portfolio showcasing design engineering work, featuring clean animations, accessibility-first design, and performance-optimized components.
 
