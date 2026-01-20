@@ -4,6 +4,7 @@ import {
   Briefcase09Icon,
   FolderLibraryIcon,
   Home09Icon,
+  VictoryFinger03Icon,
 } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import Link from "next/link";
@@ -91,8 +92,15 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="hidden md:block text-sm text-muted-foreground uppercase tracking-tight">
-        2026 © diip3sh. Open to use for free
+      <div className="hidden md:block text-sm  uppercase tracking-tight">
+        <div className="flex items-end gap-2">
+          2026 © <span className="lowercase"> diip3sh</span>.{" "}
+          <HugeiconsIcon
+            icon={VictoryFinger03Icon}
+            className="size-4 inline-block"
+          />{" "}
+          thanks for attention!
+        </div>
       </div>
     </div>
   );

@@ -44,8 +44,8 @@ export const workExperience = [
     date: "2023 - 2022",
   },
   {
-    company: "Graduation",
-    date: "2017 - 2021",
+    company: "Internship",
+    date: "2022 - 2021",
   },
 ];
 
