@@ -2,7 +2,7 @@
 
 A modern, pixel-perfect portfolio showcasing design engineering work, featuring clean animations, accessibility-first design, and performance-optimized components.
 
-→ Check out the live site: [diip3sh.netlify.app](https://diip3sh.xyz/)
+→ Check out the live site: [diip3sh.xyz](https://diip3sh.xyz/)
 
 [![Portfolio Screenshot](https://i.ibb.co/Mbfdr7M/SCR-20260118-pncy.png)](https://diip3sh.netlify.app)
 
