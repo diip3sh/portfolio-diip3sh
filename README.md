@@ -1,8 +1,8 @@
-# [diip3sh.dev](https://diip3sh.netlify.app) &middot; ![GitHub Repo Views](https://gitviews.com/repo/diip3sh/portfolio-diip3sh.svg)
+# [diip3sh.xyz](https://diip3sh.xyz) &middot; ![GitHub Repo Views](https://gitviews.com/repo/diip3sh/portfolio-diip3sh.svg)
 
 A modern, pixel-perfect portfolio showcasing design engineering work, featuring clean animations, accessibility-first design, and performance-optimized components.
 
-→ Check out the live site: [diip3sh.netlify.app](https://diip3sh.netlify.app)
+→ Check out the live site: [diip3sh.netlify.app](https://diip3sh.xyz/)
 
 [![Portfolio Screenshot](https://i.ibb.co/Mbfdr7M/SCR-20260118-pncy.png)](https://diip3sh.netlify.app)
 
