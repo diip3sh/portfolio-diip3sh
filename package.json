@@ -16,6 +16,7 @@
 		"@paper-design/shaders-react": "^0.0.68",
 		"@toolwind/corner-shape": "^0.0.8-3",
 		"@types/bun": "^1.3.4",
+		"@vercel/analytics": "^1.6.1",
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
 		"motion": "^12.23.26",
