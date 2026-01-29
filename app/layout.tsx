@@ -6,6 +6,8 @@ import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import { cn } from "@/lib/utils";
 
+import { Analytics } from "@vercel/analytics/next"
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -129,6 +131,7 @@ export default function RootLayout({
             style={{ height: `calc(100dvh - 120px)` }}
           >
             {children}
+            <Analytics />
           </div>
           <Footer />
         </div>
