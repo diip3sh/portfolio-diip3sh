@@ -2,11 +2,10 @@ import type { Metadata } from "next";
 import { Geist, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Dithering } from "@paper-design/shaders-react";
+import { Analytics } from "@vercel/analytics/next";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import { cn } from "@/lib/utils";
-
-import { Analytics } from "@vercel/analytics/next"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,7 +17,7 @@ const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://diip3sh.netlify.app";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://diip3sh.xyz";
 const openGraphImage = "/og.png";
 
 export const metadata: Metadata = {
