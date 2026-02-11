@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "w.wallhaven.cc" },
       { protocol: "https", hostname: "images.unsplash.com"},
       { protocol: "https", hostname: "plus.unsplash.com"},
+      { protocol: "https", hostname: "mniewerqzpis1qpo.public.blob.vercel-storage.com"},
     ],
   },
 };

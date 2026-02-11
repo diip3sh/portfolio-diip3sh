@@ -5,6 +5,7 @@ import { PageFooter } from "@/components/page-footer";
 import { TitleText } from "@/components/ui/text";
 import { Video } from "@/components/ui/video";
 import { craftData } from "@/lib/data/craft";
+import { Arrow } from "@/lib/svg/arrow";
 import { XformerlyTwitter } from "@/lib/svg/x";
 
 export default function Craft() {
@@ -14,7 +15,10 @@ export default function Craft() {
 const CraftGridOne = () => {
   return (
     <div className="flex xl:h-[calc(100vh-10.5rem)] flex-col justify-between">
-      <section></section>
+      <section className="text-end">
+        {/* <span>Hover over</span>
+        <Arrow className="fill-red-500" /> */}
+      </section>
       <section className="flex flex-col gap-6">
         <TitleText title="Craft" />
         <p className="text-wrap text-muted-foreground max-w-3/4 font-sans">
@@ -29,13 +33,13 @@ const CraftGridOne = () => {
 const CraftGridTwo = () => {
   return (
     <div className="flex flex-col gap-12">
-      <div className="grid grid-cols-1 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {[...craftData]
           .sort((a, b) => b.id - a.id)
           .map((item) => (
             <div
               key={item.id}
-              className="flex flex-col rounded-xl border border-border bg-card lg:w-[max(min(100vw-56px,720px),1px)]"
+              className="flex flex-col rounded-xl border border-border bg-card "
             >
               <div className="relative p-1.5">
                 <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-muted shadow-sm">
