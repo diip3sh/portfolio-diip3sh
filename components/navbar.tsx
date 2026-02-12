@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { LiquidMetalButton } from "./ui/liquid-metal";
-import { InteractiveEye } from "./ui/interactive-eye";
+import { InteractiveEyes } from "./ui/interactive-eye";
 
 export default function Navbar() {
   return (
@@ -32,9 +32,8 @@ export default function Navbar() {
             <span className="ml-4 py-1.5 text-muted font-semibold">
               Get in touch
             </span>
-            <div className="flex gap-2 items-center px-1.5">
-              <InteractiveEye size={24} pupilSize={10} />
-              <InteractiveEye size={24} pupilSize={10} />
+            <div className="px-1.5">
+              <InteractiveEyes size={24} pupilSize={10} gap={8} />
             </div>
           </div>
         </Link>
