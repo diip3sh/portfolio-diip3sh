@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { LiquidMetalButton } from "./ui/liquid-metal";
+import { InteractiveEye } from "./ui/interactive-eye";
 
 export default function Navbar() {
   return (
-    <div className="h-[60px] w-full py-2">
+    <div className="h-15 w-full py-2">
       <div className="flex items-center justify-between">
         <div className="p-px bg-muted rounded-xl ml-1.5">
           <Link
@@ -25,19 +26,17 @@ export default function Navbar() {
           href={"https://cal.com/pilla-dipesh-dnyt7l/15min"}
           target="_blank"
           rel="noopener noreferrer"
+          className="p-0.75 bg-primary/10 rounded-full"
         >
-          <LiquidMetalButton
-            size="sm"
-            metalConfig={{ colorBack: "#064e3b", colorTint: "#10b981" }}
-          >
-            <div className="flex items-center gap-2">
-              <span className="relative flex size-2.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-600 opacity-75"></span>
-                <span className="relative inline-flex size-2.5 rounded-full bg-emerald-500"></span>
-              </span>
-              <span className="font-sans">Open To Roles</span>
+          <div className="flex items-center gap-2.5 bg-primary shadow-md rounded-full  font-sans">
+            <span className="ml-4 py-1.5 text-muted font-semibold">
+              Get in touch
+            </span>
+            <div className="flex gap-2 items-center px-1.5">
+              <InteractiveEye size={24} pupilSize={10} />
+              <InteractiveEye size={24} pupilSize={10} />
             </div>
-          </LiquidMetalButton>
+          </div>
         </Link>
       </div>
     </div>
